@@ -7,3 +7,4 @@
 [node name="Coin" type="Sprite2D" parent="."]
 position = Vector2(-1, -4)
 texture = ExtResource("1_1ckkx")
+hframes = 12
