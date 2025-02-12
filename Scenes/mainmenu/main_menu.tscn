@@ -5,12 +5,15 @@
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_75lln"]
 font_names = PackedStringArray("SimSun")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_j7bib"]
 font_names = PackedStringArray("SimSun")
+subpixel_positioning = 0
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
