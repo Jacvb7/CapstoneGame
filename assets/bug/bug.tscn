@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d10ywf6a6a4u0"]
+[gd_scene load_steps=16 format=3 uid="uid://b0bbgey2gkp5s"]
 
 [ext_resource type="Texture2D" uid="uid://03y7iot283la" path="res://assets/sprites/cave_npc.png" id="1_ocj8i"]
 
@@ -111,7 +111,7 @@ position = Vector2(-1, -9)
 sprite_frames = SubResource("SpriteFrames_yhehx")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.568278
+frame_progress = 0.657329
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="temp-bug"]
 position = Vector2(-1, -5)
