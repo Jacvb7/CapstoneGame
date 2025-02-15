@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgakm27m1a7xm"
-path="res://.godot/imported/Forest-Tileset.png-ac2e164cadf06adb1eee70190b8ea7fc.ctex"
+uid="uid://55w2gyh7fxwy"
+path="res://.godot/imported/simple_milk_and_grass_item.png-34e97e475093fe0b75af1dfd8ea8465a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Forest-Tileset.png"
-dest_files=["res://.godot/imported/Forest-Tileset.png-ac2e164cadf06adb1eee70190b8ea7fc.ctex"]
+source_file="res://assets/farming_game/objects/simple_milk_and_grass_item.png"
+dest_files=["res://.godot/imported/simple_milk_and_grass_item.png-34e97e475093fe0b75af1dfd8ea8465a.ctex"]
 
 [params]
 
