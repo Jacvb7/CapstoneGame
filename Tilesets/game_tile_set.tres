@@ -1,3 +1,35 @@
-[gd_resource type="TileSet" format=3 uid="uid://qww2eqjct2pi"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://qww2eqjct2pi"]
+
+[ext_resource type="Texture2D" uid="uid://d00q6fro5hrqj" path="res://assets/farming_game/objects/basic_grass_biom_things.png" id="1_e62mu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4u2c"]
+texture = ExtResource("1_e62mu")
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+7:1/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:3/0 = 0
+7:4/0 = 0
+6:4/0 = 0
+5:4/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+8:4/0 = 0
+8:2/size_in_atlas = Vector2i(1, 2)
+8:2/0 = 0
+3:0/size_in_atlas = Vector2i(2, 2)
+3:0/0 = 0
+0:3/0 = 0
+1:3/0 = 0
 
 [resource]
+sources/0 = SubResource("TileSetAtlasSource_h4u2c")
