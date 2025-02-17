@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://672ladi7rvee"]
+[gd_scene load_steps=9 format=3 uid="uid://672ladi7rvee"]
 
 [ext_resource type="Script" path="res://settings.gd" id="1_dc2jk"]
 [ext_resource type="Texture2D" uid="uid://cjymt0r6kxw1y" path="res://9dd25a2b-7683-4d8a-8618-f293bb7a1c08.jpg" id="2_gb1du"]
+[ext_resource type="Script" path="res://Scenes/user settings screen/volume.gd" id="3_cmsqf"]
 [ext_resource type="AudioStream" uid="uid://32fant6cycgk" path="res://assets/sounds/On the Farm.wav" id="3_n64g1"]
 
 [sub_resource type="FontVariation" id="FontVariation_ii314"]
@@ -52,9 +53,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="MasterVol" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_cmsqf")
+bus_name = "Master"
 
 [node name="Mute_Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -112,7 +117,7 @@ text = "Back"
 stream = ExtResource("3_n64g1")
 autoplay = true
 
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/MasterVol" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
