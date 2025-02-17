@@ -25,18 +25,13 @@ grow_vertical = 2
 script = ExtResource("1_ti2el")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -2.057
-anchor_top = -2.329
-anchor_right = 2.165
-anchor_bottom = 2.807
-offset_left = -0.335938
-offset_top = 0.192017
-offset_right = -0.0803223
-offset_bottom = 0.0638428
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_right = 1291.0
+offset_bottom = 734.0
+
+[node name="9Dd25a2b-7683-4d8a-8618-f293Bb7a1c08" type="Sprite2D" parent="TextureRect"]
+position = Vector2(646, 360)
+scale = Vector2(0.265625, 0.214543)
 texture = ExtResource("1_uh401")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -46,10 +41,10 @@ anchor_left = -2.074
 anchor_top = -2.318
 anchor_right = 2.164
 anchor_bottom = 2.819
-offset_left = 0.248047
-offset_top = 0.0640869
-offset_right = 0.0720215
-offset_bottom = 0.287842
+offset_left = 2206.72
+offset_top = 1651.96
+offset_right = -1029.92
+offset_bottom = -1028.68
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12
@@ -68,10 +63,10 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/line_spacing = 20
 theme_override_constants/shadow_offset_x = 20
-theme_override_constants/outline_size = 120
+theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = SubResource("SystemFont_ml8si")
-theme_override_font_sizes/font_size = 400
+theme_override_font_sizes/font_size = 75
 text = "GAME TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -88,25 +83,19 @@ alignment = 1
 [node name="start_game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_75lln")
-theme_override_font_sizes/font_size = 300
+theme_override_font_sizes/font_size = 50
 text = "NEW GAME"
-
-[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="exit_game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_j7bib")
-theme_override_font_sizes/font_size = 300
+theme_override_font_sizes/font_size = 50
 text = "LOAD GAME"
-
-[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="settings" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_j7bib")
-theme_override_font_sizes/font_size = 300
+theme_override_font_sizes/font_size = 50
 text = "SETTINGS"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
