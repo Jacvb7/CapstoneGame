@@ -1,41 +1,41 @@
 [gd_scene load_steps=13 format=3 uid="uid://ctbrtfgf3sm54"]
 
-[ext_resource type="Texture2D" uid="uid://bq02uv4r3mvda" path="res://assets/farming_game/tilesets/doors.png" id="1_a7v1h"]
+[ext_resource type="Texture2D" uid="uid://bq02uv4r3mvda" path="res://assets/farming_game/tilesets/doors.png" id="1_btpcv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gifi4"]
-atlas = ExtResource("1_a7v1h")
+atlas = ExtResource("1_btpcv")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_toynq"]
-atlas = ExtResource("1_a7v1h")
+atlas = ExtResource("1_btpcv")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0cta"]
-atlas = ExtResource("1_a7v1h")
+atlas = ExtResource("1_btpcv")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xj78r"]
-atlas = ExtResource("1_a7v1h")
+atlas = ExtResource("1_btpcv")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gna8n"]
-atlas = ExtResource("1_a7v1h")
+atlas = ExtResource("1_btpcv")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ovq4t"]
-atlas = ExtResource("1_a7v1h")
+atlas = ExtResource("1_btpcv")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s4fy6"]
-atlas = ExtResource("1_a7v1h")
+atlas = ExtResource("1_btpcv")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6a4km"]
-atlas = ExtResource("1_a7v1h")
+atlas = ExtResource("1_btpcv")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpc1j"]
-atlas = ExtResource("1_a7v1h")
+atlas = ExtResource("1_btpcv")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3afxy"]
