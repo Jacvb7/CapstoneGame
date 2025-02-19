@@ -1,7 +1,7 @@
 extends NodeState
 #created by following this tutorial by Rapid Vectors: https://www.youtube.com/watch?v=it0lsREGdmc
 
-@export var player: CharacterBody2D
+@export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var speed: int = 50
 
@@ -21,16 +21,20 @@ func _on_physics_process(_delta : float) -> void:
 	elif direction == Vector2.RIGHT:
 		animated_sprite_2d.play("walk_right")
 		
+	if direction != Vector2.ZERO:
+		player.player_direction = direction
+		
 	player.velocity = direction * speed
 	player.move_and_slide()
 
 
 func _on_next_transitions() -> void:
-	pass
+	if !GameInputEvents.is_movement_input():
+		transition.emit("Idle")
 
 func _on_enter() -> void:
 	pass
 
 
 func _on_exit() -> void:
-	pass
+	animated_sprite_2d.stop()
