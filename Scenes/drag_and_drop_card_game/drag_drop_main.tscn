@@ -4,7 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://i3xwnrt0i8i5" path="res://Scenes/drag_and_drop_card_game/datablock.tscn" id="2_0d2m3"]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://bl6byxr0vq1m8" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="3_311qs"]
+=======
+[ext_resource type="PackedScene" uid="uid://07eug086ybgd" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="3_311qs"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="PackedScene" uid="uid://07eug086ybgd" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="3_311qs"]
 >>>>>>> Stashed changes
