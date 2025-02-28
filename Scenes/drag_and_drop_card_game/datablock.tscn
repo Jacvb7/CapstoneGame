@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://i3xwnrt0i8i5"]
+[gd_scene load_steps=4 format=3 uid="uid://i3xwnrt0i8i5"]
 
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock.gd" id="1_85cap"]
 [ext_resource type="Texture2D" uid="uid://cfqwqaojgd3gg" path="res://icon.svg" id="1_hgn6k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7gfs"]
 size = Vector2(119, 120)
 
 [node name="datablock" type="Node2D"]
+script = ExtResource("1_85cap")
 
 [node name="datablock_image" type="Sprite2D" parent="."]
 texture = ExtResource("1_hgn6k")
@@ -15,3 +17,6 @@ texture = ExtResource("1_hgn6k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_n7gfs")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
