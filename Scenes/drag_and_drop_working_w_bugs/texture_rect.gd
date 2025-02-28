@@ -30,3 +30,4 @@ func _can_drop_data(_pos, data):
 func _drop_data(_pos, data):
 	# assign the dragged texture from _get_drag_data()
 	texture = data
+	

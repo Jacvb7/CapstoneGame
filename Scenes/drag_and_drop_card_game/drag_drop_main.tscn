@@ -1,22 +1,30 @@
 [gd_scene load_steps=4 format=3 uid="uid://07m0tm5jv10i"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_mang.gd" id="1_6ujy1"]
-[ext_resource type="PackedScene" uid="uid://i3xwnrt0i8i5" path="res://Scenes/drag_and_drop_card_game/datablock.tscn" id="2_0d2m3"]
 [ext_resource type="PackedScene" uid="uid://0gl5using56j" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="3_311qs"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/unplaced_datablocks.gd" id="3_olowc"]
 
 [node name="DragDropMain" type="Node2D"]
+position = Vector2(12, 3)
 
 [node name="datablock_mang" type="Node2D" parent="."]
 script = ExtResource("1_6ujy1")
 
-[node name="datablock" parent="datablock_mang" instance=ExtResource("2_0d2m3")]
-position = Vector2(157, 272)
-
-[node name="datablock2" parent="datablock_mang" instance=ExtResource("2_0d2m3")]
-position = Vector2(481, 266)
-
 [node name="datablock_slot2" parent="." instance=ExtResource("3_311qs")]
-position = Vector2(554, 81)
+position = Vector2(376, 99)
+scale = Vector2(1, 1)
 
 [node name="datablock_slot" parent="." instance=ExtResource("3_311qs")]
-position = Vector2(413, 82)
+position = Vector2(238, 99)
+scale = Vector2(1, 1)
+
+[node name="datablock_slot3" parent="." instance=ExtResource("3_311qs")]
+position = Vector2(514, 99)
+scale = Vector2(1, 1)
+
+[node name="datablock_slot4" parent="." instance=ExtResource("3_311qs")]
+position = Vector2(100, 99)
+scale = Vector2(1, 1)
+
+[node name="unplaced_datablocks" type="Node2D" parent="."]
+script = ExtResource("3_olowc")
