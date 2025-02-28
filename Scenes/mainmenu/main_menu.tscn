@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://beb5ly8wb4u2s"]
 
 [ext_resource type="Script" path="res://Scenes/mainmenu/main_menu.gd" id="1_ti2el"]
-[ext_resource type="Texture2D" uid="uid://cjymt0r6kxw1y" path="res://9dd25a2b-7683-4d8a-8618-f293bb7a1c08.jpg" id="1_uh401"]
+[ext_resource type="Texture2D" uid="uid://4rj4yn6iuakb" path="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg" id="2_mx22y"]
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")
@@ -28,13 +28,12 @@ script = ExtResource("1_ti2el")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1291.0
-offset_bottom = 734.0
+offset_right = 1156.0
+offset_bottom = 653.0
 
-[node name="9Dd25a2b-7683-4d8a-8618-f293Bb7a1c08" type="Sprite2D" parent="TextureRect"]
-position = Vector2(577, 327)
-scale = Vector2(0.237253, 0.194712)
-texture = ExtResource("1_uh401")
+[node name="Solid-light-blue-background-53Xkyn7Gnrw2373e" type="Sprite2D" parent="TextureRect"]
+position = Vector2(621, 291)
+texture = ExtResource("2_mx22y")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -43,10 +42,10 @@ anchor_left = -2.074
 anchor_top = -2.318
 anchor_right = 2.164
 anchor_bottom = 2.819
-offset_left = 2680.68
-offset_top = 1661.01
-offset_right = -1639.05
-offset_bottom = -1368.22
+offset_left = 2683.68
+offset_top = 1658.01
+offset_right = -1642.05
+offset_bottom = -1371.22
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12

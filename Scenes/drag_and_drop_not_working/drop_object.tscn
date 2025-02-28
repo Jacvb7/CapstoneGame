@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://csru4yridbpxl"]
 
-[ext_resource type="Script" path="res://Scenes/drag_and_drop/drop_object.gd" id="1_mn556"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_not_working/drop_object.gd" id="1_mn556"]
 [ext_resource type="Texture2D" uid="uid://cfqwqaojgd3gg" path="res://icon.svg" id="2_dehcj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcaqc"]

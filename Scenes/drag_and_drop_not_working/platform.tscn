@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0j3mv634si70"]
 
-[ext_resource type="Script" path="res://Scenes/drag_and_drop/platform.gd" id="1_l00xj"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_not_working/platform.gd" id="1_l00xj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpgsh"]
 size = Vector2(104, 106)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://buqunq06gk25h"]
 
-[ext_resource type="PackedScene" uid="uid://csru4yridbpxl" path="res://Scenes/drag_and_drop/drop_object.tscn" id="1_51m5n"]
-[ext_resource type="PackedScene" uid="uid://d0j3mv634si70" path="res://Scenes/drag_and_drop/platform.tscn" id="2_jyfxt"]
+[ext_resource type="PackedScene" uid="uid://csru4yridbpxl" path="res://Scenes/drag_and_drop_not_working/drop_object.tscn" id="1_51m5n"]
+[ext_resource type="PackedScene" uid="uid://d0j3mv634si70" path="res://Scenes/drag_and_drop_not_working/platform.tscn" id="2_jyfxt"]
 
 [node name="TestDragAndDrop" type="Node2D"]
 

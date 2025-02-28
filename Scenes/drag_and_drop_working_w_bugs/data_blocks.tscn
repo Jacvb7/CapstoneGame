@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b1yfabgbxwavh"]
 
-[ext_resource type="PackedScene" uid="uid://ds55vng0efx5y" path="res://Scenes/data_block/texture_rect.tscn" id="1_r0bup"]
+[ext_resource type="PackedScene" uid="uid://ds55vng0efx5y" path="res://Scenes/drag_and_drop_working_w_bugs/texture_rect.tscn" id="1_r0bup"]
 
 [node name="DataBlocks" type="Node2D"]
 
