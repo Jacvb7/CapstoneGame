@@ -1,0 +1,137 @@
+# https://youtu.be/2jMcuKdRh2w?si=1xDDcHiEXJ0qo9vr
+# manages datablocks to allow user to drag and drop 
+# datablock objects around the screen.
+
+extends Node2D
+
+const COLLISION_MASK_DATABLOCK = 1
+const COLLISION_MASK_DATABLOCK_SLOT = 2
+
+var screen_size
+var datablock_being_dragged
+var is_hovering_on_datablock
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	screen_size = get_viewport_rect().size
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	if datablock_being_dragged:
+		var mouse_pos = get_global_mouse_position()
+		# keep player from dragging datablock offscreen where they cannot click on it
+		datablock_being_dragged.position = Vector2(clamp(mouse_pos.x, 0, screen_size.x), 
+			clamp(mouse_pos.y, 0, screen_size.y))
+
+
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			# returns name and collider id for each object instance
+			var datablock = raycast_check_for_datablock()
+			if datablock:
+				start_drag(datablock)
+		else:
+			# when left click released
+			if datablock_being_dragged:
+				finish_drag()
+
+
+# Creates more visual feedback for player dragging a block
+func start_drag(datablock):
+	datablock_being_dragged = datablock
+	datablock.scale = Vector2(1, 1)
+
+
+# Creates more visual feedback for player releasing a block
+func finish_drag():
+	datablock_being_dragged.scale = Vector2(1.05, 1.05)
+	var datablock_slot_found = raycast_check_for_datablock_slot()
+	if datablock_slot_found and not datablock_slot_found.datablock_in_slot:
+		# datablock dropped in empty slot
+		datablock_being_dragged.position = datablock_slot_found.position
+		datablock_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
+		datablock_slot_found.datablock_in_slot = true
+		
+	datablock_being_dragged = null
+
+
+func connect_datablock_signals(datablock):
+	datablock.connect("hovered", on_hovered_over_datablock)
+	datablock.connect("hovered_off", on_hovered_off_datablock)
+
+
+func on_hovered_over_datablock(datablock):
+	if !is_hovering_on_datablock:
+		is_hovering_on_datablock = true
+		highlight_datablock(datablock, true)
+
+
+func on_hovered_off_datablock(datablock):
+	if !datablock_being_dragged:
+		# if not dragging
+		highlight_datablock(datablock, false)
+		# check if hovered off one datablock and hovered onto another datablock
+		var new_datablock_hovered = raycast_check_for_datablock() # return the card under the cursor
+		if new_datablock_hovered:
+			highlight_datablock(new_datablock_hovered, true)
+		else:
+			is_hovering_on_datablock = false
+
+
+func highlight_datablock(datablock, hovered):
+	if hovered:
+		datablock.scale = Vector2(1.05, 1.05)
+		# adjust z-axis for when blocks cross one another
+		datablock.z_index = 2
+	else:
+		datablock.scale = Vector2(1, 1)
+		# adjust z-axis for when blocks cross one another
+		datablock.z_index = 1
+
+
+func raycast_check_for_datablock_slot():
+	var space_state = get_world_2d().direct_space_state
+	var parameters = PhysicsPointQueryParameters2D.new()
+	parameters.position = get_global_mouse_position()
+	parameters.collide_with_areas = true
+	parameters.collision_mask = COLLISION_MASK_DATABLOCK_SLOT
+	var result = space_state.intersect_point(parameters)
+	if result.size() > 0:
+		#return result[0].collider.get_parent()
+		return result[0].collider.get_parent()
+	else:
+		return null	
+
+
+# set up raycast to return object under the cursor when we click on it
+func raycast_check_for_datablock():
+	var space_state = get_world_2d().direct_space_state
+	var parameters = PhysicsPointQueryParameters2D.new()
+	parameters.position = get_global_mouse_position()
+	parameters.collide_with_areas = true
+	parameters.collision_mask = COLLISION_MASK_DATABLOCK
+	var result = space_state.intersect_point(parameters)
+	if result.size() > 0:
+		#return result[0].collider.get_parent()
+		return get_datablock_with_highest_z_index(result)
+	else:
+		return null
+
+
+# Corrects bug in program where overlapping blocks return an array of more than one draggable datablocks. 
+# This function ensure that the datablock on top will be chosen as the drag object.
+func get_datablock_with_highest_z_index(datablocks):
+	# assumes that the first datblock in the raycast array has the highest z value
+	var highest_z_datablock = datablocks[0].collider.get_parent()
+	var highest_z_index = highest_z_datablock.z_index
+	
+	# loops through all datablocks for the block with the highest z index
+	for i in range(1, datablocks.size()):
+		var current_datablock = datablocks[i].collider.get_parent()
+		if current_datablock.z_index > highest_z_index:
+			highest_z_datablock = current_datablock
+			highest_z_index = current_datablock.z_index
+	
+	return highest_z_datablock

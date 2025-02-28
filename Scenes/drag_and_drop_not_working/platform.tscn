@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0j3mv634si70"]
+
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_not_working/platform.gd" id="1_l00xj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpgsh"]
+size = Vector2(104, 106)
+
+[node name="platform" type="StaticBody2D" groups=["dropable"]]
+script = ExtResource("1_l00xj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["dropable"]]
+shape = SubResource("RectangleShape2D_rpgsh")
+
+[node name="ColorRect" type="ColorRect" parent="." groups=["dropable"]]
+offset_left = -64.0
+offset_top = -66.0
+offset_right = 64.0
+offset_bottom = 62.0
+color = Color(0.655919, 0.0948145, 0.487887, 1)

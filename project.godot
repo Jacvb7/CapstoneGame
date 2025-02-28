@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/mainmenu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+global="*res://global.gd"
+
 [display]
 
 window/size/viewport_width=640
@@ -24,6 +28,7 @@ window/size/window_height_override=720
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
+window/vsync/vsync_mode=0
 
 [editor]
 
