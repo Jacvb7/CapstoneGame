@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://07m0tm5jv10i"]
+
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_mang.gd" id="1_6ujy1"]
+[ext_resource type="PackedScene" uid="uid://i3xwnrt0i8i5" path="res://Scenes/drag_and_drop_card_game/datablock.tscn" id="2_0d2m3"]
+
+[node name="DragDropMain" type="Node2D"]
+
+[node name="datablock_mang" type="Node2D" parent="."]
+script = ExtResource("1_6ujy1")
+
+[node name="datablock" parent="datablock_mang" instance=ExtResource("2_0d2m3")]
+position = Vector2(157, 272)
+
+[node name="datablock2" parent="datablock_mang" instance=ExtResource("2_0d2m3")]
+position = Vector2(309, 273)
