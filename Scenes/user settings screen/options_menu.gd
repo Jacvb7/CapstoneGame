@@ -14,7 +14,6 @@ func _ready() -> void:
 	#To avoid an error where the button is still clickable even when the options menu is gone
 	set_process(false)	#This code will not run at all unless the process is running or set to true.
 	
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -23,3 +22,15 @@ func _process(delta: float) -> void:
 func _on_exit_button_button_down() -> void:
 	exit_options_menu.emit #emit the signal
 	set_process(false)
+
+
+
+#To be added into main_menu script:
+	#in func on_exit_options_menu():
+		#margin_container.visible = true
+		#options_menu.visible = false
+		
+	#in func _on_settings_button_down():
+		#options_menu.set_process(true)
+		#(add this between the two lines of code alredady in the function
+		
