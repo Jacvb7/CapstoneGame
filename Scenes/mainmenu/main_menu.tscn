@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://beb5ly8wb4u2s"]
+[gd_scene load_steps=7 format=3 uid="uid://beb5ly8wb4u2s"]
 
 [ext_resource type="Script" path="res://Scenes/mainmenu/main_menu.gd" id="1_ti2el"]
 [ext_resource type="Texture2D" uid="uid://4rj4yn6iuakb" path="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg" id="2_mx22y"]
+[ext_resource type="PackedScene" uid="uid://dy5caa0mf4mqb" path="res://Scenes/user settings screen/options_menu.tscn" id="3_12owe"]
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")
@@ -25,9 +26,12 @@ grow_vertical = 2
 script = ExtResource("1_ti2el")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1156.0
-offset_bottom = 653.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Solid-light-blue-background-53Xkyn7Gnrw2373e" type="Sprite2D" parent="TextureRect"]
 position = Vector2(325.5, 182)
@@ -101,6 +105,10 @@ theme_override_fonts/font = SubResource("SystemFont_j7bib")
 theme_override_font_sizes/font_size = 30
 text = "SETTINGS"
 
+[node name="Options_Menu" parent="." instance=ExtResource("3_12owe")]
+visible = false
+layout_mode = 1
+
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/start_game" to="." method="_on_start_game_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/exit_game" to="." method="_on_exit_game_button_down"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_settings_button_down"]
