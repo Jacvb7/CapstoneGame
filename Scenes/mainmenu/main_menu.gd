@@ -26,9 +26,11 @@ func _ready():
 #func on_exit_pressed() -> void:
 	#get_tree().quit()
 	
-
+#Reeha: Added this for the exit button. (Going from options screen back to main menu
 func on_exit_options_menu() -> void:
-	pass
+	margin_container.visible = true
+	options_menu.visible = false
+	
 
 
 func _on_start_game_button_down() -> void:
@@ -41,4 +43,5 @@ func _on_exit_game_button_down() -> void:
 #Reeha: Added this to change the visibility upon pressing settings button. Connection to settings menu
 func _on_settings_button_down() -> void:
 	margin_container.visible = false
+	options_menu.set_process(true)
 	options_menu.visible = true
