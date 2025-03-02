@@ -1,8 +1,8 @@
 class_name MainMenu
 extends Control
 
-@onready var start_game: Button = $MarginContainer/HBoxContainer/VBoxContainer/start_game
-@onready var exit_game: Button = $MarginContainer/HBoxContainer/VBoxContainer/exit_game
+@onready var new_game: Button = $MarginContainer/HBoxContainer/VBoxContainer/new_game
+@onready var load_game: Button = $MarginContainer/HBoxContainer/VBoxContainer/load_game
 @onready var settings: Button = $MarginContainer/HBoxContainer/VBoxContainer/settings
 #Reeha: Added these two variables below
 @onready var options_menu: OptionsMenu = $Options_Menu
@@ -13,9 +13,9 @@ extends Control
 
 func _ready():
 	#Reeha: modified the function names a little
-	start_game.button_down.connect(_on_start_game_button_down)
+	new_game.button_down.connect(_on_new_game_button_down)
 	settings.button_down.connect(_on_settings_button_down)
-	exit_game.button_down.connect(_on_exit_game_button_down)
+	load_game.button_down.connect(_on_load_game_button_down)
 	options_menu.exit_options_menu.connect(on_exit_options_menu)
 
 #Reeha: Commented out. Can possibly delete this
@@ -31,14 +31,11 @@ func on_exit_options_menu() -> void:
 	margin_container.visible = true
 	options_menu.visible = false
 	
-
-
-func _on_start_game_button_down() -> void:
+func _on_new_game_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
 	
-
-func _on_exit_game_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
+func _on_load_game_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/load_game_screen/load_game.tscn")
 	
 #Reeha: Added this to change the visibility upon pressing settings button. Connection to settings menu
 func _on_settings_button_down() -> void:
