@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlk6vicnk01c8"]
+[gd_scene load_steps=6 format=3 uid="uid://dlk6vicnk01c8"]
 
 [ext_resource type="PackedScene" uid="uid://jcmkb4ogg185" path="res://Scenes/user settings screen/hotkey_rebind_button.tscn" id="1_414l2"]
+[ext_resource type="PackedScene" uid="uid://cscbxntl4g8r0" path="res://Scenes/user settings screen/window_mode_button.tscn" id="1_xwnnn"]
+[ext_resource type="PackedScene" uid="uid://4o1tq8cbsyxe" path="res://Scenes/user settings screen/resolution_display_button.tscn" id="2_yhiif"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nihob"]
 
@@ -85,24 +87,14 @@ theme_override_constants/margin_bottom = 24
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 65
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
+[node name="Window_mode_button" parent="TabContainer/Graphics/MarginContainer/VBoxContainer" instance=ExtResource("1_xwnnn")]
 layout_mode = 2
-text = "Graphics 1"
 
-[node name="Label2" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
+[node name="Resolution_display_button" parent="TabContainer/Graphics/MarginContainer/VBoxContainer" instance=ExtResource("2_yhiif")]
 layout_mode = 2
-text = "Graphics 2"
-
-[node name="Label3" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Graphics 3"
-
-[node name="Label4" type="Label" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Graphics 4"
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false
