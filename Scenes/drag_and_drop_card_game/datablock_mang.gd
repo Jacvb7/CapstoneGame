@@ -6,6 +6,9 @@ extends Node2D
 
 const COLLISION_MASK_DATABLOCK = 1
 const COLLISION_MASK_DATABLOCK_SLOT = 2
+const DEFAULT_DATABLOCK_SCALE = 1
+const BIGGER_DATABLOCK_SCALE = 1.05
+const SMALLER_DATABLOCK_SCALE = 0.95
 
 var screen_size
 var datablock_being_dragged
@@ -41,14 +44,18 @@ func _input(event):
 # Creates more visual feedback for player dragging a block
 func start_drag(datablock):
 	datablock_being_dragged = datablock
-	datablock.scale = Vector2(1, 1)
+	datablock.scale = Vector2(DEFAULT_DATABLOCK_SCALE, DEFAULT_DATABLOCK_SCALE)
 
 
 # Creates more visual feedback for player releasing a block
 func finish_drag():
-	datablock_being_dragged.scale = Vector2(1.05, 1.05)
+	datablock_being_dragged.scale = Vector2(BIGGER_DATABLOCK_SCALE, BIGGER_DATABLOCK_SCALE)
 	var datablock_slot_found = raycast_check_for_datablock_slot()
 	if datablock_slot_found and not datablock_slot_found.datablock_in_slot:
+		# datablock placed in slot
+		datablock_being_dragged.scale = Vector2(SMALLER_DATABLOCK_SCALE, SMALLER_DATABLOCK_SCALE)
+		datablock_being_dragged.z_index = -1
+		datablock_being_dragged.datablock_is_in_slot = datablock_slot_found
 		unplayed_datablock_position_ref.remove_datablock_from_unplayed_datablocks(datablock_being_dragged)
 		# datablock snaps into empty slot
 		datablock_being_dragged.position = datablock_slot_found.position
@@ -74,7 +81,8 @@ func on_hovered_over_datablock(datablock):
 
 
 func on_hovered_off_datablock(datablock):
-	if !datablock_being_dragged:
+	# check if datablock is NOT in a slot AND NOT being dragged
+	if !datablock.datablock_is_in_slot and !datablock_being_dragged:
 		# if not dragging
 		highlight_datablock(datablock, false)
 		# check if hovered off one datablock and hovered onto another datablock
@@ -87,11 +95,11 @@ func on_hovered_off_datablock(datablock):
 
 func highlight_datablock(datablock, hovered):
 	if hovered:
-		datablock.scale = Vector2(1.05, 1.05)
+		datablock.scale = Vector2(BIGGER_DATABLOCK_SCALE, BIGGER_DATABLOCK_SCALE)
 		# adjust z-axis for when blocks cross one another
 		datablock.z_index = 2
 	else:
-		datablock.scale = Vector2(1, 1)
+		datablock.scale = Vector2(DEFAULT_DATABLOCK_SCALE, DEFAULT_DATABLOCK_SCALE)
 		# adjust z-axis for when blocks cross one another
 		datablock.z_index = 1
 

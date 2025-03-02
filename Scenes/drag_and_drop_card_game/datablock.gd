@@ -11,6 +11,7 @@ signal hovered_off
 var bug_database_ref = preload("res://scripts/bug_database.gd")
 
 var unplayed_datablock_position
+var datablock_is_in_slot
 
 # Code from chatGPT to dynamically control text point size in datablocks
 # https://chatgpt.com/share/67c4865e-beb0-800f-9681-e511ad29d4f6
