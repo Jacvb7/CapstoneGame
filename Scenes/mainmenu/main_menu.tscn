@@ -2,14 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/mainmenu/main_menu.gd" id="1_ti2el"]
 [ext_resource type="Texture2D" uid="uid://4rj4yn6iuakb" path="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg" id="2_mx22y"]
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://dy5caa0mf4mqb" path="res://Scenes/user settings screen/options_menu.tscn" id="3_12owe"]
-=======
->>>>>>> 9b1d6381155332cf6e5fea731820c5ff0b63a67e
-=======
 [ext_resource type="PackedScene" path="res://Scenes/user settings screen/options_menu.tscn" id="3_12owe"]
->>>>>>> Stashed changes
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")

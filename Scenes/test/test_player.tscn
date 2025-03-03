@@ -27,5 +27,3 @@ tile_set = ExtResource("1_8j1sg")
 
 [node name="Player" parent="." instance=ExtResource("2_msj8k")]
 position = Vector2(394, 131)
-collision_layer = 1
-script = null

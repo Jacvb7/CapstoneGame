@@ -12,7 +12,6 @@ extends Control
 @onready var start_level = preload("res://Scenes/mainmenu/main_menu.tscn") as PackedScene
 
 func _ready():
-	#Reeha: modified the function names a little
 	new_game.button_down.connect(_on_new_game_button_down)
 	settings.button_down.connect(_on_settings_button_down)
 	load_game.button_down.connect(_on_load_game_button_down)
@@ -22,8 +21,6 @@ func _ready():
 #func on_start_pressed() -> void:
 	#get_tree().change_scene_to_packed(start_level)
 	
-<<<<<<< Updated upstream
-
 func on_exit_pressed() -> void:
 	get_tree().quit()
 
@@ -31,9 +28,8 @@ func _on_settings_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/user settings screen/settings.tscn")
 
 
-func _on_start_game_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/test/test_player_house_tilemap.tscn")
-=======
+#func _on_start_game_button_down() -> void:
+#	get_tree().change_scene_to_file("res://Scenes/test/test_player_house_tilemap.tscn")
 #Reeha: Commented out. Can possibly delete this
 #func on_exit_pressed() -> void:
 	#get_tree().quit()
@@ -45,7 +41,6 @@ func on_exit_options_menu() -> void:
 	
 func _on_new_game_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/test/test_player.tscn")
->>>>>>> Stashed changes
 	
 func _on_load_game_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/load_game_screen/load_game.tscn")
