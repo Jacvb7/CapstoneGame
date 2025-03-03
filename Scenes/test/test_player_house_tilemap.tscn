@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://hm4n8i7tghpr"]
+[gd_scene load_steps=4 format=4 uid="uid://chsjvan3usgv7"]
 
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_7pfgs"]
 [ext_resource type="PackedScene" uid="uid://bhscvpkwhrjjm" path="res://Scenes/Characters/player/player.tscn" id="2_cfpak"]

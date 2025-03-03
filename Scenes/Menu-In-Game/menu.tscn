@@ -87,17 +87,17 @@ alignment = 1
 custom_minimum_size = Vector2(50, 100)
 layout_mode = 2
 
-[node name="Save" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Resume" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_75lln")
 theme_override_font_sizes/font_size = 30
-text = "Save"
+text = "Resume"
 
-[node name="Load" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_j7bib")
 theme_override_font_sizes/font_size = 30
-text = "Load"
+text = "Settings"
 
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -105,30 +105,10 @@ theme_override_fonts/font = SubResource("SystemFont_j7bib")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 130.0
-offset_right = 118.0
-offset_bottom = 407.0
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="Seperator" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(50, 100)
-layout_mode = 2
-
-[node name="Settings" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_75lln")
-theme_override_font_sizes/font_size = 30
-text = "Settings"
-
 [node name="Options_Menu" parent="." instance=ExtResource("3_kw1sd")]
 visible = false
 layout_mode = 1
 
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Save" to="." method="_on_start_game_button_down"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Load" to="." method="_on_exit_game_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Resume" to="." method="_on_start_game_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Settings" to="." method="_on_exit_game_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_settings_button_down"]
-[connection signal="button_down" from="VBoxContainer/Settings" to="." method="_on_start_game_button_down"]
