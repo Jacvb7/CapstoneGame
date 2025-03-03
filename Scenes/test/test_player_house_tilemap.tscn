@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cax7fe0vlwndk" path="res://Scenes/Characters/player/byte/byte.tscn" id="3_qtqqs"]
 
 [node name="testSceneHouseTileMap" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [-33.0]
 
 [node name="GameTileMap" type="Node2D" parent="."]
 
