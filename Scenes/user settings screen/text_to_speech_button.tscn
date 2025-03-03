@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwbqlx5ywpw8a"]
+
+[ext_resource type="Script" path="res://Scenes/user settings screen/text_to_speech_button.gd" id="1_ohjvu"]
+
+[sub_resource type="SystemFont" id="SystemFont_26hkv"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_fmj6l"]
+font_names = PackedStringArray("Impact")
+
+[node name="Text_to_speech_button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ohjvu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 30
+
+[node name="Name_label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_26hkv")
+theme_override_font_sizes/font_size = 25
+text = "Text-to-speech"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="CheckButton" type="CheckButton" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="State_label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_fmj6l")
+theme_override_font_sizes/font_size = 25
+text = "Off"
+
+[connection signal="toggled" from="HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]

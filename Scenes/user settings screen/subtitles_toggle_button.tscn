@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlpuitkygxyt0"]
+
+[ext_resource type="Script" path="res://Scenes/user settings screen/subtitles_toggle_button.gd" id="1_6snlc"]
+
+[sub_resource type="SystemFont" id="SystemFont_3oj3f"]
+font_names = PackedStringArray("Impact")
+
+[node name="Subtitles_Toggle_Button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6snlc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 30
+
+[node name="Name_label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_3oj3f")
+theme_override_font_sizes/font_size = 25
+text = "Subtitles"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="CheckButton" type="CheckButton" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="State_label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_3oj3f")
+theme_override_font_sizes/font_size = 25
+text = "Off"
+
+[connection signal="toggled" from="HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
