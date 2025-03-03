@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkxe8gkas33c"]
+[gd_scene load_steps=8 format=3 uid="uid://c0lwytkkfncny"]
 
-[ext_resource type="Script" path="res://Scenes/load_game_screen/load_game.gd" id="1_3g2w7"]
-[ext_resource type="Texture2D" uid="uid://4rj4yn6iuakb" path="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg" id="2_bifwk"]
-[ext_resource type="PackedScene" path="res://Scenes/user settings screen/options_menu.tscn" id="3_5r8yd"]
+[ext_resource type="Script" path="res://menu.gd" id="1_a11kk"]
+[ext_resource type="Texture2D" uid="uid://4rj4yn6iuakb" path="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg" id="2_e1i7s"]
+[ext_resource type="Script" path="res://Scenes/Menu-In-Game/resume.gd" id="3_6rkdd"]
+[ext_resource type="PackedScene" path="res://Scenes/user settings screen/options_menu.tscn" id="3_snyir"]
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")
@@ -16,14 +17,14 @@ subpixel_positioning = 0
 font_names = PackedStringArray("SimSun")
 subpixel_positioning = 0
 
-[node name="Load_Game" type="Control"]
+[node name="Pause_Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3g2w7")
+script = ExtResource("1_a11kk")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,7 +37,7 @@ grow_vertical = 2
 [node name="Solid-light-blue-background-53Xkyn7Gnrw2373e" type="Sprite2D" parent="TextureRect"]
 position = Vector2(325.5, 182)
 scale = Vector2(0.378646, 0.427778)
-texture = ExtResource("2_bifwk")
+texture = ExtResource("2_e1i7s")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -60,7 +61,7 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Load_Game" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Pause" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 20
@@ -70,7 +71,7 @@ theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = SubResource("SystemFont_ml8si")
 theme_override_font_sizes/font_size = 75
-text = "Load Game"
+text = "Pause"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -87,48 +88,29 @@ alignment = 1
 custom_minimum_size = Vector2(50, 100)
 layout_mode = 2
 
-[node name="Save_1" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="resume" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_75lln")
 theme_override_font_sizes/font_size = 30
-text = "Save 1"
+text = "Resume"
+script = ExtResource("3_6rkdd")
 
-[node name="Save_2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="settings" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_j7bib")
 theme_override_font_sizes/font_size = 30
-text = "Save 2"
+text = "Settings"
 
-[node name="Save_3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_j7bib")
 theme_override_font_sizes/font_size = 30
-text = "Save 3"
+text = "Quit"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 130.0
-offset_right = 118.0
-offset_bottom = 407.0
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="Seperator" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(50, 100)
-layout_mode = 2
-
-[node name="Back" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_75lln")
-theme_override_font_sizes/font_size = 30
-text = "Back"
-
-[node name="Options_Menu" parent="." instance=ExtResource("3_5r8yd")]
+[node name="Options_Menu" parent="." instance=ExtResource("3_snyir")]
 visible = false
 layout_mode = 1
 
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Save_1" to="." method="_on_start_game_button_down"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Save_2" to="." method="_on_exit_game_button_down"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/Save_3" to="." method="_on_settings_button_down"]
-[connection signal="button_down" from="VBoxContainer/Back" to="." method="_on_start_game_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/resume" to="." method="_on_start_game_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_exit_game_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/quit" to="." method="_on_settings_button_down"]

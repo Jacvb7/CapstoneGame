@@ -4,6 +4,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_gr8i4"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [node name="Hotkey_rebind_button" type="Control" groups=["hotkey_button"]]
 layout_mode = 3
