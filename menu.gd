@@ -1,9 +1,9 @@
 class_name pauseMenu
 extends Control
 
-@onready var resume: Button = $MarginContainer/HBoxContainer/VBoxContainer/Resume
-@onready var settings: Button = $MarginContainer/HBoxContainer/VBoxContainer/Settings
-@onready var quit: Button = $MarginContainer/HBoxContainer/VBoxContainer/Quit
+@onready var resume: Button = $MarginContainer/HBoxContainer/VBoxContainer/resume
+@onready var settings: Button = $MarginContainer/HBoxContainer/VBoxContainer/settings
+@onready var quit: Button = $MarginContainer/HBoxContainer/VBoxContainer/quit
 
 @onready var options_menu: OptionsMenu = $Options_Menu
 @onready var margin_container: MarginContainer = $MarginContainer
@@ -27,7 +27,7 @@ func on_exit_options_menu() -> void:
 	options_menu.visible = false
 	
 func _on_resume_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/test/test_player_house_tilemap.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Debug Scenes/test_player_house_tilemap.tscn")
 	
 func _on_quit_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/mainmenu/main_menu.tscn")
