@@ -62,6 +62,7 @@ animations = [{
 radius = 6.0
 
 [node name="Byte" type="CharacterBody2D" node_paths=PackedStringArray("parent", "animated_sprite_2d")]
+collision_layer = 2
 script = ExtResource("1_7exsn")
 parent = NodePath(".")
 animated_sprite_2d = NodePath("AnimatedSprite2D")

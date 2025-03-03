@@ -444,3 +444,4 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="FollowPoint" type="Marker2D" parent="Sprite2D"]
+position = Vector2(0, -6)

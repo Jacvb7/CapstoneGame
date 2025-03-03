@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bjp3idubuaopy" path="res://assets/farming_game/tilesets/wooden_house_walls_tilset.png" id="1_1ngxc"]
 [ext_resource type="Texture2D" uid="uid://xd3ec83bk8x6" path="res://assets/farming_game/objects/basic_furniture.png" id="2_ived1"]
-[ext_resource type="PackedScene" uid="uid://ctbrtfgf3sm54" path="res://Scenes/test/houses/door.tscn" id="3_ixdbt"]
+[ext_resource type="PackedScene" uid="uid://ctbrtfgf3sm54" path="res://Scenes/objects/houses/door.tscn" id="3_kyhh6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgk7j"]
 texture = ExtResource("1_1ngxc")
@@ -97,7 +97,7 @@ texture = ExtResource("2_ived1")
 7:3/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_03lt5"]
-scenes/1/scene = ExtResource("3_ixdbt")
+scenes/1/scene = ExtResource("3_kyhh6")
 
 [resource]
 physics_layer_0/collision_layer = 1
