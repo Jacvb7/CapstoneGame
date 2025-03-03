@@ -24,7 +24,7 @@ func _on_settings_pressed() -> void:
 
 
 func _on_start_game_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/test/test_player_house_tilemap.tscn")
 	
 func _on_exit_game_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")

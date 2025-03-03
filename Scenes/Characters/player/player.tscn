@@ -440,3 +440,7 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("9_j5p02")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="FollowPoint" type="Marker2D" parent="Sprite2D"]
