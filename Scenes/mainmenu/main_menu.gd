@@ -40,7 +40,7 @@ func on_exit_options_menu() -> void:
 	options_menu.visible = false
 	
 func _on_new_game_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/test/test_player_house_tilemap.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Debug Scenes/test_player_house_tilemap.tscn")
 	
 func _on_load_game_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/load_game_screen/load_game.tscn")

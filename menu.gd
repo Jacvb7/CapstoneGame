@@ -1,9 +1,9 @@
 class_name pauseMenu
 extends Control
 
-@onready var resume: Button = $MarginContainer/HBoxContainer/VBoxContainer/resume
-@onready var quit: Button = $MarginContainer/HBoxContainer/VBoxContainer/quit
-@onready var settings: Button = $MarginContainer/HBoxContainer/VBoxContainer/settings
+@onready var resume: Button = $MarginContainer/HBoxContainer/VBoxContainer/Resume
+@onready var settings: Button = $MarginContainer/HBoxContainer/VBoxContainer/Settings
+@onready var quit: Button = $MarginContainer/HBoxContainer/VBoxContainer/Quit
 
 @onready var options_menu: OptionsMenu = $Options_Menu
 @onready var margin_container: MarginContainer = $MarginContainer
