@@ -6,15 +6,20 @@ extends Node2D
 
 const COLLISION_MASK_DATABLOCK = 1
 const COLLISION_MASK_DATABLOCK_SLOT = 2
+const DEFAULT_DATABLOCK_SCALE = 1
+const BIGGER_DATABLOCK_SCALE = 1.05
+const SMALLER_DATABLOCK_SCALE = 0.95
 
 var screen_size
 var datablock_being_dragged
 var is_hovering_on_datablock
+var unplayed_datablock_position_ref
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
+	unplayed_datablock_position_ref = $"../unplaced_datablocks"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -28,12 +33,10 @@ func _process(_delta: float) -> void:
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			# returns name and collider id for each object instance
 			var datablock = raycast_check_for_datablock()
 			if datablock:
 				start_drag(datablock)
-		else:
-			# when left click released
+		else: # when left click released
 			if datablock_being_dragged:
 				finish_drag()
 
@@ -41,19 +44,28 @@ func _input(event):
 # Creates more visual feedback for player dragging a block
 func start_drag(datablock):
 	datablock_being_dragged = datablock
-	datablock.scale = Vector2(1, 1)
+	datablock.scale = Vector2(DEFAULT_DATABLOCK_SCALE, DEFAULT_DATABLOCK_SCALE)
 
 
 # Creates more visual feedback for player releasing a block
 func finish_drag():
-	datablock_being_dragged.scale = Vector2(1.05, 1.05)
+	datablock_being_dragged.scale = Vector2(BIGGER_DATABLOCK_SCALE, BIGGER_DATABLOCK_SCALE)
 	var datablock_slot_found = raycast_check_for_datablock_slot()
 	if datablock_slot_found and not datablock_slot_found.datablock_in_slot:
-		# datablock dropped in empty slot
+		# datablock placed in slot
+		datablock_being_dragged.scale = Vector2(SMALLER_DATABLOCK_SCALE, SMALLER_DATABLOCK_SCALE)
+		datablock_being_dragged.z_index = -1
+		datablock_being_dragged.datablock_is_in_slot = datablock_slot_found
+		unplayed_datablock_position_ref.remove_datablock_from_unplayed_datablocks(datablock_being_dragged)
+		# datablock snaps into empty slot
 		datablock_being_dragged.position = datablock_slot_found.position
+		# locks card in place via disabled
 		datablock_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		datablock_slot_found.datablock_in_slot = true
-		
+	# snap card back to unplayed starting position
+	else:
+		unplayed_datablock_position_ref.add_new_datablock_to_place(datablock_being_dragged)
+		#unplayed_datablock_position
 	datablock_being_dragged = null
 
 
@@ -69,7 +81,8 @@ func on_hovered_over_datablock(datablock):
 
 
 func on_hovered_off_datablock(datablock):
-	if !datablock_being_dragged:
+	# check if datablock is NOT in a slot AND NOT being dragged
+	if !datablock.datablock_is_in_slot and !datablock_being_dragged:
 		# if not dragging
 		highlight_datablock(datablock, false)
 		# check if hovered off one datablock and hovered onto another datablock
@@ -82,11 +95,11 @@ func on_hovered_off_datablock(datablock):
 
 func highlight_datablock(datablock, hovered):
 	if hovered:
-		datablock.scale = Vector2(1.05, 1.05)
+		datablock.scale = Vector2(BIGGER_DATABLOCK_SCALE, BIGGER_DATABLOCK_SCALE)
 		# adjust z-axis for when blocks cross one another
 		datablock.z_index = 2
 	else:
-		datablock.scale = Vector2(1, 1)
+		datablock.scale = Vector2(DEFAULT_DATABLOCK_SCALE, DEFAULT_DATABLOCK_SCALE)
 		# adjust z-axis for when blocks cross one another
 		datablock.z_index = 1
 
@@ -99,10 +112,9 @@ func raycast_check_for_datablock_slot():
 	parameters.collision_mask = COLLISION_MASK_DATABLOCK_SLOT
 	var result = space_state.intersect_point(parameters)
 	if result.size() > 0:
-		#return result[0].collider.get_parent()
 		return result[0].collider.get_parent()
 	else:
-		return null	
+		return null
 
 
 # set up raycast to return object under the cursor when we click on it

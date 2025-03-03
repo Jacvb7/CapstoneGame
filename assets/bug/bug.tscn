@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0bbgey2gkp5s"]
+[gd_scene load_steps=17 format=3 uid="uid://b0bbgey2gkp5s"]
 
 [ext_resource type="Texture2D" uid="uid://03y7iot283la" path="res://assets/sprites/cave_npc.png" id="1_ocj8i"]
+[ext_resource type="Texture2D" uid="uid://cnr7v4afrtm28" path="res://assets/bug/purple_spider_bug.png" id="2_xdxm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onjwq"]
 atlas = ExtResource("1_ocj8i")
@@ -119,3 +120,7 @@ shape = SubResource("CircleShape2D_5lh4x")
 
 [node name="Timer" type="Timer" parent="temp-bug"]
 autostart = true
+
+[node name="PurpleSpiderBug" type="Sprite2D" parent="."]
+position = Vector2(20, -8)
+texture = ExtResource("2_xdxm5")

@@ -4,9 +4,10 @@
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_slot.gd" id="1_v6hu0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsdp6"]
-size = Vector2(134, 134)
+size = Vector2(48, 24)
 
 [node name="datablock_slot" type="Node2D"]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_v6hu0")
 
 [node name="datablock_slot_image" type="Sprite2D" parent="."]
@@ -14,7 +15,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_ouc0m")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

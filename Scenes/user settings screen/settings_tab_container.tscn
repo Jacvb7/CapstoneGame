@@ -1,0 +1,170 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlk6vicnk01c8"]
+
+[ext_resource type="PackedScene" uid="uid://jcmkb4ogg185" path="res://Scenes/user settings screen/hotkey_rebind_button.tscn" id="1_414l2"]
+[ext_resource type="PackedScene" uid="uid://cscbxntl4g8r0" path="res://Scenes/user settings screen/window_mode_button.tscn" id="1_xwnnn"]
+[ext_resource type="PackedScene" uid="uid://4o1tq8cbsyxe" path="res://Scenes/user settings screen/resolution_display_button.tscn" id="2_yhiif"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nihob"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfbkv"]
+
+[node name="Settings_tab_container" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 0
+
+[node name="Sound" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 65
+alignment = 1
+
+[node name="Window_mode_button" parent="TabContainer/Graphics/MarginContainer/VBoxContainer" instance=ExtResource("1_xwnnn")]
+layout_mode = 2
+
+[node name="Resolution_display_button" parent="TabContainer/Graphics/MarginContainer/VBoxContainer" instance=ExtResource("2_yhiif")]
+layout_mode = 2
+
+[node name="Controls" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nihob")
+
+[node name="Hotkey_rebind_button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_414l2")]
+layout_mode = 2
+
+[node name="Hotkey_rebind_button2" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_414l2")]
+layout_mode = 2
+action_name = "walk_right"
+
+[node name="Hotkey_rebind_button3" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_414l2")]
+layout_mode = 2
+action_name = "walk_up"
+
+[node name="Hotkey_rebind_button4" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_414l2")]
+layout_mode = 2
+action_name = "walk_down"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_hfbkv")
+
+[node name="Accesibilty" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Accesibilty"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Accesibilty/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Accesibilty/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Accesibility 1"
+
+[node name="Label2" type="Label" parent="TabContainer/Accesibilty/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Accesibility 2"
+
+[node name="Label3" type="Label" parent="TabContainer/Accesibilty/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Accesibility 3"
+
+[node name="Label4" type="Label" parent="TabContainer/Accesibilty/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Accesibility 4"
