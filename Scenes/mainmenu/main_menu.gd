@@ -22,6 +22,7 @@ func _ready():
 #func on_start_pressed() -> void:
 	#get_tree().change_scene_to_packed(start_level)
 	
+<<<<<<< Updated upstream
 
 func on_exit_pressed() -> void:
 	get_tree().quit()
@@ -32,6 +33,19 @@ func _on_settings_pressed() -> void:
 
 func _on_start_game_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/test/test_player_house_tilemap.tscn")
+=======
+#Reeha: Commented out. Can possibly delete this
+#func on_exit_pressed() -> void:
+	#get_tree().quit()
+	
+#Reeha: Added this for the exit button. (Going from options screen back to main menu
+func on_exit_options_menu() -> void:
+	margin_container.visible = true
+	options_menu.visible = false
+	
+func _on_new_game_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/test/test_player.tscn")
+>>>>>>> Stashed changes
 	
 func _on_load_game_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/load_game_screen/load_game.tscn")
