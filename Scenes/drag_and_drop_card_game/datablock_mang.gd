@@ -15,7 +15,6 @@ var datablock_being_dragged
 var is_hovering_on_datablock
 var unplayed_datablock_position_ref
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
