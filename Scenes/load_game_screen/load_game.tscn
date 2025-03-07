@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/load_game_screen/load_game.gd" id="1_3g2w7"]
 [ext_resource type="Texture2D" uid="uid://4rj4yn6iuakb" path="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg" id="2_bifwk"]
-[ext_resource type="PackedScene" path="res://Scenes/user settings screen/options_menu.tscn" id="3_5r8yd"]
+[ext_resource type="PackedScene" uid="uid://cwwgdf2ykqb7p" path="res://Scenes/user settings screen/options_menu.tscn" id="3_5r8yd"]
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")
