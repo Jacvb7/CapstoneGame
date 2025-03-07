@@ -1,9 +1,10 @@
-#class_name pauseMenu
+class_name pauseMenu
 extends Control
 
 @onready var resume: Button = $MarginContainer/HBoxContainer/VBoxContainer/resume
 @onready var settings: Button = $MarginContainer/HBoxContainer/VBoxContainer/settings
 @onready var quit: Button = $MarginContainer/HBoxContainer/VBoxContainer/quit
+@onready var pause_menu: pauseMenu = $"."
 
 #@onready var pause_menu: pauseMenu = $Pause_Menu
 @onready var options_menu: OptionsMenu = $Options_Menu
@@ -24,6 +25,7 @@ func pause_game():
 func escape_key():
 	if Input.is_action_just_pressed("esc") and !get_tree().paused:
 		pause_game()
+		
 
 	elif Input.is_action_just_pressed("esc") and get_tree().paused:
 		resume_game()
@@ -34,16 +36,16 @@ func _process(delta):
 	
 
 func _ready():
-	#resume.button_down.connect(_on_resume_button_down) previous declaration
+	resume.button_down.connect(_on_resume_pressed) # previous declaration
 	settings.button_down.connect(_on_settings_button_down)
-	#quit.button_down.connect(_on_quit_button_down)
+	quit.button_down.connect(_on_quit_pressed)
 	options_menu.exit_options_menu.connect(on_exit_options_menu)
 
-func on_exit_pressed() -> void:
-	get_tree().quit()
+#func on_exit_pressed() -> void:
+	#get_tree().quit()
 
-func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/user settings screen/settings.tscn")
+#func _on_settings_pressed() -> void:
+	#get_tree().change_scene_to_file("res://Scenes/user settings screen/settings.tscn")
 
 func on_exit_options_menu() -> void:
 	margin_container.visible = true
@@ -67,7 +69,9 @@ func _on_settings_button_down() -> void:
 
 func _on_resume_pressed() -> void:
 	resume_game()
+	#pause_game().visible = false
 	
-
+	
 func _on_quit_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/mainmenu/main_menu.tscn") 
+	#get_tree().change_scene_to_file("res://Scenes/mainmenu/new_game_screen.tscn") 
+	pass

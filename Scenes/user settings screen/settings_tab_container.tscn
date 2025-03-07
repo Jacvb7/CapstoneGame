@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://Scenes/user settings screen/hotkey_rebind_button.tscn" id="1_414l2"]
 [ext_resource type="PackedScene" path="res://Scenes/user settings screen/window_mode_button.tscn" id="1_xwnnn"]
-[ext_resource type="PackedScene" uid="uid://b5i2mxnbkyoaa" path="res://Scenes/user settings screen/audio_slider_settings.tscn" id="1_ybqgg"]
+[ext_resource type="PackedScene" path="res://Scenes/user settings screen/audio_slider_settings.tscn" id="1_ybqgg"]
 [ext_resource type="PackedScene" path="res://Scenes/user settings screen/resolution_display_button.tscn" id="2_yhiif"]
 [ext_resource type="PackedScene" path="res://Scenes/user settings screen/subtitles_toggle_button.tscn" id="5_8qv5e"]
 [ext_resource type="PackedScene" path="res://Scenes/user settings screen/text_to_speech_button.tscn" id="6_65bpf"]

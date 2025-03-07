@@ -1,8 +1,9 @@
 class_name testHouse
 extends Control
 
-@onready var pause_menu: pauseMenu = $Pause_Menu
+
 @onready var margin_container: MarginContainer = $MarginContainer
+@onready var pause_menu: Control = $GameTileMap/CanvasLayer/Pause_Menu
 
 func _on_esc_button_down() -> void:
 	#margin_container.visible = false

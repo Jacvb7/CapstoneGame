@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c0lwytkkfncny"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_a11kk"]
+[ext_resource type="Script" path="res://Scenes/Menu-In-Game/pause_menu.gd" id="1_nrv5w"]
 [ext_resource type="Script" path="res://Scenes/Menu-In-Game/resume.gd" id="3_6rkdd"]
 [ext_resource type="PackedScene" uid="uid://cwwgdf2ykqb7p" path="res://Scenes/user settings screen/options_menu.tscn" id="3_snyir"]
 
@@ -24,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_a11kk")
+script = ExtResource("1_nrv5w")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -91,6 +91,7 @@ text = "Resume"
 script = ExtResource("3_6rkdd")
 
 [node name="settings" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_j7bib")
 theme_override_font_sizes/font_size = 30
