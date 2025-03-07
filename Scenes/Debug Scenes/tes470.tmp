@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=4 uid="uid://chsjvan3usgv7"]
+[gd_scene load_steps=6 format=4 uid="uid://chsjvan3usgv7"]
 
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_nnbhu"]
+[ext_resource type="Script" path="res://Scenes/Debug Scenes/test_player_house_tilemap.gd" id="1_rv422"]
 [ext_resource type="PackedScene" uid="uid://bhscvpkwhrjjm" path="res://Scenes/Characters/player/player.tscn" id="2_dgemu"]
 [ext_resource type="PackedScene" uid="uid://cax7fe0vlwndk" path="res://Scenes/Characters/player/byte/byte.tscn" id="3_xg4os"]
 [ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="4_urjeg"]
 
 [node name="testSceneHouseTileMap" type="Node2D"]
+script = ExtResource("1_rv422")
 metadata/_edit_horizontal_guides_ = [-33.0]
 
 [node name="GameTileMap" type="Node2D" parent="."]

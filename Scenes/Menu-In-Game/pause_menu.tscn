@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://menu.gd" id="1_a11kk"]
 [ext_resource type="Texture2D" uid="uid://4rj4yn6iuakb" path="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg" id="2_e1i7s"]
 [ext_resource type="Script" path="res://Scenes/Menu-In-Game/resume.gd" id="3_6rkdd"]
-[ext_resource type="PackedScene" uid="uid://dy5caa0mf4mqb" path="res://Scenes/user settings screen/options_menu.tscn" id="3_snyir"]
+[ext_resource type="PackedScene" uid="uid://baalldi3m3fpd" path="res://Scenes/user settings screen/options_menu.tscn" id="3_snyir"]
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")
@@ -96,6 +96,7 @@ text = "Resume"
 script = ExtResource("3_6rkdd")
 
 [node name="settings" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_j7bib")
 theme_override_font_sizes/font_size = 30
@@ -111,6 +112,6 @@ text = "Quit"
 visible = false
 layout_mode = 1
 
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/resume" to="." method="_on_start_game_button_down"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_exit_game_button_down"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/quit" to="." method="_on_settings_button_down"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://npn60pmj57ly"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://hb6f0itmvssy"]
 
 [ext_resource type="Texture2D" uid="uid://bjp3idubuaopy" path="res://assets/farming_game/tilesets/wooden_house_walls_tilset.png" id="1_1ngxc"]
 [ext_resource type="Texture2D" uid="uid://xd3ec83bk8x6" path="res://assets/farming_game/objects/basic_furniture.png" id="2_ived1"]
