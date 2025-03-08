@@ -1,3 +1,5 @@
+# datablock_mang.gd
+
 # https://youtu.be/2jMcuKdRh2w?si=1xDDcHiEXJ0qo9vr
 # manages datablocks to allow user to drag and drop 
 # datablock objects around the screen.
@@ -9,6 +11,10 @@ const COLLISION_MASK_DATABLOCK_SLOT = 2
 const DEFAULT_DATABLOCK_SCALE = 1
 const BIGGER_DATABLOCK_SCALE = 1.05
 const SMALLER_DATABLOCK_SCALE = 0.95
+
+# Add these signals at the top of your file
+signal datablock_placed_in_slot(datablock, slot)
+signal datablock_removed_from_slot(datablock, old_slot)
 
 var screen_size
 var datablock_being_dragged
@@ -50,21 +56,34 @@ func start_drag(datablock):
 func finish_drag():
 	datablock_being_dragged.scale = Vector2(BIGGER_DATABLOCK_SCALE, BIGGER_DATABLOCK_SCALE)
 	var datablock_slot_found = raycast_check_for_datablock_slot()
+	
+	# Store current slot if datablock was in a slot
+	var old_slot = null
+	if datablock_being_dragged.datablock_is_in_slot:
+		old_slot = datablock_being_dragged.datablock_is_in_slot
+		emit_signal("datablock_removed_from_slot", datablock_being_dragged, old_slot)
+	
 	if datablock_slot_found and not datablock_slot_found.datablock_in_slot:
-		# datablock placed in slot
+		# Set up the datablock in the slot temporarily
 		datablock_being_dragged.scale = Vector2(SMALLER_DATABLOCK_SCALE, SMALLER_DATABLOCK_SCALE)
 		datablock_being_dragged.z_index = -1
 		datablock_being_dragged.datablock_is_in_slot = datablock_slot_found
 		unplayed_datablock_position_ref.remove_datablock_from_unplayed_datablocks(datablock_being_dragged)
-		# datablock snaps into empty slot
 		datablock_being_dragged.position = datablock_slot_found.position
-		# locks card in place via disabled
-		datablock_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
+		
+		# Temporarily set the slot as occupied for validation
 		datablock_slot_found.datablock_in_slot = true
-	# snap card back to unplayed starting position
+		
+		# Emit signal for validation - validation will occur in preset_datablock_mang
+		emit_signal("datablock_placed_in_slot", datablock_being_dragged, datablock_slot_found)
+		
+		# Note: The signal handler in preset_datablock_mang will unlock the block
+		# if it's not valid, so we don't need to lock it permanently here
+		datablock_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 	else:
+		# snap card back to unplayed starting position
 		unplayed_datablock_position_ref.add_new_datablock_to_place(datablock_being_dragged)
-		#unplayed_datablock_position
+	
 	datablock_being_dragged = null
 
 

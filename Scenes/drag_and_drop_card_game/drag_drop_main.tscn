@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://07m0tm5jv10i"]
+[gd_scene load_steps=6 format=3 uid="uid://07m0tm5jv10i"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_mang.gd" id="1_6ujy1"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/preset_datablock_mang.gd" id="2_dfuyv"]
 [ext_resource type="PackedScene" uid="uid://0gl5using56j" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="3_311qs"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/unplaced_datablocks.gd" id="3_olowc"]
+[ext_resource type="PackedScene" uid="uid://cy7b1qcm2dncb" path="res://Scenes/drag_and_drop_card_game/preset_datablock.tscn" id="5_2ukwp"]
 
 [node name="DragDropMain" type="Node2D"]
 position = Vector2(12, 3)
@@ -10,59 +12,106 @@ position = Vector2(12, 3)
 [node name="datablock_mang" type="Node2D" parent="."]
 script = ExtResource("1_6ujy1")
 
+[node name="preset_datablock_mang" type="Node2D" parent="."]
+script = ExtResource("2_dfuyv")
+
 [node name="unplaced_datablocks" type="Node2D" parent="."]
 script = ExtResource("3_olowc")
 
 [node name="slots" type="Node2D" parent="."]
 
-[node name="datablock_slot_0_0" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r2c0" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(273, 50)
+position = Vector2(274, 84)
 scale = Vector2(1.3, 1.3)
 
-[node name="datablock_slot_0_1" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r2c1" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(340, 50)
+position = Vector2(341, 84)
 scale = Vector2(1.3, 1.3)
 
-[node name="datablock_slot_1_0" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r3c0" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(273, 85)
+position = Vector2(274, 119)
 scale = Vector2(1.3, 1.3)
 
-[node name="datablock_slot_1_1" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r3c1" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(340, 85)
+position = Vector2(341, 119)
 scale = Vector2(1.3, 1.3)
 
-[node name="datablock_slot_2_0" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r4c0" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(273, 120)
+position = Vector2(274, 154)
 scale = Vector2(1.3, 1.3)
 
-[node name="datablock_slot_2_1" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r4c1" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(340, 120)
+position = Vector2(341, 154)
 scale = Vector2(1.3, 1.3)
 
-[node name="datablock_slot_3_0" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r5c0" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(273, 155)
+position = Vector2(274, 189)
 scale = Vector2(1.3, 1.3)
 
-[node name="datablock_slot_3_1" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r5c1" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(340, 155)
+position = Vector2(341, 189)
 scale = Vector2(1.3, 1.3)
 
-[node name="datablock_slot_4_0" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r6c0" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(273, 190)
+position = Vector2(274, 224)
 scale = Vector2(1.3, 1.3)
 
-[node name="datablock_slot_4_1" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r6c1" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(340, 190)
+position = Vector2(341, 224)
 scale = Vector2(1.3, 1.3)
 
-[node name="preset_datablocks" type="Node2D" parent="."]
+[node name="preset_dataslots" type="Node2D" parent="."]
+
+[node name="preset_datablock_NAME" parent="preset_dataslots" instance=ExtResource("5_2ukwp")]
+position = Vector2(712, 61)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_TOTAL LEGS" parent="preset_dataslots" instance=ExtResource("5_2ukwp")]
+position = Vector2(778, 61)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_COLOR" parent="preset_dataslots" instance=ExtResource("5_2ukwp")]
+position = Vector2(844, 61)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_FIZZGIG" parent="preset_dataslots" instance=ExtResource("5_2ukwp")]
+position = Vector2(712, 94)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_FIZZGIG_TOTAL LEGS" parent="preset_dataslots" instance=ExtResource("5_2ukwp")]
+position = Vector2(778, 93)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_FIZZGIG_COLOR" parent="preset_dataslots" instance=ExtResource("5_2ukwp")]
+position = Vector2(845, 93)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_ALBY" parent="preset_dataslots" instance=ExtResource("5_2ukwp")]
+position = Vector2(712, 129)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_BIX" parent="preset_dataslots" instance=ExtResource("5_2ukwp")]
+position = Vector2(712, 164)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_EMBER" parent="preset_dataslots" instance=ExtResource("5_2ukwp")]
+position = Vector2(712, 199)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_NOX" parent="preset_dataslots" instance=ExtResource("5_2ukwp")]
+position = Vector2(712, 234)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_TAFFY" parent="preset_dataslots" instance=ExtResource("5_2ukwp")]
+position = Vector2(712, 267)
+scale = Vector2(1, 1)
