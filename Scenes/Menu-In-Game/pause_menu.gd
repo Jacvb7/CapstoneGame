@@ -16,15 +16,19 @@ extends Control
 #inspector for this file, go to process and toggle the mode to "Always" in order for the buttons to be visible
 #adding this to display pause menu over the game state 
 func resume_game():
+	margin_container.visible = false
 	get_tree().paused = false
 	
+	
 func pause_game():
+	margin_container.visible = true
 	get_tree().paused = true
 	
 #added an escape key binding to the game state in order to pause the game whenever
 func escape_key():
 	if Input.is_action_just_pressed("esc") and !get_tree().paused:
 		pause_game()
+		
 		
 
 	elif Input.is_action_just_pressed("esc") and get_tree().paused:
