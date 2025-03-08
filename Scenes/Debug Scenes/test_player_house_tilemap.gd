@@ -1,10 +1,16 @@
-class_name testHouse
-extends Control
+extends Node
+class_name GameManager
 
-@onready var pause_menu: pauseMenu = $Pause_Menu
-@onready var margin_container: MarginContainer = $MarginContainer
+signal toggle_game_paused(is_paused : bool)
 
-func _on_esc_button_down() -> void:
-	#margin_container.visible = false
-	pause_menu.set_process(true)
-	pause_menu.visible = true
+var game_paused : bool = false:
+	get: 
+		return game_paused
+	set(value):
+		game_paused = value
+		get_tree().paused = game_paused
+		emit_signal("toggle_game_paused", game_paused)
+
+func _input(event : InputEvent): 
+	if(event.is_action_pressed("esc")):
+		game_paused = !game_paused

@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0lwytkkfncny"]
+[gd_scene load_steps=6 format=3 uid="uid://c0lwytkkfncny"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_a11kk"]
-[ext_resource type="Script" path="res://Scenes/Menu-In-Game/resume.gd" id="3_6rkdd"]
 [ext_resource type="PackedScene" uid="uid://cwwgdf2ykqb7p" path="res://Scenes/user settings screen/options_menu.tscn" id="3_snyir"]
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
@@ -26,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a11kk")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,29 +33,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -2.074
-anchor_top = -2.318
-anchor_right = 2.164
-anchor_bottom = 2.819
-offset_left = 1744.79
-offset_top = 1015.42
-offset_right = -1166.08
-offset_bottom = -863.351
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 50
+offset_left = 224.155
+offset_top = 17.2145
+offset_right = 412.155
+offset_bottom = 315.214
+theme_override_constants/separation = 15
 
-[node name="Pause" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Pause" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 20
@@ -70,33 +55,25 @@ text = "Pause"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 100)
-layout_mode = 2
-
-[node name="resume" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_75lln")
 theme_override_font_sizes/font_size = 30
 text = "Resume"
-script = ExtResource("3_6rkdd")
 
-[node name="settings" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="save" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_75lln")
+theme_override_font_sizes/font_size = 30
+text = "Save"
+
+[node name="settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_j7bib")
 theme_override_font_sizes/font_size = 30
 text = "Settings"
 
-[node name="quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_j7bib")
 theme_override_font_sizes/font_size = 30
@@ -106,8 +83,4 @@ text = "Quit"
 visible = false
 layout_mode = 1
 
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/resume" to="." method="_on_start_game_button_down"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_exit_game_button_down"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/quit" to="." method="_on_settings_button_down"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
