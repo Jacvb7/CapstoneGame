@@ -10,6 +10,7 @@ region = Rect2(0, 0, 16, 32)
 radius = 3.0
 
 [node name="SmallTree" type="Sprite2D"]
+y_sort_enabled = true
 position = Vector2(0, -11)
 texture = SubResource("AtlasTexture_toj52")
 
