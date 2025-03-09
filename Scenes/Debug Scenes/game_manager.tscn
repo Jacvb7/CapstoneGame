@@ -1,24 +1,14 @@
 [gd_scene load_steps=6 format=4 uid="uid://chsjvan3usgv7"]
 
-[ext_resource type="Script" path="res://Scenes/Debug Scenes/test_player_house_tilemap.gd" id="1_bqahw"]
+[ext_resource type="Script" path="res://Scenes/Debug Scenes/game_manager.gd" id="1_4f4i1"]
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="2_ymjl4"]
 [ext_resource type="PackedScene" uid="uid://bhscvpkwhrjjm" path="res://Scenes/Characters/player/player.tscn" id="3_01agw"]
 [ext_resource type="PackedScene" uid="uid://cax7fe0vlwndk" path="res://Scenes/Characters/player/byte/byte.tscn" id="4_8r4ag"]
 [ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="5_p7ldv"]
 
 [node name="GameManager" type="Node2D"]
-script = ExtResource("1_bqahw")
+script = ExtResource("1_4f4i1")
 metadata/_edit_horizontal_guides_ = [-33.0]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="Pause_Menu" parent="CanvasLayer" node_paths=PackedStringArray("game_manager") instance=ExtResource("5_p7ldv")]
-offset_left = -5.0
-offset_top = -2.0
-offset_right = 7.0
-offset_bottom = 9.0
-game_manager = NodePath("../..")
 
 [node name="GameTileMap" type="Node2D" parent="."]
 
@@ -48,3 +38,13 @@ position = Vector2(391, 136)
 [node name="Byte" parent="GameTileMap" node_paths=PackedStringArray("parent") instance=ExtResource("4_8r4ag")]
 position = Vector2(381, 101)
 parent = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameTileMap"]
+visible = false
+follow_viewport_enabled = true
+
+[node name="Pause_Menu" parent="GameTileMap/CanvasLayer" instance=ExtResource("5_p7ldv")]
+offset_left = -5.0
+offset_top = -2.0
+offset_right = 7.0
+offset_bottom = 9.0
