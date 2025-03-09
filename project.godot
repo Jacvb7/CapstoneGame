@@ -49,6 +49,11 @@ folder_colors={
 "res://scripts/": "pink"
 }
 
+[global_group]
+
+preset_datablocks=""
+datablock_slots=""
+
 [input]
 
 walk_up={
