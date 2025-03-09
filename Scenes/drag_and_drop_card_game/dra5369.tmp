@@ -17,52 +17,80 @@ script = ExtResource("3_olowc")
 
 [node name="datablock_slot_0_0" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(273, 50)
+position = Vector2(212, 65)
 scale = Vector2(1.3, 1.3)
 
 [node name="datablock_slot_0_1" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(340, 50)
+position = Vector2(279, 65)
+scale = Vector2(1.3, 1.3)
+
+[node name="datablock_slot_0_2" parent="slots" instance=ExtResource("3_311qs")]
+z_index = -2
+position = Vector2(346, 65)
+scale = Vector2(1.3, 1.3)
+
+[node name="datablock_slot_0_3" parent="slots" instance=ExtResource("3_311qs")]
+z_index = -2
+position = Vector2(413, 65)
 scale = Vector2(1.3, 1.3)
 
 [node name="datablock_slot_1_0" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(273, 85)
+position = Vector2(212, 100)
 scale = Vector2(1.3, 1.3)
 
 [node name="datablock_slot_1_1" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(340, 85)
+position = Vector2(279, 100)
+scale = Vector2(1.3, 1.3)
+
+[node name="datablock_slot_1_2" parent="slots" instance=ExtResource("3_311qs")]
+z_index = -2
+position = Vector2(346, 100)
+scale = Vector2(1.3, 1.3)
+
+[node name="datablock_slot_1_3" parent="slots" instance=ExtResource("3_311qs")]
+z_index = -2
+position = Vector2(413, 100)
 scale = Vector2(1.3, 1.3)
 
 [node name="datablock_slot_2_0" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(273, 120)
+position = Vector2(212, 135)
 scale = Vector2(1.3, 1.3)
 
 [node name="datablock_slot_2_1" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(340, 120)
+position = Vector2(279, 135)
+scale = Vector2(1.3, 1.3)
+
+[node name="datablock_slot_2_2" parent="slots" instance=ExtResource("3_311qs")]
+z_index = -2
+position = Vector2(346, 135)
+scale = Vector2(1.3, 1.3)
+
+[node name="datablock_slot_2_3" parent="slots" instance=ExtResource("3_311qs")]
+z_index = -2
+position = Vector2(413, 135)
 scale = Vector2(1.3, 1.3)
 
 [node name="datablock_slot_3_0" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(273, 155)
+position = Vector2(212, 170)
 scale = Vector2(1.3, 1.3)
 
 [node name="datablock_slot_3_1" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(340, 155)
+position = Vector2(279, 170)
 scale = Vector2(1.3, 1.3)
 
-[node name="datablock_slot_4_0" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_3_2" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(273, 190)
+position = Vector2(346, 170)
 scale = Vector2(1.3, 1.3)
 
-[node name="datablock_slot_4_1" parent="slots" instance=ExtResource("3_311qs")]
+[node name="datablock_slot_3_3" parent="slots" instance=ExtResource("3_311qs")]
 z_index = -2
-position = Vector2(340, 190)
+position = Vector2(413, 170)
 scale = Vector2(1.3, 1.3)
-
-[node name="preset_datablocks" type="Node2D" parent="."]

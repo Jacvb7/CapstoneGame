@@ -2,25 +2,41 @@
 
 extends Node2D
 
-const TOTAL_DATABLOCKS = 16
+const TOTAL_DATABLOCKS = 10
 const DATABLOCK_SCENE_PATH = "res://Scenes/drag_and_drop_card_game/datablock.tscn"
 const DATABLOCK_WIDTH = 65 # space between datablocks
 const UNPLAYED_Y_POSITION = 270
 
 var unplayed_datablocks = []
 var center_screen_x
+var bug_database_ref = preload("res://scripts/bug_database.gd").new()
+var bug_names = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	center_screen_x = get_viewport_rect().size.x / 2
 	var datablock_scene = preload(DATABLOCK_SCENE_PATH)
 
-	for i in range(TOTAL_DATABLOCKS):
-		var new_datablock = datablock_scene.instantiate()
-		new_datablock.scale = Vector2(1, 1)  # Force correct scale
-		$"../datablock_mang".add_child(new_datablock)
-		new_datablock.name = "datablock"
-		add_new_datablock_to_place(new_datablock)
+	# Get bug names from database
+	bug_names = bug_database_ref.get_bug_names()
+	
+	# Create datablocks for each bug, one for legs and one for color
+	for i in range(TOTAL_DATABLOCKS / 2):  # Divide by 2 since each bug makes 2 datablocks
+		var assigned_bug = bug_names[i % bug_names.size()]
+		
+		# Create Legs Datablock
+		var legs_datablock = datablock_scene.instantiate()
+		legs_datablock.scale = Vector2(1, 1)
+		$"../datablock_mang".add_child(legs_datablock)
+		legs_datablock.set_bug_data(assigned_bug, "legs")
+		add_new_datablock_to_place(legs_datablock)
+		
+		# Create Color Datablock
+		var color_datablock = datablock_scene.instantiate()
+		color_datablock.scale = Vector2(1, 1)
+		$"../datablock_mang".add_child(color_datablock)
+		color_datablock.set_bug_data(assigned_bug, "color")
+		add_new_datablock_to_place(color_datablock)
 
 
 func add_new_datablock_to_place(datablock):

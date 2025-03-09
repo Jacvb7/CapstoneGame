@@ -25,29 +25,100 @@
 	#TIZZY, TOFFEE, TONIC, TWIG, TYCHO, VEX, VIBE, VINNIE, VIREO, WHIMSY, 
 	#ZIPPY, ZODIAC, ZOOMIE 
 #}
+#
 ## Different types of bugs should have preset values/ranges that can be
 ## assigned to newly spawned bugs
 #enum Type { 
 	#ANT, BEE, BEETLE, BUTTERFLY, CATERPILLAR, CENTIPEDE, COCKROACH, DRAGONFLY, 
-	#FLEA, GRASSHOPPER, GRUB, HARVESTMAN, HORSESHOE_CRAB, HOUSEFLY, JUMPING_SPIDER, 
+	#FLEA, GRASSHOPPER, GRUB, HARVESTMEN, HORSESHOE_CRAB, HOUSEFLY, JUMPING_SPIDER, 
 	#LADYBUG, MAGGOT, MANTIS_SHRIMP, MILLIPEDE, MOSQUITO, PRAYING_MANTIS, SCORPION, 
-	#SPIDER, SPRINGTAIL, STINK_BUG, TERMITE, TICK_LARVA, WASP 
+	#SLUG, SNAIL, SPIDER, SPRINGTAIL, STINK_BUG, TERMITE, TICK_LARVA, WASP 
 #}
-## L1 = level 1, L2 = level 2, L3 = level 3
-#enum Biome {L1, L2, L3}
+#
 #enum Shape {ROUND, OVAL, SLENDER, LONG, FLAT}
 #enum Spots {TRUE, FALSE}
 #enum Stripes {TRUE, FALSE}
 #enum Wings {TRUE, FALSE}
 #
-## NUMERICAL FEATURES BELOW:
-##enum Length {}
-##enum Eyes {}
-##enum Legs {}
 #
-#@export var species: Type = Type.ANT
-#@export var color: Color = Color.WHITE
-#@export var size: int = 1
+## Dictionary of hardcoded bugs for level 1: index = bugID, Type = species, 
+## total eyes, total legs, width, height, 
+## color, shape, 
+## does it have spots, does it have stripes, does it have wings
+#const tutorial_bug_database = {
+	#Name.ALBY : [ # bugID = 0
+		#Type.ANT, 
+		#2, 
+		#6, 
+		#1, 
+		#2, 
+		#Color.RED, 
+		#Shape.OVAL, 
+		#Spots.FALSE, 
+		#Stripes.FALSE, 
+		#Wings.FALSE
+		#],
+	#Name.BIX : [ # bugID = 1
+		#Type.BUTTERFLY, 
+		#2, 
+		#6, 
+		#4, 
+		#3, 
+		#Color.BLUE, 
+		#Shape.FLAT, 
+		#Spots.FALSE, 
+		#Stripes.FALSE, 
+		#Wings.TRUE
+		#],
+	#Name.EMBER : [ # bugID = 2
+		#Type.CATERPILLAR, 
+		#12, 
+		#16, 
+		#1, 
+		#4, 
+		#Color.GREEN, 
+		#Shape.LONG, 
+		#Spots.TRUE, 
+		#Stripes.FALSE, 
+		#Wings.FALSE
+		#],
+	#Name.NOX : [ # bugID = 3
+		#Type.SNAIL, 
+		#2, 
+		#0, 
+		#2, 
+		#2, 
+		#Color.ORANGE, 
+		#Shape.ROUND, 
+		#Spots.FALSE, 
+		#Stripes.TRUE, 
+		#Wings.FALSE
+		#],
+	#Name.TAFFY : [ # bugID = 4
+		#Type.SPIDER, 
+		#4, 
+		#8, 
+		#2, 
+		#2, 
+		#Color.PURPLE, 
+		#Shape.ROUND, 
+		#Spots.FALSE, 
+		#Stripes.FALSE, 
+		#Wings.FALSE
+		#],
+		#Name.FIZZGIG : [ # bugID = 5
+		#Type.SCORPION, 
+		#6, 
+		#8, 
+		#1, 
+		#3, 
+		#Color.SADDLE_BROWN, 
+		#Shape.OVAL, 
+		#Spots.FALSE, 
+		#Stripes.TRUE, 
+		#Wings.FALSE
+		#],
+#}
 #
 ## movement speed/velocity of Bug NPCs
 #@export var speed: float = 100.0  # Movement speed
