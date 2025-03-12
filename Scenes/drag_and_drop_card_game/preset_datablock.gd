@@ -27,7 +27,7 @@ func update_text():
 		print("PRESET_DATABLOCK NOT FOUND: ", block_name)
 	else:
 		block_name = name  # Get the name of the node (e.g., "preset_datablock_r0c0")
-		print(block_name)
+		# print(block_name)
 
 		# Extract row and column indices from the block name using split()
 		var parts = block_name.split("_r")  # ["preset_datablock", "0c0"]

@@ -1,5 +1,3 @@
-# datablock.gd
-
 # https://youtu.be/1mM73u1tvpU?si=z1QizoPoQK9xzoC2
 # script to attatch signals to the datablock_mang
 
@@ -30,9 +28,6 @@ func _ready():
 	await get_tree().process_frame  # Ensure nodes are initialized
 	update_text()
 	set_text()
-	
-	# Add the datablock to a group for validation
-	add_to_group("datablocks")
 	
 	# Attach signals to the parent (datablock_mang)
 	get_parent().connect_datablock_signals(self)

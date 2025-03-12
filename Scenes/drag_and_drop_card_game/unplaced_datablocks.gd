@@ -1,5 +1,3 @@
-# unplaced_datablocks.gd
-
 # https://youtu.be/lATAS8YpzFE?si=mD7kWHaMV-GZMf4v
 
 extends Node2D

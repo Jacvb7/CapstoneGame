@@ -9,6 +9,14 @@
 [node name="DragDropMain" type="Node2D"]
 position = Vector2(12, 3)
 
+[node name="table_background" type="ColorRect" parent="."]
+z_index = -5
+offset_left = 210.0
+offset_top = 9.0
+offset_right = 413.0
+offset_bottom = 247.0
+color = Color(0.113725, 0.462745, 1, 1)
+
 [node name="datablock_mang" type="Node2D" parent="."]
 script = ExtResource("1_6ujy1")
 
