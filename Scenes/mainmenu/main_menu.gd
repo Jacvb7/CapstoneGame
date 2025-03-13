@@ -4,6 +4,7 @@ extends Control
 @onready var new_game: Button = $MarginContainer/HBoxContainer/VBoxContainer/new_game
 @onready var load_game: Button = $MarginContainer/HBoxContainer/VBoxContainer/load_game
 @onready var settings: Button = $MarginContainer/HBoxContainer/VBoxContainer/settings
+@onready var exit_game: Button = $MarginContainer/HBoxContainer/VBoxContainer/exit_game
 #Reeha: Added these two variables below
 @onready var options_menu: OptionsMenu = $Options_Menu
 @onready var margin_container: MarginContainer = $MarginContainer
@@ -50,3 +51,7 @@ func _on_settings_button_down() -> void:
 	margin_container.visible = false
 	options_menu.set_process(true)
 	options_menu.visible = true
+	
+#Jacob: Added this to be able to quit out of the game from the main menu and eventually pause menu
+func _on_exit_game_button_down() -> void: 
+	get_tree().quit()
