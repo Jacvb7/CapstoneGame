@@ -15,6 +15,7 @@ var datablock_being_dragged
 var is_hovering_on_datablock
 var unplayed_datablock_position_ref
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
@@ -27,6 +28,8 @@ func _process(_delta: float) -> void:
 		# keep player from dragging datablock offscreen where they cannot click on it
 		datablock_being_dragged.position = Vector2(clamp(mouse_pos.x, 0, screen_size.x), 
 			clamp(mouse_pos.y, 0, screen_size.y))
+		# Ensure the dragged block always stays on top
+		datablock_being_dragged.z_index = 10
 
 
 func _input(event):
@@ -44,27 +47,50 @@ func _input(event):
 func start_drag(datablock):
 	datablock_being_dragged = datablock
 	datablock.scale = Vector2(DEFAULT_DATABLOCK_SCALE, DEFAULT_DATABLOCK_SCALE)
+	# Ensures that datablock being dragged is above all other elements
+	datablock.z_index = 10
 
 
 # Creates more visual feedback for player releasing a block
 func finish_drag():
 	datablock_being_dragged.scale = Vector2(BIGGER_DATABLOCK_SCALE, BIGGER_DATABLOCK_SCALE)
 	var datablock_slot_found = raycast_check_for_datablock_slot()
+	
+	# temporary variable for testing before validation signals/methods are applied
+	var is_valid = false
+	
+	# If datablock is being moved from one slot to another, mark previous slot as empty
+	if datablock_being_dragged.datablock_is_in_slot:
+		datablock_being_dragged.datablock_is_in_slot.datablock_in_slot = false
+		datablock_being_dragged.datablock_is_in_slot = null
+	
 	if datablock_slot_found and not datablock_slot_found.datablock_in_slot:
-		# datablock placed in slot
+		
+		# Set visual appearance when in slot
 		datablock_being_dragged.scale = Vector2(SMALLER_DATABLOCK_SCALE, SMALLER_DATABLOCK_SCALE)
 		datablock_being_dragged.z_index = -1
+		
+		# Datablock always snaps into empty slot
 		datablock_being_dragged.datablock_is_in_slot = datablock_slot_found
-		unplayed_datablock_position_ref.remove_datablock_from_unplayed_datablocks(datablock_being_dragged)
-		# datablock snaps into empty slot
 		datablock_being_dragged.position = datablock_slot_found.position
-		# locks card in place via disabled
-		datablock_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		datablock_slot_found.datablock_in_slot = true
-	# snap card back to unplayed starting position
+		
+		# Remove from unplayed datablocks
+		unplayed_datablock_position_ref.remove_datablock_from_unplayed_datablocks(datablock_being_dragged)
+		
+		# Lock card in place ONLY if it's valid
+		if is_valid:
+			datablock_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
+		else:
+			# Keep collision enabled so the player can pick it up again
+			datablock_being_dragged.get_node("Area2D/CollisionShape2D").disabled = false
 	else:
+		# No valid slot found, return datablock to unplaced section
 		unplayed_datablock_position_ref.add_new_datablock_to_place(datablock_being_dragged)
-		#unplayed_datablock_position
+		# Reset the z-index for unplaced datablocks
+		datablock_being_dragged.z_index = 1
+		datablock_being_dragged.scale = Vector2(DEFAULT_DATABLOCK_SCALE, DEFAULT_DATABLOCK_SCALE)
+	
 	datablock_being_dragged = null
 
 

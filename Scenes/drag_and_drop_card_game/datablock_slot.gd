@@ -5,3 +5,5 @@
 extends Node2D
 
 var datablock_in_slot = false
+
+var slot_is_valid = false
