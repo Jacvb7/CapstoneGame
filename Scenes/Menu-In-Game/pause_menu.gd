@@ -60,7 +60,9 @@ func _on_resume_pressed() -> void:
 	v_box_container.visible = false		#Hides pause screen
 	texture_rect.visible = false
 
+#Jacob changed this, instead of quiting out the game we will include the option to return to the main menu
+func _on_main_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/mainmenu/main_menu.tscn")
 
-func _on_quit_pressed() -> void:
-	#Quitting the game
+func _on_exit_game_pressed() -> void: 
 	get_tree().quit()

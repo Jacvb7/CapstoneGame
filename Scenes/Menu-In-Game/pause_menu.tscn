@@ -77,19 +77,35 @@ theme_override_fonts/font = SubResource("SystemFont_j7bib")
 theme_override_font_sizes/font_size = 30
 text = "Settings"
 
-[node name="quit" type="Button" parent="VBoxContainer"]
+[node name="main_menu" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = SubResource("SystemFont_j7bib")
 theme_override_font_sizes/font_size = 30
-text = "Quit"
+text = "Main Menu"
 
 [node name="Options_Menu" parent="." instance=ExtResource("3_snyir")]
 process_mode = 3
 visible = false
 layout_mode = 1
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = -43.0
+offset_top = 9.0
+offset_right = 212.0
+offset_bottom = 291.0
+
+[node name="exit_game" type="Button" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("SystemFont_75lln")
+theme_override_font_sizes/font_size = 30
+text = "Exit Game"
+
 [connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="button_down" from="VBoxContainer/settings" to="." method="_on_settings_button_down"]
-[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer2/exit_game" to="." method="_on_exit_game_pressed"]
