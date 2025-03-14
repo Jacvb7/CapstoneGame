@@ -1,11 +1,13 @@
+# unplaced_datablocks.gd
 # https://youtu.be/lATAS8YpzFE?si=mD7kWHaMV-GZMf4v
 
 extends Node2D
 
 const TOTAL_DATABLOCKS = 10
 const DATABLOCK_SCENE_PATH = "res://Scenes/drag_and_drop_card_game/datablock.tscn"
-const DATABLOCK_WIDTH = 65 # space between datablocks
-const UNPLAYED_Y_POSITION = 270
+const DATABLOCK_WIDTH = 63 # space between datablocks
+const UNPLAYED_Y_POSITION = 315
+const CENTER_SCREEN_ADJUSTMENT = -13
 
 var unplayed_datablocks = []
 var center_screen_x
@@ -14,14 +16,14 @@ var bug_names = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	center_screen_x = get_viewport_rect().size.x / 2
+	center_screen_x = get_viewport_rect().size.x / 2 + CENTER_SCREEN_ADJUSTMENT
 	var datablock_scene = preload(DATABLOCK_SCENE_PATH)
 
 	# Get bug names from database
 	bug_names = bug_database_ref.get_bug_names()
 	
 	# Create datablocks for each bug, one for legs and one for color
-	for i in range(TOTAL_DATABLOCKS / 2):  # Divide by 2 since each bug makes 2 datablocks
+	for i in range(int(float(TOTAL_DATABLOCKS) / 2)):  # Divide by 2 since each bug makes 2 datablocks
 		var assigned_bug = bug_names[i % bug_names.size()]
 		
 		# Create Legs Datablock
@@ -47,47 +49,51 @@ func add_new_datablock_to_place(datablock):
 		animate_datablock_to_position(datablock, datablock.unplayed_datablock_position)
 
 
-#func update_unplayed_datablocks_positions():
-	#for i in range(unplayed_datablocks.size()):
-		## get new datablock position based on index
-		#var new_position = Vector2(calculate_datablock_position(i), UNPLAYED_Y_POSITION)
-		#var current_datablock = unplayed_datablocks[i]
-		#current_datablock.unplayed_datablock_position = new_position
-		#animate_datablock_to_position(current_datablock, new_position)
-
-
-#func calculate_datablock_position(index):
-	#var total_width = (unplayed_datablocks.size() - 1) * DATABLOCK_WIDTH
-	#var x_offset = center_screen_x + index * DATABLOCK_WIDTH - total_width / 2
-	#return x_offset
-
-
+# ORIGINAL VERSION OF THIS FUNCTION INSTANTIATES A SINGLE ROW OF BLOCKS TO BE PLACED
 func update_unplayed_datablocks_positions():
-	var total_datablocks = unplayed_datablocks.size()
-	for i in range(total_datablocks):
-		if i < ceil(total_datablocks/2):
-			# get new datablock position based on index for row 1
-			var new_position = Vector2(calculate_datablock_position(i), UNPLAYED_Y_POSITION)
-			var current_datablock = unplayed_datablocks[i]
-			current_datablock.unplayed_datablock_position = new_position
-			animate_datablock_to_position(current_datablock, new_position)
-		else:
-			# get new datablock position based on index for row 1
-			var new_position = Vector2(calculate_datablock_position(i), UNPLAYED_Y_POSITION + 50)
-			var current_datablock = unplayed_datablocks[i]
-			current_datablock.unplayed_datablock_position = new_position
-			animate_datablock_to_position(current_datablock, new_position)
+	for i in range(unplayed_datablocks.size()):
+		# get new datablock position based on index
+		var new_position = Vector2(calculate_datablock_position(i), UNPLAYED_Y_POSITION)
+		var current_datablock = unplayed_datablocks[i]
+		current_datablock.unplayed_datablock_position = new_position
+		animate_datablock_to_position(current_datablock, new_position)
 
-
+# THIS FUNCTION IS USED BY THE ORIGINAL update_unplayed_datablocks_positions() THAT INSTANTIATES 
+# A SINGLE ROW OF UNPLACED BLOCKS INSTEAD OF 2 ROWS (SEE BELOW)
 func calculate_datablock_position(index):
-	var total_datablocks = unplayed_datablocks.size()
-	var total_width = (total_datablocks / 2 - 1) * DATABLOCK_WIDTH
-	var x_offset
-	if index < ceil(total_datablocks / 2):
-		x_offset = center_screen_x + index * DATABLOCK_WIDTH - total_width / 2
-	else:
-		x_offset = center_screen_x + (total_datablocks - index - 1) * DATABLOCK_WIDTH - total_width / 2
+	var total_width = (unplayed_datablocks.size() - 1) * DATABLOCK_WIDTH
+	var x_offset = center_screen_x + index * DATABLOCK_WIDTH - int(float(total_width) / 2)
 	return x_offset
+
+## THIS VERSION OF FUNCTION INSTANTIATES A 2 ROWS OF BLOCKS TO BE PLACED
+#func update_unplayed_datablocks_positions():
+	#var total_datablocks = unplayed_datablocks.size()
+	#for i in range(total_datablocks):
+		#if i < ceil(total_datablocks/2):
+			## get new datablock position based on index for row 1
+			#var new_position = Vector2(calculate_datablock_position(i), UNPLAYED_Y_POSITION)
+			#var current_datablock = unplayed_datablocks[i]
+			#current_datablock.unplayed_datablock_position = new_position
+			#animate_datablock_to_position(current_datablock, new_position)
+		#else:
+			## get new datablock position based on index for row 1
+			#var new_position = Vector2(calculate_datablock_position(i), UNPLAYED_Y_POSITION + 50)
+			#var current_datablock = unplayed_datablocks[i]
+			#current_datablock.unplayed_datablock_position = new_position
+			#animate_datablock_to_position(current_datablock, new_position)
+
+
+## THIS FUNCTION IS USED BY THE 2ND VERSION OF update_unplayed_datablocks_positions() THAT INSTANTIATES 
+# A 2 ROWS OF UNPLACED BLOCKS INSTEAD OF ONE. (SEE ABOVE)
+#func calculate_datablock_position(index):
+	#var total_datablocks = unplayed_datablocks.size()
+	#var total_width = (total_datablocks / 2 - 1) * DATABLOCK_WIDTH
+	#var x_offset
+	#if index < ceil(total_datablocks / 2):
+		#x_offset = center_screen_x + index * DATABLOCK_WIDTH - total_width / 2
+	#else:
+		#x_offset = center_screen_x + (total_datablocks - index - 1) * DATABLOCK_WIDTH - total_width / 2
+	#return x_offset
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

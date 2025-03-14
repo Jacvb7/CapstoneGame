@@ -1,3 +1,5 @@
+# bug.gd
+
 #extends CharacterBody2D  # CharacterBody2D allows physics to be used on Bugs
 #
 #class_name Bug  # children of Bug will include extends Bug in their heading
