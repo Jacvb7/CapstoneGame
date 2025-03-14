@@ -43,7 +43,7 @@ func on_exit_options_menu() -> void:
 	options_menu.visible = false
 	
 func _on_new_game_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Debug Scenes/game_manager.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Debug Scenes/test_player_house_tilemap.tscn")
 	
 	
 #Reeha: Added this to change the visibility upon pressing settings button. Connection to settings menu

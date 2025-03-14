@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://8se14ckmfutk"]
+[gd_scene load_steps=8 format=4 uid="uid://4rofr2ec78vm"]
 
 [ext_resource type="Script" path="res://Scenes/Debug Scenes/test_player_house_tilemap.gd" id="1_hwhe8"]
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_nnbhu"]
