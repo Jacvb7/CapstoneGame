@@ -91,11 +91,9 @@ visible = false
 layout_mode = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-layout_mode = 2
-offset_left = -43.0
-offset_top = 9.0
-offset_right = 212.0
-offset_bottom = 291.0
+layout_mode = 1
+offset_right = 150.0
+offset_bottom = 39.0
 
 [node name="exit_game" type="Button" parent="VBoxContainer2"]
 custom_minimum_size = Vector2(150, 25)
