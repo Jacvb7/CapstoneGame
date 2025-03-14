@@ -116,6 +116,6 @@ visible = false
 layout_mode = 1
 
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/new_game" to="." method="_on_start_game_button_down"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/load_game" to="." method="_on_exit_game_button_down"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/load_game" to="." method="_on_load_game_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_settings_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/exit_game" to="." method="_on_exit_game_button_down"]

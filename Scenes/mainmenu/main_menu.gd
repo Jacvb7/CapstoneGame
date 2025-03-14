@@ -45,8 +45,6 @@ func on_exit_options_menu() -> void:
 func _on_new_game_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Debug Scenes/game_manager.tscn")
 	
-func _on_load_game_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/load_game_screen/load_game.tscn")
 	
 #Reeha: Added this to change the visibility upon pressing settings button. Connection to settings menu
 func _on_settings_button_down() -> void:
@@ -57,3 +55,6 @@ func _on_settings_button_down() -> void:
 #Jacob: Added this to be able to quit out of the game from the main menu and eventually pause menu
 func _on_exit_game_button_down() -> void: 
 	get_tree().quit()
+
+func _on_load_game_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/load_game_screen/load_game.tscn")
