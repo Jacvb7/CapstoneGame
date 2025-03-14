@@ -2,7 +2,8 @@ extends Node2D
 #class_name GameManager
 
 #signal toggle_game_paused(is_paused : bool)
-@onready var pause_menu: Control = $Pause_Menu
+
+@onready var pause_menu: Control = $CanvasLayer/Pause_Menu
 
 func _process(delta: float) -> void:
 	on_esc_pressed()
@@ -12,6 +13,7 @@ func on_esc_pressed() -> void:
 		pause()
 		
 func pause():
+	print("paused from game")
 	pause_menu.set_process(true)
 	#get_tree().paused = true
 

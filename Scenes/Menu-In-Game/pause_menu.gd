@@ -9,12 +9,13 @@ extends Control
 @onready var settings: Button = $VBoxContainer/settings			#Settings button
 
 #These are used for hiding pause menu visibility
-@onready var v_box_container: VBoxContainer = $VBoxContainer 	#The container for the pause menu
-@onready var texture_rect: PanelContainer = $TextureRect		#The texture rectangle for pause menu	
-
+@onready var texture_rect: PanelContainer = $TextureRect
+@onready var v_box_container: VBoxContainer = $VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	texture_rect.visible = false
+	v_box_container.visible = false
 	set_process(false)												#I set it to false so that this script does not run immediatly. 
 																	#It is set to true in game_manager.gd
 	options_menu.exit_options_menu.connect(on_exit_options_menu)	#Connection to options menu's exit button
@@ -48,6 +49,7 @@ func _on_settings_button_down() -> void:
 
 func pause():
 	#When game is paused
+	print("paused from pause screen")
 	get_tree().paused = true			#Pause the game state
 	
 	v_box_container.visible = true		#Make the pause menu visible
