@@ -1,3 +1,4 @@
+# unplaced_datablocks.gd
 # https://youtu.be/lATAS8YpzFE?si=mD7kWHaMV-GZMf4v
 
 extends Node2D
@@ -22,7 +23,7 @@ func _ready() -> void:
 	bug_names = bug_database_ref.get_bug_names()
 	
 	# Create datablocks for each bug, one for legs and one for color
-	for i in range(TOTAL_DATABLOCKS / 2):  # Divide by 2 since each bug makes 2 datablocks
+	for i in range(int(float(TOTAL_DATABLOCKS) / 2)):  # Divide by 2 since each bug makes 2 datablocks
 		var assigned_bug = bug_names[i % bug_names.size()]
 		
 		# Create Legs Datablock
@@ -61,7 +62,7 @@ func update_unplayed_datablocks_positions():
 # A SINGLE ROW OF UNPLACED BLOCKS INSTEAD OF 2 ROWS (SEE BELOW)
 func calculate_datablock_position(index):
 	var total_width = (unplayed_datablocks.size() - 1) * DATABLOCK_WIDTH
-	var x_offset = center_screen_x + index * DATABLOCK_WIDTH - total_width / 2
+	var x_offset = center_screen_x + index * DATABLOCK_WIDTH - int(float(total_width) / 2)
 	return x_offset
 
 ## THIS VERSION OF FUNCTION INSTANTIATES A 2 ROWS OF BLOCKS TO BE PLACED

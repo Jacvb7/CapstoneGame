@@ -1,14 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://07m0tm5jv10i"]
+[gd_scene load_steps=8 format=3 uid="uid://07m0tm5jv10i"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_mang.gd" id="1_6ujy1"]
 [ext_resource type="Texture2D" uid="uid://cej26dhahal0q" path="res://Scenes/drag_and_drop_card_game/byte beta.png" id="1_ehxhq"]
-[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/preset_datablock_mang.gd" id="2_dfuyv"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sg2pe"]
 [ext_resource type="PackedScene" uid="uid://0gl5using56j" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="3_311qs"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/unplaced_datablocks.gd" id="3_olowc"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/preset_datablock_mang.gd" id="4_xpc5g"]
 [ext_resource type="PackedScene" uid="uid://cy7b1qcm2dncb" path="res://Scenes/drag_and_drop_card_game/preset_datablock.tscn" id="5_2ukwp"]
 
 [node name="DragDropMain" type="Node2D"]
 position = Vector2(12, 3)
+script = ExtResource("1_sg2pe")
 
 [node name="graphics" type="Node2D" parent="."]
 
@@ -141,7 +143,7 @@ scale = Vector2(1, 1)
 script = ExtResource("1_6ujy1")
 
 [node name="preset_datablock_mang" type="Node2D" parent="."]
-script = ExtResource("2_dfuyv")
+script = ExtResource("4_xpc5g")
 
 [node name="unplaced_datablocks" type="Node2D" parent="."]
 script = ExtResource("3_olowc")

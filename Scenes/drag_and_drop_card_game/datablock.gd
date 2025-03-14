@@ -1,3 +1,4 @@
+# datablock.gd
 # https://youtu.be/1mM73u1tvpU?si=z1QizoPoQK9xzoC2
 # script to attatch signals to the datablock_mang
 
@@ -29,8 +30,16 @@ func _ready():
 	update_text()
 	set_text()
 	
+	# THIS CODE IS CAUSING A WARNING:
 	# Attach signals to the parent (datablock_mang)
 	get_parent().connect_datablock_signals(self)
+
+	## ChatGPT suggested fix for warning to ensure signals are used
+	## BUT CAUSES ERRORS
+	#hovered.connect(_on_area_2d_mouse_entered)
+	#hovered_off.connect(_on_area_2d_mouse_exited)
+	#if get_parent().has_method("connect_datablock_signals"):
+		#get_parent().connect_datablock_signals(self)
 
 
 func set_bug_data(bug, attr_type):
