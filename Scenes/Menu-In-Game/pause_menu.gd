@@ -9,6 +9,8 @@ extends Control
 @onready var v_box_container: VBoxContainer = $VBoxContainer 	#The container for the pause menu
 @onready var texture_rect: PanelContainer = $TextureRect		#The texture rectangle for pause menu	
 
+@export var testscenehousetilemap : GameManager
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_process(false)												#I set it to false so that this script does not run immediatly. 
@@ -16,13 +18,15 @@ func _ready() -> void:
 	options_menu.exit_options_menu.connect(on_exit_options_menu)	#Connection to options menu's exit button
 	#resume.button_down.connect(_on_resume_pressed)					#connection to resume button
 	#settings.button_down.connect(_on_settings_button_down)
-	
+	hide()
+	testscenehousetilemap.connect("toggle_game_paused", _on_testscenehousetilemap_toggle_game_paused)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(delta):
 	#When process is set to true, will run these functions
-	pause()				#Pauses game state and makes pause menu visible
-	on_esc_pressed()	#To resume game when esc is pressed
+	#pause()				#Pauses game state and makes pause menu visible
+	#on_esc_pressed()	#To resume game when esc is pressed
+	pass
 	
 
 func on_exit_options_menu() -> void:
@@ -53,12 +57,12 @@ func on_esc_pressed() -> void:
 	if Input.is_action_just_pressed("esc") and get_tree().paused:	
 		_on_resume_pressed()	#Resumes game 
 
-func _on_resume_pressed() -> void:
-	#Resumes game
-	set_process(false)		#Sets this process to false, so that it does not run when the game is resumed
-	get_tree().paused = false			#resumes game state
-	v_box_container.visible = false		#Hides pause screen
-	texture_rect.visible = false
+#func _on_resume_pressed() -> void:
+	##Resumes game
+	#set_process(false)		#Sets this process to false, so that it does not run when the game is resumed
+	#get_tree().paused = false			#resumes game state
+	#v_box_container.visible = false		#Hides pause screen
+	#texture_rect.visible = false
 
 #Jacob changed this, instead of quiting out the game we will include the option to return to the main menu
 func _on_main_menu_pressed() -> void:
@@ -66,3 +70,16 @@ func _on_main_menu_pressed() -> void:
 
 func _on_exit_game_pressed() -> void: 
 	get_tree().quit()
+
+func _on_testscenehousetilemap_toggle_game_paused() -> void:
+	if(is_paused):
+		show()
+	else: 
+		hide()
+	
+func _on_resume_pressed():
+	game_manager.game_paused = false
+
+	
+	
+	

@@ -12,6 +12,8 @@ extends Control
 
 @onready var start_level = preload("res://Scenes/mainmenu/main_menu.tscn") as PackedScene
 
+
+
 func _ready():
 	new_game.button_down.connect(_on_new_game_button_down)
 	settings.button_down.connect(_on_settings_button_down)
