@@ -14,8 +14,6 @@ func _ready() -> void:
 	#To avoid an error where the button is still clickable even when the options menu is gone
 	set_process(false)	#This code will not run at all unless the process is running or set to true.
 	
-	
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

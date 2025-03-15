@@ -4,10 +4,12 @@
 extends Node2D
 
 const TOTAL_DATABLOCKS = 10
+# controls the animation of blocks appearing on screen
+const SPEED_OF_MOVEMENT = .3 # smaller values move the blocks faster
 const DATABLOCK_SCENE_PATH = "res://Scenes/drag_and_drop_card_game/datablock.tscn"
 const DATABLOCK_WIDTH = 63 # space between datablocks
-const UNPLAYED_Y_POSITION = 315
-const CENTER_SCREEN_ADJUSTMENT = -13
+const UNPLAYED_Y_POSITION = 315 # position of blocks from the bottom of the scene
+const CENTER_SCREEN_ADJUSTMENT = -13 # magic number that assists in centering the blocks
 
 var unplayed_datablocks = []
 var center_screen_x
@@ -39,6 +41,37 @@ func _ready() -> void:
 		$"../datablock_mang".add_child(color_datablock)
 		color_datablock.set_bug_data(assigned_bug, "color")
 		add_new_datablock_to_place(color_datablock)
+		
+		# print the array for debugging
+		print_array_contents()
+
+#############################################################
+## FUNCTION TO PRINT DATABLOCK NAMES AND THEIR TEXT LABELS ##
+#############################################################
+#Datablock @Node2D@17: 	8
+#Datablock @Node2D@17: 	8
+#Datablock @Node2D@17: 	8
+#Datablock @Node2D@15: 	Red
+#Datablock @Node2D@15: 	Red
+#Datablock @Node2D@15: 	Red
+#Datablock @Node2D@15: 	Red
+#Datablock @Node2D@15: 	Red
+#Datablock datablock: 	6
+#Datablock datablock: 	6
+#Datablock datablock: 	6
+#Datablock datablock: 	6
+#Datablock datablock: 	6
+func print_array_contents():
+	for unplayed in unplayed_datablocks:
+		await get_tree().process_frame  # Ensure positions are updated
+		#print("Children of ", unplayed.name, ": ", unplayed.get_children()) # Debugging
+		# Corrected path: Look for 'datablock_text' instead of 'RichTextLabel'
+		var rich_text_label = unplayed.get_node("datablock_text")
+		if rich_text_label:
+			var clean_text = rich_text_label.text.strip_edges().replace("[center]", "").replace("[/center]", "")
+			print("Datablock ", unplayed.name, ": \t", clean_text)
+		else:
+			print(" -> [No RichTextLabel Found]")
 
 
 func add_new_datablock_to_place(datablock):
@@ -47,6 +80,12 @@ func add_new_datablock_to_place(datablock):
 		update_unplayed_datablocks_positions()
 	else:
 		animate_datablock_to_position(datablock, datablock.unplayed_datablock_position)
+
+
+func remove_datablock_from_unplayed_datablocks(current_datablock):
+	if current_datablock in unplayed_datablocks:
+		unplayed_datablocks.erase(current_datablock)
+		update_unplayed_datablocks_positions()
 
 
 # ORIGINAL VERSION OF THIS FUNCTION INSTANTIATES A SINGLE ROW OF BLOCKS TO BE PLACED
@@ -65,7 +104,15 @@ func calculate_datablock_position(index):
 	var x_offset = center_screen_x + index * DATABLOCK_WIDTH - int(float(total_width) / 2)
 	return x_offset
 
-## THIS VERSION OF FUNCTION INSTANTIATES A 2 ROWS OF BLOCKS TO BE PLACED
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func animate_datablock_to_position(current_datablock, new_position):
+	var tween = get_tree().create_tween()
+	# arguments passed: object, start position, end position, velocity
+	tween.tween_property(current_datablock, "position", new_position, SPEED_OF_MOVEMENT)
+	
+	
+	## THIS VERSION OF FUNCTION INSTANTIATES A 2 ROWS OF BLOCKS TO BE PLACED
 #func update_unplayed_datablocks_positions():
 	#var total_datablocks = unplayed_datablocks.size()
 	#for i in range(total_datablocks):
@@ -94,16 +141,3 @@ func calculate_datablock_position(index):
 	#else:
 		#x_offset = center_screen_x + (total_datablocks - index - 1) * DATABLOCK_WIDTH - total_width / 2
 	#return x_offset
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func animate_datablock_to_position(current_datablock, new_position):
-	var tween = get_tree().create_tween()
-	# arguments passed: object, start position, end position, velocity
-	tween.tween_property(current_datablock, "position", new_position, 0.2)
-
-
-func remove_datablock_from_unplayed_datablocks(current_datablock):
-	if current_datablock in unplayed_datablocks:
-		unplayed_datablocks.erase(current_datablock)
-		update_unplayed_datablocks_positions()

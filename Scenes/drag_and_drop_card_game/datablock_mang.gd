@@ -99,13 +99,6 @@ func connect_datablock_signals(datablock):
 	# THESE ARE CAUSING A WARNING:
 	datablock.connect("hovered", on_hovered_over_datablock)
 	datablock.connect("hovered_off", on_hovered_off_datablock)
-	
-	## ChatGPT suggested fix for warning BUT CAUSES ERRORS:
-	#if not datablock.hovered.is_connected(on_hovered_over_datablock):
-		#datablock.hovered.connect(on_hovered_over_datablock)
-	#if not datablock.hovered_off.is_connected(on_hovered_off_datablock):
-		#datablock.hovered_off.connect(on_hovered_off_datablock)
-
 
 
 func on_hovered_over_datablock(datablock):
