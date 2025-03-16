@@ -83,12 +83,7 @@ func finish_drag():
 		# Remove from unplayed datablocks
 		unplayed_datablock_position_ref.remove_datablock_from_unplayed_datablocks(datablock_being_dragged)
 		
-		## Lock card in place ONLY if it's valid
-		#if is_valid:
-			#datablock_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
-		#else:
-			## Keep collision enabled so the player can pick it up again
-			#datablock_being_dragged.get_node("Area2D/CollisionShape2D").disabled = false
+		# Validate data on block against bug name and feature value
 		check_if_valid(datablock_being_dragged, datablock_slot_found)
 		
 	else:
@@ -122,12 +117,12 @@ func check_if_valid(datablock_being_dragged, datablock_slot_found):
 	var is_valid = false
 	var text_on_datablock = datablock_being_dragged.get_node("datablock_text")
 	var data = text_on_datablock.text.strip_edges().replace("[center]", "").replace("[/center]", "")
-	print("Datablock ", datablock_being_dragged.name, ": \t", data) # example output: Datablock @Node2D@15: 	Red
+	#print("Datablock ", datablock_being_dragged.name, ": \t", data) # example output: Datablock @Node2D@15: 	Red
 	
 	# extract row and column from slot that datablock was placed
 	var slot_name = datablock_slot_found.name
 	extract_row_and_col(slot_name)
-	print("Extracted row:", row, " | Extracted col:", col)
+	#print("Extracted row:", row, " | Extracted col:", col)
 	
 	# Use row to find the name of the bug in column 0 #preset_datablock_r6c0 	Position: (381, 248)	Text: TAFFY
 	var bug_name = "preset_datablock_r" + str(row) + "c0"
@@ -136,7 +131,7 @@ func check_if_valid(datablock_being_dragged, datablock_slot_found):
 		if node.name == bug_name:
 			var text_label = node.get_node("preset_datablock_text")
 			bug_name = strip_bbcode_tags(text_label.text)  # Remove BBCode
-			print(bug_name, " is in preset datablock: ", node.name)
+			#print(bug_name, " is in preset datablock: ", node.name)
 	
 	if bug_name in bug_database_ref.get_bug_names():
 		is_valid = bug_database_ref.validate_bug_data(bug_name, col, data)
