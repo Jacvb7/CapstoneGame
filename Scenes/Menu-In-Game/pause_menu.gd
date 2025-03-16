@@ -9,13 +9,16 @@ extends Control
 @onready var settings: Button = $VBoxContainer/settings			#Settings button
 
 #These are used for hiding pause menu visibility
-@onready var texture_rect: PanelContainer = $TextureRect
-@onready var v_box_container: VBoxContainer = $VBoxContainer
+@onready var v_box_container: VBoxContainer = $VBoxContainer 	#The container for the pause menu
+@onready var exit_container: VBoxContainer = $VBoxContainer2 #The container for the exit button
+@onready var texture_rect: PanelContainer = $TextureRect		#The texture rectangle for pause menu	
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	texture_rect.visible = false
 	v_box_container.visible = false
+	exit_container.visible = false
+	texture_rect.visible = false 
 	set_process(false)												#I set it to false so that this script does not run immediatly. 
 																	#It is set to true in game_manager.gd
 	options_menu.exit_options_menu.connect(on_exit_options_menu)	#Connection to options menu's exit button
@@ -40,6 +43,7 @@ func on_exit_options_menu() -> void:
 
 func _on_settings_button_down() -> void:
 	#Visibiltiy for settings screen
+	print("in settings")
 	texture_rect.visible = false
 	v_box_container.visible = false
 	options_menu.set_process(true)
@@ -48,10 +52,10 @@ func _on_settings_button_down() -> void:
 
 func pause():
 	#When game is paused
-	print("paused from pause screen")
 	get_tree().paused = true			#Pause the game state
 	
 	v_box_container.visible = true		#Make the pause menu visible
+	exit_container.visible = true
 	texture_rect.visible = true
 	
 
@@ -66,6 +70,7 @@ func _on_resume_pressed() -> void:
 	set_process(false)		#Sets this process to false, so that it does not run when the game is resumed
 	get_tree().paused = false			#resumes game state
 	v_box_container.visible = false		#Hides pause screen
+	exit_container.visible = false
 	texture_rect.visible = false
 
 #Jacob changed this, instead of quiting out the game we will include the option to return to the main menu
