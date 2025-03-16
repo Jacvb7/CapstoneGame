@@ -19,10 +19,10 @@ func get_bug_names():
 
 
 # Added validation function to check if a datablock has correct data for a bug
-func validate_bug_data(bug_name, attribute_type, value):
+func validate_bug_data(bug_name, col, value):
 	if bug_name in bug_data:
-		if attribute_type == "legs":
+		if col == 1:
 			return str(bug_data[bug_name]["legs"]) == value
-		elif attribute_type == "color":
+		elif col == 2:
 			return bug_data[bug_name]["color"] == value
 	return false
