@@ -43,24 +43,11 @@ func _ready() -> void:
 		add_new_datablock_to_place(color_datablock)
 		
 		# print the array for debugging
-		print_array_contents()
+		#print_array_contents()
 
 #############################################################
 ## FUNCTION TO PRINT DATABLOCK NAMES AND THEIR TEXT LABELS ##
 #############################################################
-#Datablock @Node2D@17: 	8
-#Datablock @Node2D@17: 	8
-#Datablock @Node2D@17: 	8
-#Datablock @Node2D@15: 	Red
-#Datablock @Node2D@15: 	Red
-#Datablock @Node2D@15: 	Red
-#Datablock @Node2D@15: 	Red
-#Datablock @Node2D@15: 	Red
-#Datablock datablock: 	6
-#Datablock datablock: 	6
-#Datablock datablock: 	6
-#Datablock datablock: 	6
-#Datablock datablock: 	6
 func print_array_contents():
 	for unplayed in unplayed_datablocks:
 		await get_tree().process_frame  # Ensure positions are updated
