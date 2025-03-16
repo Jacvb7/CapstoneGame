@@ -7,7 +7,8 @@ extends Control
 @onready var options_menu: OptionsMenu = $Options_Menu			#The options menu scene
 @onready var resume: Button = $VBoxContainer/resume				#Resume button
 @onready var settings: Button = $VBoxContainer/settings			#Settings button
-
+@onready var main_menu: Button = $VBoxContainer/main_menu
+@onready var pause_menu: Control = $"."
 #These are used for hiding pause menu visibility
 @onready var v_box_container: VBoxContainer = $VBoxContainer 	#The container for the pause menu
 @onready var exit_container: VBoxContainer = $VBoxContainer2 #The container for the exit button
@@ -42,12 +43,16 @@ func on_exit_options_menu() -> void:
 	options_menu.visible = false
 
 func _on_settings_button_down() -> void:
+	#These three visible calls will make the pause menu "invisible" when the settings menu is open
+	#pause_menu.visible = false DO NOT USE THIS. Keeping in case of later solution
+	v_box_container.visible = false
+	exit_container.visible = false
+	texture_rect.visible = false
 	#Visibiltiy for settings screen
 	print("in settings")
-	texture_rect.visible = false
-	v_box_container.visible = false
 	options_menu.set_process(true)
 	options_menu.visible = true
+	
 
 
 func pause():
@@ -75,8 +80,10 @@ func _on_resume_pressed() -> void:
 
 #Jacob changed this, instead of quiting out the game we will include the option to return to the main menu
 func _on_main_menu_pressed() -> void:
+	get_tree().paused = false # Debugging; needed to set the tree to false when returning to main menu 
+	# the pause menu tree was overriding the main menu tree. 
 	get_tree().change_scene_to_file("res://Scenes/mainmenu/main_menu.tscn")
-
+	
 func _on_exit_game_pressed() -> void: 
 	get_tree().quit()
 
