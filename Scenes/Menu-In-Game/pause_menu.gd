@@ -40,7 +40,6 @@ func on_exit_options_menu() -> void:
 
 func _on_settings_button_down() -> void:
 	#Visibiltiy for settings screen
-	print("in settings")
 	texture_rect.visible = false
 	v_box_container.visible = false
 	options_menu.set_process(true)
