@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4rj4yn6iuakb"
-path="res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-63d093db4f191b592bc6fdc363508e04.ctex"
+uid="uid://dtqh12xooft57"
+path="res://.godot/imported/green_acanthocephala.png-9c230461e605e7ee41f9726f71482536.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg"
-dest_files=["res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-63d093db4f191b592bc6fdc363508e04.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/bug_images/green_acanthocephala.png"
+dest_files=["res://.godot/imported/green_acanthocephala.png-9c230461e605e7ee41f9726f71482536.ctex"]
 
 [params]
 

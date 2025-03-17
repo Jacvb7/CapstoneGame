@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4rj4yn6iuakb"
-path="res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-63d093db4f191b592bc6fdc363508e04.ctex"
+uid="uid://5h1ibs7chodg"
+path="res://.godot/imported/purple_spider.png-e868cbd44385b7fd3c5dc38eb3e13bad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg"
-dest_files=["res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-63d093db4f191b592bc6fdc363508e04.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/bug_images/purple_spider.png"
+dest_files=["res://.godot/imported/purple_spider.png-e868cbd44385b7fd3c5dc38eb3e13bad.ctex"]
 
 [params]
 

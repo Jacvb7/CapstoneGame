@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4rj4yn6iuakb"
-path="res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-63d093db4f191b592bc6fdc363508e04.ctex"
+uid="uid://0osofscb51nf"
+path="res://.godot/imported/blue_butterfly.png-e1605165d8a12d869d0d25c01fe6e6a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg"
-dest_files=["res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-63d093db4f191b592bc6fdc363508e04.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/bug_images/blue_butterfly.png"
+dest_files=["res://.godot/imported/blue_butterfly.png-e1605165d8a12d869d0d25c01fe6e6a7.ctex"]
 
 [params]
 
