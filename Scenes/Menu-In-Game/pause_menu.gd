@@ -79,6 +79,12 @@ func on_esc_pressed() -> void:
 	#When esc is pressed from pause menu
 	#If esc is pressed and the game is in pause state(which it should be, but I added the condition just in case and to avoid any problems later on)
 	if Input.is_action_just_pressed("esc") and get_tree().paused:	
+		resume.visible = true
+		main_menu.visible = true
+		settings.visible = true
+		save.visible = true
+		options_menu.set_process(false)
+		options_menu.visible = false
 		_on_resume_pressed()	#Resumes game 
 
 func _on_resume_pressed() -> void:
