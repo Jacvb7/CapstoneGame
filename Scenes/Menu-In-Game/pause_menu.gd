@@ -9,6 +9,7 @@ extends Control
 @onready var settings: Button = $VBoxContainer/settings			#Settings button
 @onready var main_menu: Button = $VBoxContainer/main_menu
 @onready var save: Button = $VBoxContainer/save
+@onready var pause_label: Label = $VBoxContainer/Pause_Label
 
 @onready var pause_menu: Control = $"."
 #These are used for hiding pause menu visibility
@@ -47,6 +48,7 @@ func on_exit_options_menu() -> void:
 	main_menu.visible = true
 	settings.visible = true 
 	save.visible = true
+	pause_label.visible = true
 
 func _on_settings_button_down() -> void:
 	#These three visible calls will make the pause menu "invisible" when the settings menu is open
@@ -55,6 +57,7 @@ func _on_settings_button_down() -> void:
 	main_menu.visible = false
 	settings.visible = false 
 	save.visible = false
+	pause_label.visible = false
 	
 	#v_box_container.visible = false
 	#exit_container.visible = false
@@ -83,6 +86,7 @@ func on_esc_pressed() -> void:
 		main_menu.visible = true
 		settings.visible = true
 		save.visible = true
+		pause_label.visible = true
 		options_menu.set_process(false)
 		options_menu.visible = false
 		_on_resume_pressed()	#Resumes game 
