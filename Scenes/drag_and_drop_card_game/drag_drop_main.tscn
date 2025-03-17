@@ -1,68 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://07m0tm5jv10i"]
+[gd_scene load_steps=7 format=3 uid="uid://07m0tm5jv10i"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_mang.gd" id="1_6ujy1"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sg2pe"]
 [ext_resource type="PackedScene" uid="uid://0gl5using56j" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="3_311qs"]
-[ext_resource type="Texture2D" uid="uid://b28jdnl02f2eo" path="res://assets/farming_game/characters/free_chicken_sprites.png" id="3_jhxpg"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/unplaced_datablocks.gd" id="3_olowc"]
-[ext_resource type="Texture2D" uid="uid://jnidfepyw2n0" path="res://assets/game/characters/Free Chicken Sprites.png" id="3_p1avw"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/preset_datablock_mang.gd" id="4_xpc5g"]
 [ext_resource type="PackedScene" uid="uid://cy7b1qcm2dncb" path="res://Scenes/drag_and_drop_card_game/preset_datablock.tscn" id="5_2ukwp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0u0el"]
-atlas = ExtResource("3_p1avw")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3tgpf"]
-atlas = ExtResource("3_p1avw")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4o1tj"]
-atlas = ExtResource("3_jhxpg")
-region = Rect2(0, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dnpsd"]
-atlas = ExtResource("3_jhxpg")
-region = Rect2(16, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gkx0u"]
-atlas = ExtResource("3_jhxpg")
-region = Rect2(32, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6xyec"]
-atlas = ExtResource("3_jhxpg")
-region = Rect2(48, 16, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_308or"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0u0el")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3tgpf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4o1tj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dnpsd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gkx0u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6xyec")
-}],
-"loop": true,
-"name": &"walking",
-"speed": 5.0
-}]
 
 [node name="DragDropMain" type="Node2D"]
 position = Vector2(12, 3)
@@ -133,13 +76,6 @@ offset_top = 34.0
 offset_right = 273.0
 offset_bottom = 271.0
 color = Color(0.0575887, 0.626515, 0.652203, 1)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="graphics"]
-position = Vector2(177, 153)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_308or")
-animation = &"walking"
-autoplay = "walking"
 
 [node name="preset_datablocks" type="Node2D" parent="."]
 

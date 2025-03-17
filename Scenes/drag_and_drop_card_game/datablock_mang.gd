@@ -96,28 +96,28 @@ func finish_drag():
 	datablock_being_dragged = null
 
 
-func extract_row_and_col(name):
+func extract_row_and_col(slot_name):
 	# Extract row and column using regex
 	var regex = RegEx.new()
 	regex.compile("r(\\d+)c(\\d+)")
-	var result = regex.search(name)
+	var result = regex.search(slot_name)
 	
 	if result:
 		row = int(result.get_string(1))
 		col = int(result.get_string(2))
 	else:
-		print("Could not extract row/col from:", name)
+		print("Could not extract row/col from:", slot_name)
 
 
 func strip_bbcode_tags(text: String) -> String:
 	return text.strip_edges().replace("[center]", "").replace("[/center]", "")
 
 
-func check_if_valid(datablock_being_dragged, datablock_slot_found):
+func check_if_valid(dragged_datablock, datablock_slot_found):
 	var is_valid = false
-	var text_on_datablock = datablock_being_dragged.get_node("datablock_text")
+	var text_on_datablock = dragged_datablock.get_node("datablock_text")
 	var data = text_on_datablock.text.strip_edges().replace("[center]", "").replace("[/center]", "")
-	#print("Datablock ", datablock_being_dragged.name, ": \t", data) # example output: Datablock @Node2D@15: 	Red
+	#print("Datablock ", dragged_datablock.name, ": \t", data) # example output: Datablock @Node2D@15: 	Red
 	
 	# extract row and column from slot that datablock was placed
 	var slot_name = datablock_slot_found.name
@@ -138,22 +138,22 @@ func check_if_valid(datablock_being_dragged, datablock_slot_found):
 		visualize_validation_feedback(datablock_being_dragged, is_valid)
 
 
-func visualize_validation_feedback(datablock_being_dragged, is_valid):
+func visualize_validation_feedback(dragged_datablock, is_valid):
 	# **Lock card in place if it's valid**
 	if is_valid:
-		datablock_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
+		dragged_datablock.get_node("Area2D/CollisionShape2D").disabled = true
 	else:
 		# Keep collision enabled so the player can pick it up again
-		datablock_being_dragged.get_node("Area2D/CollisionShape2D").disabled = false
+		dragged_datablock.get_node("Area2D/CollisionShape2D").disabled = false
 		
 	# **Apply visual feedback: invalid=red, valid=green**
 	var target_color = Color(0, 1, 0, 1) if is_valid else Color(1, 0, 0, 1)  # Green for valid, red for invalid
-	var original_color = datablock_being_dragged.modulate
+	var original_color = dragged_datablock.modulate
 	
-	datablock_being_dragged.modulate = target_color
+	dragged_datablock.modulate = target_color
 	await get_tree().create_timer(0.5).timeout  # Wait 0.3 seconds
 	
-	datablock_being_dragged.modulate = original_color  # Restore original color
+	dragged_datablock.modulate = original_color  # Restore original color
 
 
 func connect_datablock_signals(datablock):

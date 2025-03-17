@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf7um0n445bp5"
-path="res://.godot/imported/datablock_slot.png-d8e90d847fc09d278c8fb32f8a5cade5.ctex"
+uid="uid://cr074s8vk64mm"
+path="res://.godot/imported/datablock.png-8db24bb33cb973948edeb5d855452179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/drag_and_drop_card_game/datablock_slot.png"
-dest_files=["res://.godot/imported/datablock_slot.png-d8e90d847fc09d278c8fb32f8a5cade5.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/datablock_images/datablock.png"
+dest_files=["res://.godot/imported/datablock.png-8db24bb33cb973948edeb5d855452179.ctex"]
 
 [params]
 

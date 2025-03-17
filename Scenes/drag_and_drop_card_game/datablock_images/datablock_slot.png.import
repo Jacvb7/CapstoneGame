@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4rj4yn6iuakb"
-path="res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-63d093db4f191b592bc6fdc363508e04.ctex"
+uid="uid://bf7um0n445bp5"
+path="res://.godot/imported/datablock_slot.png-c51f96e1f3a33ca0a6f6d2b0040e5932.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg"
-dest_files=["res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-63d093db4f191b592bc6fdc363508e04.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/datablock_images/datablock_slot.png"
+dest_files=["res://.godot/imported/datablock_slot.png-c51f96e1f3a33ca0a6f6d2b0040e5932.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnr7v4afrtm28"
-path="res://.godot/imported/purple_spider_bug.png-90b11a3259d11f9818b7fe844135f6e7.ctex"
+uid="uid://bnq4ot83w6im7"
+path="res://.godot/imported/yellow_beetle.png-c9733f0db06208871d14eed8ba784e44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bug/purple_spider_bug.png"
-dest_files=["res://.godot/imported/purple_spider_bug.png-90b11a3259d11f9818b7fe844135f6e7.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/bug_images/yellow_beetle.png"
+dest_files=["res://.godot/imported/yellow_beetle.png-c9733f0db06208871d14eed8ba784e44.ctex"]
 
 [params]
 

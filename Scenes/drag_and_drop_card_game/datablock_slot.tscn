@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://0gl5using56j"]
 
-[ext_resource type="Texture2D" uid="uid://bf7um0n445bp5" path="res://Scenes/drag_and_drop_card_game/datablock_slot.png" id="1_ouc0m"]
+[ext_resource type="Texture2D" uid="uid://bf7um0n445bp5" path="res://Scenes/drag_and_drop_card_game/datablock_images/datablock_slot.png" id="1_ouc0m"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_slot.gd" id="1_v6hu0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsdp6"]

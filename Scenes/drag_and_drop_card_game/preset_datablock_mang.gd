@@ -4,16 +4,14 @@ extends Node2D
 
 var preset_datablock_ref = preload("res://Scenes/drag_and_drop_card_game/preset_datablock.gd").new()
 
-
 func _ready():
 	await get_tree().process_frame  # Ensure all preset datablocks update first
 	
 	#print_preset_datablock_text("preset_datablocks")
 
-
-#############################################################
-## FUNCTION TO PRINT DATABLOCK POSITION AND TEXT LABELS    ##
-#############################################################
+##############################################################
+### FUNCTION TO PRINT DATABLOCK POSITION AND TEXT LABELS    ##
+##############################################################
 func print_preset_datablock_text(group_name: String):
 	var nodes = get_tree().get_nodes_in_group(group_name)
 	for node in nodes:
