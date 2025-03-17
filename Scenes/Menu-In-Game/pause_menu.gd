@@ -8,6 +8,8 @@ extends Control
 @onready var resume: Button = $VBoxContainer/resume				#Resume button
 @onready var settings: Button = $VBoxContainer/settings			#Settings button
 @onready var main_menu: Button = $VBoxContainer/main_menu
+@onready var save: Button = $VBoxContainer/save
+
 @onready var pause_menu: Control = $"."
 #These are used for hiding pause menu visibility
 @onready var v_box_container: VBoxContainer = $VBoxContainer 	#The container for the pause menu
@@ -39,15 +41,24 @@ func _process(delta: float) -> void:
 
 func on_exit_options_menu() -> void:
 	#Visibility when exiting settings screen
-	v_box_container.visible = true
+	#v_box_container.visible = true
 	options_menu.visible = false
+	resume.visible = true
+	main_menu.visible = true
+	settings.visible = true 
+	save.visible = true
 
 func _on_settings_button_down() -> void:
 	#These three visible calls will make the pause menu "invisible" when the settings menu is open
 	#pause_menu.visible = false DO NOT USE THIS. Keeping in case of later solution
-	v_box_container.visible = false
-	exit_container.visible = false
-	texture_rect.visible = false
+	resume.visible = false
+	main_menu.visible = false
+	settings.visible = false 
+	save.visible = false
+	
+	#v_box_container.visible = false
+	#exit_container.visible = false
+	#texture_rect.visible = false
 	#Visibiltiy for settings screen
 	print("in settings")
 	options_menu.set_process(true)
