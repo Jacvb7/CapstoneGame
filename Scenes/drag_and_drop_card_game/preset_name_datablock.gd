@@ -9,6 +9,9 @@ var bug_database_ref = preload("res://scripts/bug_database.gd").new()
 @export var min_font_size: int = 10
 @export var max_width: int = 60
 
+@onready var button: Button = $Button
+@onready var sprite_2d: Sprite2D = $Button/Sprite2D
+
 # Font path
 const FONT_PATH = "res://assets/fonts/Roboto-Regular.ttf"
 
@@ -47,11 +50,13 @@ func update_text():
 					if col < example_bug.size():
 						text_label.text = "[center]" + example_bug[col] + "[/center]"
 				# Fill in the rest of the first column with bug names
+				
+				######connect the names to the bugs##########
 				elif row >= 2 and col == 0:
 					var name_list = bug_database_ref.get_bug_names()
 					if row - 2 < name_list.size():
 						text_label.text = "[center]" + name_list[row - 2] + "[/center]"
-						
+							
 
 # Dynamic text sizing (similar to your datablock implementation)
 func set_text():
@@ -84,3 +89,7 @@ func set_text():
 			break
 	
 	text_label.text = full_text
+
+
+func _on_button_button_down() -> void:
+	pass

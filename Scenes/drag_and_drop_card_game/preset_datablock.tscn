@@ -7,6 +7,7 @@
 size = Vector2(64, 32)
 
 [node name="preset_datablock" type="Node2D"]
+position = Vector2(29, 16)
 scale = Vector2(0.95, 0.95)
 script = ExtResource("1_xjscq")
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnq4ot83w6im7"
-path="res://.godot/imported/yellow_beetle.png-c9733f0db06208871d14eed8ba784e44.ctex"
+uid="uid://5h1ibs7chodg"
+path="res://.godot/imported/EMBER.png-d9df31330f52ca43e385b854d2cacecc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/drag_and_drop_card_game/bug_images/yellow_beetle.png"
-dest_files=["res://.godot/imported/yellow_beetle.png-c9733f0db06208871d14eed8ba784e44.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/bug_images/EMBER.png"
+dest_files=["res://.godot/imported/EMBER.png-d9df31330f52ca43e385b854d2cacecc.ctex"]
 
 [params]
 

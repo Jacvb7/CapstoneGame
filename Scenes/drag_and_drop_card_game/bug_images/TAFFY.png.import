@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddo2lw3e82wll"
-path="res://.godot/imported/orange_snail.png-c7f359a6e1337c5cb921ec90481bea46.ctex"
+uid="uid://dtqh12xooft57"
+path="res://.godot/imported/TAFFY.png-45ad62f207020bf090b8c3b3f9f29922.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/drag_and_drop_card_game/bug_images/orange_snail.png"
-dest_files=["res://.godot/imported/orange_snail.png-c7f359a6e1337c5cb921ec90481bea46.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/bug_images/TAFFY.png"
+dest_files=["res://.godot/imported/TAFFY.png-45ad62f207020bf090b8c3b3f9f29922.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtqh12xooft57"
-path="res://.godot/imported/green_acanthocephala.png-9c230461e605e7ee41f9726f71482536.ctex"
+uid="uid://bnq4ot83w6im7"
+path="res://.godot/imported/ALBY.png-63e614da196d94217728d400f08daeeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/drag_and_drop_card_game/bug_images/green_acanthocephala.png"
-dest_files=["res://.godot/imported/green_acanthocephala.png-9c230461e605e7ee41f9726f71482536.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/bug_images/ALBY.png"
+dest_files=["res://.godot/imported/ALBY.png-63e614da196d94217728d400f08daeeb.ctex"]
 
 [params]
 
