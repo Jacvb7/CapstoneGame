@@ -101,14 +101,24 @@ z_index = -1
 position = Vector2(508, 56)
 scale = Vector2(1, 1)
 
-[node name="preset_datablock_r1c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rrbj6")]
+[node name="preset_datablock_r1c4" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rrbj6")]
+visible = false
 z_index = -1
 position = Vector2(381, 88)
 scale = Vector2(1, 1)
 
+[node name="preset_datablock_r1c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_r2la3")]
+position = Vector2(381, 88)
+
+[node name="preset_datablock_r1c3" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rrbj6")]
+visible = false
+z_index = -1
+position = Vector2(382, 89)
+scale = Vector2(1, 1)
+
 [node name="preset_datablock_r1c1" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rrbj6")]
 z_index = -1
-position = Vector2(445, 88)
+position = Vector2(445, 89)
 scale = Vector2(1, 1)
 
 [node name="preset_datablock_r1c2" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rrbj6")]
