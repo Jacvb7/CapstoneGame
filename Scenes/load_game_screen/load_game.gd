@@ -41,7 +41,7 @@ func _on_save_1_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
 	
 func _on_save_2_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_test.tscn")
 	
 func _on_save_3_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
