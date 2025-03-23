@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bhscvpkwhrjjm"]
+[gd_scene load_steps=54 format=3 uid="uid://bhscvpkwhrjjm"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/player/player.gd" id="1_ascqp"]
 [ext_resource type="Texture2D" uid="uid://csyccvdhlrxwq" path="res://assets/game/characters/basic_charakter_actions.png" id="1_fvrmw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scenes/Characters/player/tilling_state.gd" id="8_u5kff"]
 [ext_resource type="Script" path="res://Scenes/Characters/player/watering_state.gd" id="9_j5p02"]
 [ext_resource type="Script" path="res://Scenes/Characters/player/camera_2d.gd" id="10_y3f6s"]
+[ext_resource type="PackedScene" uid="uid://b8l66wq12takt" path="res://Scenes/Debug Scenes/interacting_component.tscn" id="11_b5qa7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fnlpe"]
 atlas = ExtResource("1_fvrmw")
@@ -401,7 +402,6 @@ height = 16.0
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_ascqp")
-current_tool = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
@@ -449,3 +449,5 @@ position = Vector2(0, -6)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("10_y3f6s")
+
+[node name="InteractingComponent" parent="." instance=ExtResource("11_b5qa7")]
