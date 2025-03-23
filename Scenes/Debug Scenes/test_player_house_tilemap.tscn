@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://br6prxqsemwhm"]
+[gd_scene load_steps=8 format=4 uid="uid://br6prxqsemwhm"]
 
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_nnbhu"]
 [ext_resource type="PackedScene" uid="uid://bhscvpkwhrjjm" path="res://Scenes/Characters/player/player.tscn" id="2_dgemu"]
+[ext_resource type="Script" path="res://Scenes/Debug Scenes/camera_2d_2.gd" id="3_fo6l3"]
 [ext_resource type="PackedScene" uid="uid://dybxy5wgx0pgf" path="res://Scenes/Characters/Chicken/Chicken.tscn" id="3_o64xt"]
 [ext_resource type="PackedScene" uid="uid://cax7fe0vlwndk" path="res://Scenes/Characters/player/byte/byte.tscn" id="3_xg4os"]
 [ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="5_4nepa"]
@@ -45,7 +46,8 @@ y_sort_enabled = true
 position = Vector2(391, 136)
 current_tool = 0
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+script = ExtResource("3_fo6l3")
 
 [node name="Byte" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_xg4os")]
 y_sort_enabled = true
