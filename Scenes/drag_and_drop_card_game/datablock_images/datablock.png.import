@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cej26dhahal0q"
-path="res://.godot/imported/byte beta.png-c7516b35c6c5852efd8d0ac627c7f81f.ctex"
+uid="uid://cr074s8vk64mm"
+path="res://.godot/imported/datablock.png-8db24bb33cb973948edeb5d855452179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/drag_and_drop_card_game/byte beta.png"
-dest_files=["res://.godot/imported/byte beta.png-c7516b35c6c5852efd8d0ac627c7f81f.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/datablock_images/datablock.png"
+dest_files=["res://.godot/imported/datablock.png-8db24bb33cb973948edeb5d855452179.ctex"]
 
 [params]
 

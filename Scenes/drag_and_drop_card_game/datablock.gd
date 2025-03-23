@@ -34,13 +34,6 @@ func _ready():
 	# Attach signals to the parent (datablock_mang)
 	get_parent().connect_datablock_signals(self)
 
-	## ChatGPT suggested fix for warning to ensure signals are used
-	## BUT CAUSES ERRORS
-	#hovered.connect(_on_area_2d_mouse_entered)
-	#hovered_off.connect(_on_area_2d_mouse_exited)
-	#if get_parent().has_method("connect_datablock_signals"):
-		#get_parent().connect_datablock_signals(self)
-
 
 func set_bug_data(bug, attr_type):
 	bug_name = bug
@@ -65,12 +58,12 @@ func _process(_delta: float) -> void:
 
 
 func _on_area_2d_mouse_entered() -> void:
-	# print("hovered")
+	#print("hover signal emitted")  # Debugging
 	emit_signal("hovered", self)
 
 
 func _on_area_2d_mouse_exited() -> void:
-	# print("hovered off")
+	#print("hover_off signal emitted")  # Debugging
 	emit_signal("hovered_off", self)
 
 

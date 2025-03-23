@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://br6prxqsemwhm"]
+[gd_scene load_steps=8 format=4 uid="uid://4rofr2ec78vm"]
 
+[ext_resource type="Script" path="res://Scenes/Debug Scenes/test_player_house_tilemap.gd" id="1_hwhe8"]
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_nnbhu"]
 [ext_resource type="PackedScene" uid="uid://bhscvpkwhrjjm" path="res://Scenes/Characters/player/player.tscn" id="2_dgemu"]
 [ext_resource type="Script" path="res://Scenes/Debug Scenes/camera_2d_2.gd" id="3_fo6l3"]
@@ -14,6 +15,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(341, 80, 398, 81, 466, 
 
 [node name="testSceneHouseTileMap" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_hwhe8")
 metadata/_edit_horizontal_guides_ = [-33.0]
 
 [node name="GameTileMap" type="Node2D" parent="."]

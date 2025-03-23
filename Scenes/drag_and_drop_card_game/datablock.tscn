@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://i3xwnrt0i8i5"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock.gd" id="1_85cap"]
-[ext_resource type="Texture2D" uid="uid://cr074s8vk64mm" path="res://Scenes/drag_and_drop_card_game/datablock.png" id="2_dnhae"]
+[ext_resource type="Texture2D" uid="uid://cr074s8vk64mm" path="res://Scenes/drag_and_drop_card_game/datablock_images/datablock.png" id="2_dnhae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7gfs"]
 size = Vector2(64, 32)

@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://07m0tm5jv10i"]
+[gd_scene load_steps=7 format=3 uid="uid://07m0tm5jv10i"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_mang.gd" id="1_6ujy1"]
-[ext_resource type="Texture2D" uid="uid://cej26dhahal0q" path="res://Scenes/drag_and_drop_card_game/byte beta.png" id="1_ehxhq"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sg2pe"]
 [ext_resource type="PackedScene" uid="uid://0gl5using56j" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="3_311qs"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/unplaced_datablocks.gd" id="3_olowc"]
@@ -13,10 +12,6 @@ position = Vector2(12, 3)
 script = ExtResource("1_sg2pe")
 
 [node name="graphics" type="Node2D" parent="."]
-
-[node name="ByteBeta" type="Sprite2D" parent="graphics"]
-position = Vector2(171, 109)
-texture = ExtResource("1_ehxhq")
 
 [node name="lower_table_outline" type="ColorRect" parent="graphics"]
 z_index = -5

@@ -11,7 +11,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#When you are typing on your kewboard, if something's unhandled key input is set to true, any inputs that
+	#When you are typing on your keyboard, if something's unhandled key input is set to true, any inputs that
 	#aren't handeled by something else will get picked up if this is set to true, and will ignore if set to false
 	#Prevents accidental rebinding of keys
 	set_process_unhandled_key_input(false)

@@ -9,7 +9,6 @@ extends Control
 #@onready var options_menu: OptionsMenu = $Options_Menu
 #@onready var margin_container: MarginContainer = $MarginContainer
 
-
 @onready var start_level = preload("res://Scenes/mainmenu/main_menu.tscn") as PackedScene
 
 func _ready():
@@ -20,6 +19,9 @@ func _ready():
 	Back.button_down.connect(_on_back_button_down)
 	#options_menu.exit_options_menu.connect(on_exit_options_menu)
 
+func _process(delta: float) -> void:
+	pass
+	
 #Reeha: Commented out. Can possibly delete this
 #func on_start_pressed() -> void:
 	#get_tree().change_scene_to_packed(start_level)
@@ -39,7 +41,7 @@ func _on_save_1_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
 	
 func _on_save_2_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_test.tscn")
 	
 func _on_save_3_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")

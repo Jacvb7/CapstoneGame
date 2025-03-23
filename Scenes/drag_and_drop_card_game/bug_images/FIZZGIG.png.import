@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr074s8vk64mm"
-path="res://.godot/imported/datablock.png-fd4d2f55b2cdcdb59a799e98f8fef8e6.ctex"
+uid="uid://ddo2lw3e82wll"
+path="res://.godot/imported/FIZZGIG.png-d168e3a63af61fd636459af360061d78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/drag_and_drop_card_game/datablock.png"
-dest_files=["res://.godot/imported/datablock.png-fd4d2f55b2cdcdb59a799e98f8fef8e6.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/bug_images/FIZZGIG.png"
+dest_files=["res://.godot/imported/FIZZGIG.png-d168e3a63af61fd636459af360061d78.ctex"]
 
 [params]
 
