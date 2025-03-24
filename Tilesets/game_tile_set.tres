@@ -1032,9 +1032,11 @@ texture = ExtResource("4_evvnd")
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.5, -8, -6, -5, -8, -1.5, -8, 3, -6, 5, -2, 6.5, 3.5, 6.5, 6, 5, 7, 3.5, 6.5, -2.5, 5.5, -6, 2, -8)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
+0:0/0/y_sort_origin = 7
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, 5, -3, 10, -1, 11.5, 1.5, 11, 3, 9.5, 2.5, 5.5)
 1:0/size_in_atlas = Vector2i(2, 2)
 1:0/0 = 0
+1:0/0/y_sort_origin = 7
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, 8, 3.5, 8, 4, 12.5, 1, 14, -3.5, 13)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_gid6i"]
