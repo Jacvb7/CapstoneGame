@@ -3,7 +3,8 @@ extends Node2D
 
 #signal toggle_game_paused(is_paused : bool)
 
-@onready var pause_menu: Control = $CanvasLayer/Pause_Menu
+#@onready var pause_menu: Control = $CanvasLayer/Pause_Menu
+@onready var pause_menu: Control = $Pause_Menu
 
 func _process(delta: float) -> void:
 	on_esc_pressed()
