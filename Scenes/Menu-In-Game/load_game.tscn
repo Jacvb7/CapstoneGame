@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bkxe8gkas33c"]
 
-[ext_resource type="Script" path="res://Scenes/load_game_screen/load_game.gd" id="1_3g2w7"]
-[ext_resource type="Texture2D" uid="uid://4rj4yn6iuakb" path="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg" id="2_bifwk"]
-[ext_resource type="PackedScene" uid="uid://cwwgdf2ykqb7p" path="res://Scenes/user settings screen/options_menu.tscn" id="3_5r8yd"]
+[ext_resource type="Script" path="res://Scenes/load_game_screen/load_game.gd" id="1_0j5by"]
+[ext_resource type="Texture2D" uid="uid://4rj4yn6iuakb" path="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg" id="2_gg6eq"]
+[ext_resource type="PackedScene" uid="uid://cwwgdf2ykqb7p" path="res://Scenes/user settings screen/options_menu.tscn" id="3_cysbc"]
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3g2w7")
+script = ExtResource("1_0j5by")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,7 +36,7 @@ grow_vertical = 2
 [node name="Solid-light-blue-background-53Xkyn7Gnrw2373e" type="Sprite2D" parent="TextureRect"]
 position = Vector2(325.5, 182)
 scale = Vector2(0.378646, 0.427778)
-texture = ExtResource("2_bifwk")
+texture = ExtResource("2_gg6eq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -124,7 +124,7 @@ theme_override_fonts/font = SubResource("SystemFont_75lln")
 theme_override_font_sizes/font_size = 30
 text = "Back"
 
-[node name="Options_Menu" parent="." instance=ExtResource("3_5r8yd")]
+[node name="Options_Menu" parent="." instance=ExtResource("3_cysbc")]
 visible = false
 layout_mode = 1
 
