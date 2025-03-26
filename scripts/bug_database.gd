@@ -1,4 +1,5 @@
 # bug_database.gd
+# Description: Level 1 database for datablocks.
 
 var preset_bug_data = {
 	"FIELDS": ["NAME", "TOTAL LEGS", "COLOR"],
@@ -6,19 +7,20 @@ var preset_bug_data = {
 }
 
 var bug_data = {
-	"BIX": { "legs": 4, "color": "Blue" }, # "res://Scenes/drag_and_drop_card_game/bug_images/blue_butterfly.png"
-	"EMBER": { "legs": 8, "color": "Purple" }, # "res://Scenes/drag_and_drop_card_game/bug_images/purple_spider.png"
-	"FIZZGIG": { "legs": 0, "color": "Orange" }, # "res://Scenes/drag_and_drop_card_game/bug_images/orange_snail.png"
-	"NOX": { "legs": 6, "color": "Red" }, # "res://Scenes/drag_and_drop_card_game/bug_images/red_ant.png"
-	"TAFFY": { "legs": 4, "color": "Green" } # "res://Scenes/drag_and_drop_card_game/bug_images/green_acanthocephala.png"
+	"BIX": { "legs": 4, "color": "Blue" }, 
+	"EMBER": { "legs": 8, "color": "Purple" }, 
+	"FIZZGIG": { "legs": 0, "color": "Orange" }, 
+	"NOX": { "legs": 6, "color": "Red" }, 
+	"TAFFY": { "legs": 4, "color": "Green" } 
 }
 
-
+# retrieve key values from the bug_data dictionary.
 func get_bug_names():
 	return bug_data.keys()
 
 
-# Added validation function to check if a datablock has correct data for a bug
+# Validate datablocks placed into slots in datablock_mang.gd by key value (name) 
+# and field value (column 1 = total legs and column 2 = color of bug).
 func validate_bug_data(bug_name, col, value):
 	if bug_name in bug_data:
 		if col == 1:

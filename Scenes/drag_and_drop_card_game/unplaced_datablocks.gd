@@ -1,11 +1,16 @@
 # unplaced_datablocks.gd
 # https://youtu.be/lATAS8YpzFE?si=mD7kWHaMV-GZMf4v
+# Description: Level 1 script that dynamically instantiates and animates 
+# unplaced datablocks in the scene. Constants at the beginning of the script 
+# adjust the amount of blocks that are created and how quickly they appear on 
+# the screen. Stores unplaced datablocks in an array which is updated as datablocks 
+# are placed into or removed from datablock_slots.
 
 extends Node2D
 
 const TOTAL_DATABLOCKS = 10
 # controls the animation of blocks appearing on screen
-const SPEED_OF_MOVEMENT = .3 # smaller values move the blocks faster
+const SPEED_OF_MOVEMENT = 0.5 # smaller values move the blocks faster
 const DATABLOCK_SCENE_PATH = "res://Scenes/drag_and_drop_card_game/datablock.tscn"
 const DATABLOCK_WIDTH = 63 # space between datablocks
 const UNPLAYED_Y_POSITION = 315 # position of blocks from the bottom of the scene
@@ -16,13 +21,17 @@ var center_screen_x
 var bug_database_ref = preload("res://scripts/bug_database.gd").new()
 var bug_names = []
 
-# Called when the node enters the scene tree for the first time.
+# finds center of the scene an initialized the array
 func _ready() -> void:
 	center_screen_x = get_viewport_rect().size.x / 2 + CENTER_SCREEN_ADJUSTMENT
 	var datablock_scene = preload(DATABLOCK_SCENE_PATH)
 
 	# Get bug names from database
 	bug_names = bug_database_ref.get_bug_names()
+	#bug_names.shuffle()
+	
+	# Create a list to hold datablocks before shuffling
+	var all_datablocks = []
 	
 	# Create datablocks for each bug, one for legs and one for color
 	for i in range(int(float(TOTAL_DATABLOCKS) / 2)):  # Divide by 2 since each bug makes 2 datablocks
@@ -30,22 +39,30 @@ func _ready() -> void:
 		
 		# Create Legs Datablock
 		var legs_datablock = datablock_scene.instantiate()
-		legs_datablock.scale = Vector2(1, 1)
-		$"../datablock_mang".add_child(legs_datablock)
-		legs_datablock.set_bug_data(assigned_bug, "legs")
-		add_new_datablock_to_place(legs_datablock)
+		# After instantiating the datablock, defer setting its data
+		legs_datablock.call_deferred("set_bug_data", assigned_bug, "legs")
+		#legs_datablock.set_bug_data(assigned_bug, "legs")
+		all_datablocks.append(legs_datablock)  # Add to the list before shuffling
 		
 		# Create Color Datablock
 		var color_datablock = datablock_scene.instantiate()
-		color_datablock.scale = Vector2(1, 1)
-		$"../datablock_mang".add_child(color_datablock)
-		color_datablock.set_bug_data(assigned_bug, "color")
-		add_new_datablock_to_place(color_datablock)
-		
-		# print the array for debugging
-		#print_array_contents()
+		# After instantiating the datablock, defer setting its data
+		color_datablock.call_deferred("set_bug_data", assigned_bug, "color")
+		#color_datablock.set_bug_data(assigned_bug, "color")
+		all_datablocks.append(color_datablock)  # Add to the list before shuffling
+	
+	# Shuffle the datablocks so they appear in a random order
+	all_datablocks.shuffle()
+	
+	# Now add shuffled datablocks to the scene
+	for datablock in all_datablocks:
+		datablock.scale = Vector2(1, 1)
+		$"../datablock_mang".add_child(datablock)
+		add_new_datablock_to_place(datablock)
+
 
 #############################################################
+## FOR DEBUGGING                                           ##
 ## FUNCTION TO PRINT DATABLOCK NAMES AND THEIR TEXT LABELS ##
 #############################################################
 func print_array_contents():
@@ -61,6 +78,8 @@ func print_array_contents():
 			print(" -> [No RichTextLabel Found]")
 
 
+# updates unplayed_datablocks array when datablocks are removed from datablock_slots, 
+# and updates the position of unplayed_datablocks when datablock is returned to the bottom of the screen.
 func add_new_datablock_to_place(datablock):
 	if datablock not in unplayed_datablocks:
 		unplayed_datablocks.insert(0, datablock)
@@ -69,13 +88,17 @@ func add_new_datablock_to_place(datablock):
 		animate_datablock_to_position(datablock, datablock.unplayed_datablock_position)
 
 
+# updates unplayed_datablocks array when datablocks are placed in datablock_slots, 
+# and updates the position of unplayed_datablocks after removal.
 func remove_datablock_from_unplayed_datablocks(current_datablock):
 	if current_datablock in unplayed_datablocks:
 		unplayed_datablocks.erase(current_datablock)
 		update_unplayed_datablocks_positions()
 
 
-# ORIGINAL VERSION OF THIS FUNCTION INSTANTIATES A SINGLE ROW OF BLOCKS TO BE PLACED
+# called by add_new_datablock_to_place and remove_datablock_from_unplayed_datablocks to 
+# calculate position of unplayed datablocks and animate their movement.
+# Creates a single row of blocks at the bottom of the scene.
 func update_unplayed_datablocks_positions():
 	for i in range(unplayed_datablocks.size()):
 		# get new datablock position based on index
@@ -84,22 +107,24 @@ func update_unplayed_datablocks_positions():
 		current_datablock.unplayed_datablock_position = new_position
 		animate_datablock_to_position(current_datablock, new_position)
 
-# THIS FUNCTION IS USED BY THE ORIGINAL update_unplayed_datablocks_positions() THAT INSTANTIATES 
-# A SINGLE ROW OF UNPLACED BLOCKS INSTEAD OF 2 ROWS (SEE BELOW)
+# called by update_unplayed_datablocks_positions to make position calculations
+# for a single row of blocks at the bottom of the scene.
 func calculate_datablock_position(index):
 	var total_width = (unplayed_datablocks.size() - 1) * DATABLOCK_WIDTH
 	var x_offset = center_screen_x + index * DATABLOCK_WIDTH - int(float(total_width) / 2)
 	return x_offset
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# animates nodes in the scene using a Godot’s built in class, Tween.
 func animate_datablock_to_position(current_datablock, new_position):
 	var tween = get_tree().create_tween()
 	# arguments passed: object, start position, end position, velocity
 	tween.tween_property(current_datablock, "position", new_position, SPEED_OF_MOVEMENT)
 	
-	
-	## THIS VERSION OF FUNCTION INSTANTIATES A 2 ROWS OF BLOCKS TO BE PLACED
+
+#############################################################
+## THIS VERSION OF FUNCTION INSTANTIATES 2 ROWS OF BLOCKS  ##
+#############################################################
 #func update_unplayed_datablocks_positions():
 	#var total_datablocks = unplayed_datablocks.size()
 	#for i in range(total_datablocks):
@@ -116,9 +141,10 @@ func animate_datablock_to_position(current_datablock, new_position):
 			#current_datablock.unplayed_datablock_position = new_position
 			#animate_datablock_to_position(current_datablock, new_position)
 
-
-## THIS FUNCTION IS USED BY THE 2ND VERSION OF update_unplayed_datablocks_positions() THAT INSTANTIATES 
-# A 2 ROWS OF UNPLACED BLOCKS INSTEAD OF ONE. (SEE ABOVE)
+#######################################################################
+## USED BY THE 2ND VERSION OF update_unplayed_datablocks_positions() ##
+## THAT INSTANTIATES 2 ROWS OF UNPLACED BLOCKS INSTEAD OF ONE.       ##
+#######################################################################
 #func calculate_datablock_position(index):
 	#var total_datablocks = unplayed_datablocks.size()
 	#var total_width = (total_datablocks / 2 - 1) * DATABLOCK_WIDTH

@@ -1,4 +1,7 @@
 # preset_datablock_mang.gd
+# Description: Level 1 script that previously contained validation operations. 
+# Contains an unused reference to preset_datablock.gd and functions to access 
+# coordinates and text labels.
 
 extends Node2D
 
@@ -23,5 +26,6 @@ func print_preset_datablock_text(group_name: String):
 			print("No RichTextLabel found in ", node.name)
 
 
+# cleans the text by removing tags and whitespace.
 func strip_bbcode_tags(text: String) -> String:
 	return text.replace("[center]", "").replace("[/center]", "")

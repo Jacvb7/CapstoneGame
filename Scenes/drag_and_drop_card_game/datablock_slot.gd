@@ -1,6 +1,8 @@
 # datablock_slot.gd
-
 # https://youtu.be/QmTXsm1Tohg?si=DLzIr6fPqh2aZWB8
+# Description: Level 1 script that provides boolean variables for datablock scripts. 
+# Contains datablock_in_slot and slot_is_valid which are both initialized to false.
+
 
 extends Node2D
 

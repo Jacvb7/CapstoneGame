@@ -1,4 +1,10 @@
 # preset_datablock.gd
+# Description: preset_datablocks are different from datablocks. 
+# They represent the partially filled out portion of the data table. 
+# Their position and values matter for data validation. This level 1 script 
+# prints data from bug_database.gd onto preset_datablocks which already exist 
+# in drag_drop_main.tscn. These entities cannot be moved by the player, but 
+# clicking on these blocks shows an image of the bug sprite that the row represents.
 
 extends Node2D
 
@@ -14,12 +20,14 @@ const FONT_PATH = "res://assets/fonts/Roboto-Regular.ttf"
 
 var display_text = ""
 
+# waits for initialization and calls update_text and set_text.
 func _ready():
 	await get_tree().process_frame  # Ensure nodes are initialized
 	update_text()
 	set_text()
 
 
+# accesses a globally grouped set of "preset_datablocks" to apply text values to their RichTextLabels.
 func update_text():
 	var block_name
 	if !is_in_group("preset_datablocks"):

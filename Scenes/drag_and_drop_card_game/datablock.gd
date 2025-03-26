@@ -1,6 +1,6 @@
 # datablock.gd
 # https://youtu.be/1mM73u1tvpU?si=z1QizoPoQK9xzoC2
-# script to attatch signals to the datablock_mang
+# Description: script to attatch signals to the datablock_mang
 
 extends Node2D
 
@@ -25,23 +25,31 @@ var attribute_type = ""  # Will store "legs" or "color"
 # Font path
 const FONT_PATH = "res://assets/fonts/Roboto-Regular.ttf"
 
+# waits for datablocks to be initialized before apply text values to their RichTextLabels.
 func _ready():
-	await get_tree().process_frame  # Ensure nodes are initialized
+	await get_tree().process_frame  # Ensure the scene tree updates
+	text_label = $datablock_text  # Try assigning again in case it was null
+	
 	update_text()
 	set_text()
 	
-	# THIS CODE IS CAUSING A WARNING:
-	# Attach signals to the parent (datablock_mang)
-	get_parent().connect_datablock_signals(self)
+	# Attach signals
+	if get_parent():
+		get_parent().connect_datablock_signals(self)
 
-
+# used in unplaced_datablocks.gd to instantiate “legs” and “color” datablocks.
 func set_bug_data(bug, attr_type):
 	bug_name = bug
 	attribute_type = attr_type
+	
+	if text_label == null:
+		await get_tree().process_frame  # Wait for scene tree to update
+		text_label = $datablock_text  # Try assigning again
+	
 	update_text()
 	set_text()
-
-
+	
+# connects to bug database to print feature values onto instantiated unplaced blocks.
 func update_text():
 	if bug_name in bug_database_ref.bug_data:
 		var bug_info = bug_database_ref.bug_data[bug_name]
@@ -52,16 +60,12 @@ func update_text():
 			text_label.text = "[center]" + bug_info["color"] + "[/center]"
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
-
+# emits a signal when mouse hovers over unplaced datablocks.
 func _on_area_2d_mouse_entered() -> void:
 	#print("hover signal emitted")  # Debugging
 	emit_signal("hovered", self)
 
-
+# emits a signal when mouse hovers off of unplaced datablocks.
 func _on_area_2d_mouse_exited() -> void:
 	#print("hover_off signal emitted")  # Debugging
 	emit_signal("hovered_off", self)
