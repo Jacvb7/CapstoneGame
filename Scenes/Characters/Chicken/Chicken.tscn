@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/state_machine/node_state_machine.gd" id="2_rpj4g"]
 [ext_resource type="Script" path="res://Scenes/Characters/Chicken/idle_state.gd" id="3_sy448"]
 [ext_resource type="Script" path="res://Scenes/Characters/Chicken/walk_state.gd" id="4_bsws7"]
-[ext_resource type="PackedScene" uid="uid://blqw2sb7ckwhd" path="res://Scenes/Debug Scenes/interactable.tscn" id="6_hu4m4"]
+[ext_resource type="PackedScene" uid="uid://cfw3pfgq5oaal" path="res://Scenes/Debug Scenes/interactable.tscn" id="6_hu4m4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxyr5"]
 atlas = ExtResource("1_xsi4p")

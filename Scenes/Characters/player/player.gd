@@ -9,12 +9,13 @@ var player_direction: Vector2
 
 func _ready():
 	#add_to_group("player")
+	print("in player")
 	pass
 
 
 #func _on_area_2d_body_entered(body: NonPlayableCharacter) -> void:
 	#if body.is_in_group("npc"):  # Ensure the NPC has this group
-		#canvas_layer.visible = true
+		##canvas_layer.visible = true
 		#print("proximity")
 #
 #

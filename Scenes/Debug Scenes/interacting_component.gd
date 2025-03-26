@@ -7,12 +7,16 @@ var can_interact :bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	#pass # Replace with function body.
+	print("in interacting_component")
+	#_input
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact") and can_interact:
-		if current_interactions:
+	if event.is_action_pressed("Interact") and can_interact:
+		print("in _input")
+		print("current interactions: ")
+		print(current_interactions)
+		if !current_interactions:
 			can_interact = false
 			interact_label.hide()
 			

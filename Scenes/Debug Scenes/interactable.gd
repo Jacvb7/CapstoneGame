@@ -4,6 +4,7 @@ extends Area2D
 @export var is_interactable: bool = true
 
 var interact: Callable = func():
-	pass
+	print("in interactable")
+	#pass
 	
 	   

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://4rofr2ec78vm"]
+[gd_scene load_steps=9 format=4 uid="uid://br6prxqsemwhm"]
 
 [ext_resource type="Script" path="res://Scenes/Debug Scenes/test_player_house_tilemap.gd" id="1_hwhe8"]
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_nnbhu"]
@@ -46,7 +46,6 @@ tile_set = ExtResource("1_nnbhu")
 [node name="Player" parent="." instance=ExtResource("2_dgemu")]
 y_sort_enabled = true
 position = Vector2(391, 136)
-current_tool = 0
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 script = ExtResource("3_fo6l3")
@@ -58,26 +57,8 @@ parent = NodePath("../Player")
 
 [node name="Chickens" type="Node2D" parent="."]
 
-[node name="chicken" parent="Chickens" instance=ExtResource("3_o64xt")]
-position = Vector2(669, 139)
-
-[node name="chicken7" parent="Chickens" instance=ExtResource("3_o64xt")]
-position = Vector2(758, 151)
-
-[node name="chicken6" parent="Chickens" instance=ExtResource("3_o64xt")]
-position = Vector2(692, 148)
-
-[node name="chicken5" parent="Chickens" instance=ExtResource("3_o64xt")]
-position = Vector2(707, 129)
-
 [node name="chicken2" parent="Chickens" instance=ExtResource("3_o64xt")]
-position = Vector2(663, 171)
-
-[node name="chicken3" parent="Chickens" instance=ExtResource("3_o64xt")]
-position = Vector2(683, 112)
-
-[node name="chicken4" parent="Chickens" instance=ExtResource("3_o64xt")]
-position = Vector2(702, 170)
+position = Vector2(451, 185)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens"]
 visible = false

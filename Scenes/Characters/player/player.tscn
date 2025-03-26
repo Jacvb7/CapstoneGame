@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://Scenes/Characters/player/tilling_state.gd" id="8_u5kff"]
 [ext_resource type="Script" path="res://Scenes/Characters/player/watering_state.gd" id="9_j5p02"]
 [ext_resource type="Script" path="res://Scenes/Characters/player/camera_2d.gd" id="10_y3f6s"]
-[ext_resource type="PackedScene" uid="uid://b8l66wq12takt" path="res://Scenes/Debug Scenes/interacting_component.tscn" id="11_b5qa7"]
+[ext_resource type="PackedScene" uid="uid://wbajxun2hbns" path="res://Scenes/Debug Scenes/interacting_component.tscn" id="11_b5qa7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fnlpe"]
 atlas = ExtResource("1_fvrmw")

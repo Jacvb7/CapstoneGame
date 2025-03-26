@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b0sdy33an8wyb"]
+[gd_scene load_steps=9 format=4 uid="uid://ehyi6mwrm5rd"]
 
 [ext_resource type="Script" path="res://Scenes/Debug Scenes/proximity_test.gd" id="1_myuj2"]
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="2_kswlq"]
