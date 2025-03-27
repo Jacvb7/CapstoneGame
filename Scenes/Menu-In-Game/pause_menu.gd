@@ -85,7 +85,7 @@ func on_esc_pressed() -> void:
 		resume.visible = true
 		main_menu.visible = true
 		settings.visible = true
-		save.visible = true
+		#save.visible = true
 		pause_label.visible = true
 		options_menu.set_process(false)
 		options_menu.visible = false
