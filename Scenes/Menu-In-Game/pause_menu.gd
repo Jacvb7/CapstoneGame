@@ -47,7 +47,7 @@ func on_exit_options_menu() -> void:
 	resume.visible = true
 	main_menu.visible = true
 	settings.visible = true 
-	save.visible = true
+	#save.visible = true no longer needed as of 3/23
 	pause_label.visible = true
 
 func _on_settings_button_down() -> void:
@@ -55,8 +55,8 @@ func _on_settings_button_down() -> void:
 	#pause_menu.visible = false DO NOT USE THIS. Keeping in case of later solution
 	resume.visible = false
 	main_menu.visible = false
-	settings.visible = false 
-	save.visible = false
+	settings.visible = false
+	#save.visible = false no longer a button needed as of 3/23
 	pause_label.visible = false
 	
 	#v_box_container.visible = false
