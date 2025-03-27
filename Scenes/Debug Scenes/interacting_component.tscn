@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Debug Scenes/interacting_component.gd" id="1_r8poh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hmf5m"]
+radius = 39.8121
 
 [sub_resource type="LabelSettings" id="LabelSettings_7at64"]
 font_size = 12

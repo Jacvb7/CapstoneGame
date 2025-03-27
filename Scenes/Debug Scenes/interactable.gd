@@ -6,5 +6,8 @@ extends Area2D
 var interact: Callable = func():
 	print("in interactable")
 	#pass
-	
+
+
+func _ready() -> void:
+	print("in interactable")	
 	   

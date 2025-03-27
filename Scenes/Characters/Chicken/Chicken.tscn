@@ -80,6 +80,7 @@ frame = 3
 frame_progress = 0.63028
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, -5)
 shape = SubResource("CircleShape2D_ko36s")
 
@@ -103,8 +104,10 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 navigation_agent_2d = NodePath("../../NavigationAgent2D")
 
 [node name="Interactable" parent="." instance=ExtResource("6_hu4m4")]
+position = Vector2(-1, -6)
 interact_name = "Open Table"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Interactable"]
+visible = false
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_4dsao")
