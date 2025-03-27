@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4rj4yn6iuakb"
-path="res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-d831eac3b0169496e71b0370a44ff276.ctex"
+uid="uid://cjjbuvwtswopw"
+path="res://.godot/imported/All Icons.png-a5fae2bda6e3e8f5eca04b727c9b093d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg"
-dest_files=["res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-d831eac3b0169496e71b0370a44ff276.ctex"]
+source_file="res://assets/Icons/All Icons.png"
+dest_files=["res://.godot/imported/All Icons.png-a5fae2bda6e3e8f5eca04b727c9b093d.ctex"]
 
 [params]
 

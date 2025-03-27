@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4rj4yn6iuakb"
-path="res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-d831eac3b0169496e71b0370a44ff276.ctex"
+uid="uid://ct3utybbksdkg"
+path="res://.godot/imported/Triangle Mouse icon 2.png-f3c89d6d9fc7cd7e545bff2a1b81f7cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg"
-dest_files=["res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-d831eac3b0169496e71b0370a44ff276.ctex"]
+source_file="res://assets/Mouse sprites/Triangle Mouse icon 2.png"
+dest_files=["res://.godot/imported/Triangle Mouse icon 2.png-f3c89d6d9fc7cd7e545bff2a1b81f7cc.ctex"]
 
 [params]
 
