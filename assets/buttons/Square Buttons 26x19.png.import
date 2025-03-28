@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4rj4yn6iuakb"
-path="res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-d831eac3b0169496e71b0370a44ff276.ctex"
+uid="uid://bgalwea2vsql7"
+path="res://.godot/imported/Square Buttons 26x19.png-82413471a858036929c1d2177997fb02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg"
-dest_files=["res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-d831eac3b0169496e71b0370a44ff276.ctex"]
+source_file="res://assets/buttons/Square Buttons 26x19.png"
+dest_files=["res://.godot/imported/Square Buttons 26x19.png-82413471a858036929c1d2177997fb02.ctex"]
 
 [params]
 

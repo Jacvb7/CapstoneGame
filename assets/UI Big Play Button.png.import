@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4rj4yn6iuakb"
-path="res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-d831eac3b0169496e71b0370a44ff276.ctex"
+uid="uid://i36de8pin7op"
+path="res://.godot/imported/UI Big Play Button.png-32fcd3e4f3a6d6452e71e0cd9b40a0c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg"
-dest_files=["res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-d831eac3b0169496e71b0370a44ff276.ctex"]
+source_file="res://assets/UI Big Play Button.png"
+dest_files=["res://.godot/imported/UI Big Play Button.png-32fcd3e4f3a6d6452e71e0cd9b40a0c3.ctex"]
 
 [params]
 
