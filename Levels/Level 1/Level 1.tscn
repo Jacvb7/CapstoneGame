@@ -60,7 +60,7 @@ current_tool = 0
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(-6, -11)
-zoom = Vector2(2, 2)
+zoom = Vector2(4, 4)
 limit_left = 0
 limit_top = 0
 limit_right = 950
@@ -72,6 +72,30 @@ drag_vertical_enabled = true
 y_sort_enabled = true
 position = Vector2(66, 115)
 parent = NodePath("../Player")
+
+[node name="Chickens" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens"]
+position = Vector2(13, -1)
+navigation_polygon = SubResource("NavigationPolygon_qq5y7")
+
+[node name="chicken" parent="Chickens" instance=ExtResource("2_e2g0e")]
+position = Vector2(197, 74)
+
+[node name="chicken6" parent="Chickens" instance=ExtResource("2_e2g0e")]
+position = Vector2(366, 209)
+
+[node name="chicken5" parent="Chickens" instance=ExtResource("2_e2g0e")]
+position = Vector2(347, 131)
+
+[node name="chicken4" parent="Chickens" instance=ExtResource("2_e2g0e")]
+position = Vector2(341, 83)
+
+[node name="chicken3" parent="Chickens" instance=ExtResource("2_e2g0e")]
+position = Vector2(263, 71)
+
+[node name="chicken2" parent="Chickens" instance=ExtResource("2_e2g0e")]
+position = Vector2(221, 68)
 
 [node name="butterfly group 1" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -118,6 +142,3 @@ position = Vector2(237, 132)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
 position = Vector2(2.5, 4)
 shape = SubResource("RectangleShape2D_bwhdw")
-
-[node name="Npc" parent="." instance=ExtResource("7_7kmoh")]
-position = Vector2(240, 230)

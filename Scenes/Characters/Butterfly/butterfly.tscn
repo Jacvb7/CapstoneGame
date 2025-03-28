@@ -1,20 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7t61xj05m40l"]
+[gd_scene load_steps=11 format=3 uid="uid://b7t61xj05m40l"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Chicken/chicken.gd" id="1_o6y6o"]
 [ext_resource type="Texture2D" uid="uid://dgb416xb052tj" path="res://assets/sprites/butterflyWIP.png" id="2_p8cr8"]
-[ext_resource type="Shader" path="res://Scenes/Characters/Butterfly/butterfly.gdshader" id="2_vbpg3"]
 [ext_resource type="Script" path="res://scripts/state_machine/node_state_machine.gd" id="3_h201v"]
 [ext_resource type="Script" path="res://Scenes/Characters/Chicken/idle_state.gd" id="4_7mcch"]
 [ext_resource type="Script" path="res://Scenes/Characters/Chicken/walk_state.gd" id="5_36y3r"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hghvc"]
-shader = ExtResource("2_vbpg3")
-shader_parameter/original_0 = Color(0.356863, 0.431373, 0.882353, 1)
-shader_parameter/original_1 = Color(0.388235, 0.607843, 1, 1)
-shader_parameter/original_2 = null
-shader_parameter/replace_0 = Color(0, 0.298039, 0.862745, 1)
-shader_parameter/replace_1 = null
-shader_parameter/replace_2 = null
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmsc3"]
 atlas = ExtResource("2_p8cr8")
@@ -61,7 +51,6 @@ animations = [{
 script = ExtResource("1_o6y6o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_hghvc")
 position = Vector2(9.53674e-07, -3.8147e-06)
 scale = Vector2(0.15625, 0.15625)
 sprite_frames = SubResource("SpriteFrames_4esog")
