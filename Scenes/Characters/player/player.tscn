@@ -403,6 +403,10 @@ height = 16.0
 collision_layer = 2
 script = ExtResource("1_ascqp")
 
+[node name="InteractingComponent" parent="." instance=ExtResource("11_b5qa7")]
+z_index = 3
+position = Vector2(0, -1)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_eylyq")
@@ -449,5 +453,3 @@ position = Vector2(0, -6)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("10_y3f6s")
-
-[node name="InteractingComponent" parent="." instance=ExtResource("11_b5qa7")]

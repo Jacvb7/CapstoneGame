@@ -14,6 +14,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(341, 80, 398, 81, 466, 79, 469.263, 114.137, 483, 116, 479, 219, 467, 221, 463, 236, 447.602, 239.08, 449, 254, 432, 255, 433, 269, 408, 269, 404.176, 253.369, 378, 253, 377, 238, 345, 235, 338, 219, 313, 216, 313, 184, 320, 160, 318, 141, 334, 136)])
 
 [node name="testSceneHouseTileMap" type="Node2D"]
+z_index = -7
 y_sort_enabled = true
 script = ExtResource("1_hwhe8")
 metadata/_edit_horizontal_guides_ = [-33.0]

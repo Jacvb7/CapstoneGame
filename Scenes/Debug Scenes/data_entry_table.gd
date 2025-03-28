@@ -1,7 +1,9 @@
 extends Control
 
-@onready var button: Button = $Button
+#@onready var button: Button = $Button
 @onready var drag_drop_test: Node2D = $DragDropTest
+@onready var data_entry_table: Control = $"."
+@onready var button: Button = $CanvasLayer/Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
