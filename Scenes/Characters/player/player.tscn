@@ -451,4 +451,3 @@ position = Vector2(0, -6)
 script = ExtResource("10_y3f6s")
 
 [node name="InteractingComponent" parent="." instance=ExtResource("11_b5qa7")]
-position = Vector2(0, -5)
