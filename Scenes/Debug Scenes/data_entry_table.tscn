@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cp0wejaem6207"]
 
-[ext_resource type="PackedScene" uid="uid://dj4br3v2pbd" path="res://Scenes/drag_and_drop_card_game/drag_drop_test.tscn" id="1_75df8"]
+[ext_resource type="PackedScene" uid="uid://dj4br3v2pbd" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn" id="1_75df8"]
 [ext_resource type="Script" path="res://Scenes/Debug Scenes/data_entry_table.gd" id="1_gylwf"]
 
 [node name="DataEntryTable" type="Control"]

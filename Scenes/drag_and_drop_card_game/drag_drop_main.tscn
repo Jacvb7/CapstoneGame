@@ -1,15 +1,55 @@
-[gd_scene load_steps=7 format=3 uid="uid://07m0tm5jv10i"]
+[gd_scene load_steps=14 format=3 uid="uid://dj4br3v2pbd"]
 
-[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_mang.gd" id="1_6ujy1"]
-[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sg2pe"]
-[ext_resource type="PackedScene" uid="uid://0gl5using56j" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="3_311qs"]
-[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/unplaced_datablocks.gd" id="3_olowc"]
-[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/preset_datablock_mang.gd" id="4_xpc5g"]
-[ext_resource type="PackedScene" uid="uid://cy7b1qcm2dncb" path="res://Scenes/drag_and_drop_card_game/preset_datablock.tscn" id="5_2ukwp"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sf6y0"]
+[ext_resource type="PackedScene" uid="uid://dwhenx27cd8av" path="res://Scenes/drag_and_drop_card_game/preset_datablock_TBD.tscn" id="2_rjdag"]
+[ext_resource type="PackedScene" uid="uid://chcoql3eof581" path="res://Scenes/drag_and_drop_card_game/preset_datablock.tscn" id="3_lv113"]
+[ext_resource type="Texture2D" uid="uid://bnq4ot83w6im7" path="res://Scenes/drag_and_drop_card_game/bug_images/ALBY.png" id="4_p3erg"]
+[ext_resource type="Texture2D" uid="uid://0osofscb51nf" path="res://Scenes/drag_and_drop_card_game/bug_images/BIX.png" id="5_8xp7n"]
+[ext_resource type="Texture2D" uid="uid://5h1ibs7chodg" path="res://Scenes/drag_and_drop_card_game/bug_images/EMBER.png" id="6_hexqq"]
+[ext_resource type="Texture2D" uid="uid://ddo2lw3e82wll" path="res://Scenes/drag_and_drop_card_game/bug_images/FIZZGIG.png" id="7_3h6j5"]
+[ext_resource type="Texture2D" uid="uid://bkn6t1p8e3ef4" path="res://Scenes/drag_and_drop_card_game/bug_images/NOX.png" id="8_nombl"]
+[ext_resource type="Texture2D" uid="uid://dtqh12xooft57" path="res://Scenes/drag_and_drop_card_game/bug_images/TAFFY.png" id="9_sqtt6"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_mang.gd" id="10_q1qgu"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/unplaced_datablocks.gd" id="11_mq4qx"]
+[ext_resource type="PackedScene" uid="uid://0gl5using56j" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="12_0rj87"]
 
-[node name="DragDropMain" type="Node2D"]
+[sub_resource type="GDScript" id="GDScript_4bblq"]
+script/source = "# preset_datablock_mang.gd
+# Description: Level 1 script that previously contained validation operations. 
+# Contains an unused reference to preset_datablock.gd and functions to access 
+# coordinates and text labels.
+
+extends Node2D
+
+var preset_datablock_ref = preload(\"res://Scenes/drag_and_drop_card_game/preset_datablock.gd\").new()
+
+func _ready():
+	await get_tree().process_frame  # Ensure all preset datablocks update first
+	
+	#print_preset_datablock_text(\"preset_datablocks\")
+
+##############################################################
+### FUNCTION TO PRINT DATABLOCK POSITION AND TEXT LABELS    ##
+##############################################################
+func print_preset_datablock_text(group_name: String):
+	var nodes = get_tree().get_nodes_in_group(group_name)
+	for node in nodes:
+		if node.has_node(\"preset_datablock_text\"):  # Ensure label exists
+			var text_label = node.get_node(\"preset_datablock_text\")
+			var clean_text = strip_bbcode_tags(text_label.text)  # Remove BBCode
+			print(node.name, \" \\tPosition: \", node.position, \"\\t\\tText: \", clean_text)
+		else:
+			print(\"No RichTextLabel found in \", node.name)
+
+
+# cleans the text by removing tags and whitespace.
+func strip_bbcode_tags(text: String) -> String:
+	return text.replace(\"[center]\", \"\").replace(\"[/center]\", \"\")
+"
+
+[node name="DragDropTest" type="Node2D"]
 position = Vector2(12, 3)
-script = ExtResource("1_sg2pe")
+script = ExtResource("1_sf6y0")
 
 [node name="graphics" type="Node2D" parent="."]
 
@@ -79,118 +119,158 @@ color = Color(0.0575887, 0.626515, 0.652203, 1)
 
 [node name="preset_datablocks" type="Node2D" parent="."]
 
-[node name="preset_datablock_r0c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("5_2ukwp")]
+[node name="preset_datablock_r0c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 z_index = -1
 position = Vector2(381, 56)
 scale = Vector2(1, 1)
 
-[node name="preset_datablock_r0c1" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("5_2ukwp")]
+[node name="preset_datablock_r0c1" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 z_index = -1
 position = Vector2(445, 56)
 scale = Vector2(1, 1)
 
-[node name="preset_datablock_r0c2" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("5_2ukwp")]
+[node name="preset_datablock_r0c2" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 z_index = -1
 position = Vector2(508, 56)
 scale = Vector2(1, 1)
 
-[node name="preset_datablock_r1c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("5_2ukwp")]
+[node name="preset_datablock_r1c4" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
+visible = false
 z_index = -1
 position = Vector2(381, 88)
 scale = Vector2(1, 1)
 
-[node name="preset_datablock_r1c1" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("5_2ukwp")]
+[node name="preset_datablock_r1c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+position = Vector2(381, 88)
+
+[node name="preset_datablock_r1c3" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
+visible = false
 z_index = -1
-position = Vector2(445, 88)
+position = Vector2(382, 89)
 scale = Vector2(1, 1)
 
-[node name="preset_datablock_r1c2" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("5_2ukwp")]
+[node name="preset_datablock_r1c1" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
+z_index = -1
+position = Vector2(445, 89)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_r1c2" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 z_index = -1
 position = Vector2(509, 88)
 scale = Vector2(1, 1)
 
-[node name="preset_datablock_r2c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("5_2ukwp")]
-z_index = -1
-position = Vector2(381, 120)
-scale = Vector2(1, 1)
+[node name="preset_datablock_r2c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+position = Vector2(381, 121)
 
-[node name="preset_datablock_r3c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("5_2ukwp")]
-z_index = -1
-position = Vector2(381, 152)
-scale = Vector2(1, 1)
+[node name="preset_datablock_r3c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+position = Vector2(382, 153)
 
-[node name="preset_datablock_r4c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("5_2ukwp")]
-z_index = -1
-position = Vector2(381, 184)
-scale = Vector2(1, 1)
+[node name="preset_datablock_r4c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+position = Vector2(382, 184)
 
-[node name="preset_datablock_r5c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("5_2ukwp")]
-z_index = -1
-position = Vector2(381, 216)
-scale = Vector2(1, 1)
+[node name="preset_datablock_r5c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+position = Vector2(382, 216)
 
-[node name="preset_datablock_r6c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("5_2ukwp")]
-z_index = -1
-position = Vector2(381, 248)
-scale = Vector2(1, 1)
+[node name="preset_datablock_r6c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+position = Vector2(382, 248)
+
+[node name="preset_name_datablock" parent="preset_datablocks" instance=ExtResource("3_lv113")]
+visible = false
+position = Vector2(235, 73)
+
+[node name="Alby" type="Sprite2D" parent="preset_datablocks"]
+visible = false
+position = Vector2(170, 157)
+scale = Vector2(2.97222, 3.05556)
+texture = ExtResource("4_p3erg")
+
+[node name="Bix" type="Sprite2D" parent="preset_datablocks"]
+visible = false
+position = Vector2(174, 158)
+scale = Vector2(2.3125, 2.72222)
+texture = ExtResource("5_8xp7n")
+
+[node name="Ember" type="Sprite2D" parent="preset_datablocks"]
+visible = false
+position = Vector2(172, 167)
+scale = Vector2(2.55556, 2.55556)
+texture = ExtResource("6_hexqq")
+
+[node name="Fizzgig" type="Sprite2D" parent="preset_datablocks"]
+visible = false
+position = Vector2(167, 156)
+scale = Vector2(2.97222, 3.13889)
+texture = ExtResource("7_3h6j5")
+
+[node name="Nox" type="Sprite2D" parent="preset_datablocks"]
+visible = false
+position = Vector2(165, 159)
+scale = Vector2(3.63889, 3.27778)
+texture = ExtResource("8_nombl")
+
+[node name="Taffy" type="Sprite2D" parent="preset_datablocks"]
+visible = false
+position = Vector2(172, 166)
+scale = Vector2(3.02778, 3.27778)
+texture = ExtResource("9_sqtt6")
 
 [node name="datablock_mang" type="Node2D" parent="."]
-script = ExtResource("1_6ujy1")
+script = ExtResource("10_q1qgu")
 
 [node name="preset_datablock_mang" type="Node2D" parent="."]
-script = ExtResource("4_xpc5g")
+script = SubResource("GDScript_4bblq")
 
 [node name="unplaced_datablocks" type="Node2D" parent="."]
-script = ExtResource("3_olowc")
+script = ExtResource("11_mq4qx")
 
 [node name="datablock_slots" type="Node2D" parent="."]
 
-[node name="datablock_slot_r2c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r2c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
 position = Vector2(445, 120)
 scale = Vector2(1.2, 1.2)
 
-[node name="datablock_slot_r2c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r2c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
 position = Vector2(509, 120)
 scale = Vector2(1.2, 1.2)
 
-[node name="datablock_slot_r3c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r3c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
 position = Vector2(445, 152)
 scale = Vector2(1.2, 1.2)
 
-[node name="datablock_slot_r3c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r3c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
 position = Vector2(509, 152)
 scale = Vector2(1.2, 1.2)
 
-[node name="datablock_slot_r4c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r4c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
 position = Vector2(445, 184)
 scale = Vector2(1.2, 1.2)
 
-[node name="datablock_slot_r4c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r4c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
 position = Vector2(509, 184)
 scale = Vector2(1.2, 1.2)
 
-[node name="datablock_slot_r5c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r5c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
 position = Vector2(445, 216)
 scale = Vector2(1.2, 1.2)
 
-[node name="datablock_slot_r5c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r5c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
 position = Vector2(509, 216)
 scale = Vector2(1.2, 1.2)
 
-[node name="datablock_slot_r6c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r6c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
 position = Vector2(445, 248)
 scale = Vector2(1.2, 1.2)
 
-[node name="datablock_slot_r6c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("3_311qs")]
+[node name="datablock_slot_r6c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
 position = Vector2(509, 248)
 scale = Vector2(1.2, 1.2)

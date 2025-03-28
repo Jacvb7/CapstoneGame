@@ -1,33 +1,34 @@
 # preset_datablock.gd
-# Description: preset_datablocks are different from datablocks. 
-# They represent the partially filled out portion of the data table. 
-# Their position and values matter for data validation. This level 1 script 
-# prints data from bug_database.gd onto preset_datablocks which already exist 
-# in drag_drop_main.tscn. These entities cannot be moved by the player, but 
-# clicking on these blocks shows an image of the bug sprite that the row represents.
-
 extends Node2D
-
 var bug_database_ref = preload("res://scripts/bug_database.gd").new()
-
+@onready var ALBY: Sprite2D = $"../Alby"
+@onready var BIX: Sprite2D = $"../Bix"
+@onready var EMBER: Sprite2D = $"../Ember"
+@onready var FIZZGIG: Sprite2D = $"../Fizzgig"
+@onready var NOX: Sprite2D = $"../Nox"
+@onready var TAFFY: Sprite2D = $"../Taffy"
+var bug_images = {
+	"Alby": ALBY,
+	"Bix": BIX,
+	"Ember": EMBER,
+	"Fizzgig": FIZZGIG,
+	"Nox": NOX,
+	"Taffy": TAFFY
+}
 @onready var text_label = $preset_datablock_text
 @export var max_font_size: int = 24
 @export var min_font_size: int = 10
 @export var max_width: int = 60
-
+@onready var button: Button = $Button
+@onready var sprite_2d: Sprite2D = $Button/Sprite2D
 # Font path
 const FONT_PATH = "res://assets/fonts/Roboto-Regular.ttf"
-
 var display_text = ""
-
-# waits for initialization and calls update_text and set_text.
 func _ready():
 	await get_tree().process_frame  # Ensure nodes are initialized
 	update_text()
 	set_text()
-
-
-# accesses a globally grouped set of "preset_datablocks" to apply text values to their RichTextLabels.
+var bug = ""
 func update_text():
 	var block_name
 	if !is_in_group("preset_datablocks"):
@@ -36,7 +37,6 @@ func update_text():
 	else:
 		block_name = name  # Get the name of the node (e.g., "preset_datablock_r0c0")
 		# print(block_name)
-
 		# Extract row and column indices from the block name using split()
 		var parts = block_name.split("_r")  # ["preset_datablock", "0c0"]
 		if parts.size() > 1:
@@ -49,25 +49,62 @@ func update_text():
 					var fields = bug_database_ref.preset_bug_data["FIELDS"]
 					if col < fields.size():
 						text_label.text = "[center]" + fields[col] + "[/center]"
-				# Second row: Fill in all data for FIZZGIG the example bug
+				# Second row: Fill in all data for ALBY the example bug
 				elif row == 1:
 					var example_bug = bug_database_ref.preset_bug_data["EXAMPLE_BUG"]
 					if col < example_bug.size():
 						text_label.text = "[center]" + example_bug[col] + "[/center]"
+						bug = example_bug[col] #Store the name in a global variable
+						button.button_down.connect(_on_bug_button_pressed) #When the name is pressed.
+						button.modulate.a = 0.1 # Changing visibility of the button. Only for aesthetics.
 				# Fill in the rest of the first column with bug names
+				
+				######connect the names to the bugs##########
 				elif row >= 2 and col == 0:
 					var name_list = bug_database_ref.get_bug_names()
 					if row - 2 < name_list.size():
-						text_label.text = "[center]" + name_list[row - 2] + "[/center]"
+						var bug_name = name_list[row - 2]# Name of bug
+						text_label.text = "[center]" + bug_name + "[/center]"
+						bug = bug_name	#Store the name in a global variable
+						button.button_down.connect(_on_bug_button_pressed)	#When the name is pressed.
 						
-
+# Function that displays the selected bugs.
+# It just uses a switch statement with the bug variable.
+# The bug variable stores the name of the bug currently selected.
+func _on_bug_button_pressed() -> void:
+	match bug:
+		"ALBY":
+			hide_bugs()
+			ALBY.show()
+		"BIX":
+			hide_bugs()
+			BIX.show()
+		"EMBER":
+			hide_bugs()
+			EMBER.show()
+		"FIZZGIG":
+			hide_bugs()
+			FIZZGIG.show()
+		"NOX":
+			hide_bugs()
+			NOX.show()
+		"TAFFY":
+			hide_bugs()
+			TAFFY.show()
+#function to hide all bugs
+func hide_bugs() -> void:
+	ALBY.hide()
+	BIX.hide()
+	EMBER.hide()
+	FIZZGIG.hide()
+	NOX.hide()
+	TAFFY.hide()
 # Dynamic text sizing (similar to your datablock implementation)
 func set_text():
 	var font = load(FONT_PATH)
 	if not font:
 		print("Error: Font not found at", FONT_PATH)
 		return
-
 	text_label.add_theme_font_override("font", font)
 	text_label.add_theme_font_size_override("normal_font_size", min_font_size)
 	
@@ -82,7 +119,7 @@ func set_text():
 	while font_size >= min_font_size:
 		text_label.add_theme_font_override("font", font)
 		text_label.add_theme_font_size_override("normal_font_size", font_size)
-
+	
 		# Calculate the width of the text with the current font size
 		var text_width = font.get_string_size(full_text, font_size).x
 		
