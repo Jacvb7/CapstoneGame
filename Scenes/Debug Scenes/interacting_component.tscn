@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7gqapiligpnu"]
+
+[ext_resource type="Script" path="res://Scenes/Debug Scenes/interacting_component.gd" id="1_r8poh"]
+[ext_resource type="PackedScene" uid="uid://cp0wejaem6207" path="res://Scenes/Debug Scenes/data_entry_table.tscn" id="2_j3m2q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hmf5m"]
+radius = 19.0263
+
+[sub_resource type="LabelSettings" id="LabelSettings_7at64"]
+font_size = 12
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="InteractingComponent" type="Node2D"]
+script = ExtResource("1_r8poh")
+
+[node name="InteractRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
+shape = SubResource("CircleShape2D_hmf5m")
+
+[node name="InteractLabel" type="Label" parent="InteractRange"]
+visible = false
+z_index = 10
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = -51.0
+offset_right = 48.0
+offset_bottom = -28.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "Press E
+"
+label_settings = SubResource("LabelSettings_7at64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DataEntryTable" parent="." instance=ExtResource("2_j3m2q")]
+show_behind_parent = true
+top_level = true
+z_index = 1
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 1.0
+offset_bottom = 4.0
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]
