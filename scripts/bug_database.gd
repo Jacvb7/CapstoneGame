@@ -29,14 +29,7 @@ func validate_bug_data(bug_name, col, value):
 			return bug_data[bug_name]["color"] == value
 	return false
 	
-## Counts all the features in each bug
-#func total_blocks_being_placed():
-	#var count = 0
-	#for bug in bug_data:
-		#count += 2
-	#return count
-	
-func total_blocks_being_placed() -> int:
+func total_blocks_being_placed():
 	var count = 0
 	if bug_data.is_empty():
 		return 0  # Handle case where database is empty

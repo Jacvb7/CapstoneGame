@@ -1,6 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dj4br3v2pbd"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sf6y0"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/tutorial_state_machine.gd" id="2_pweam"]
 [ext_resource type="PackedScene" uid="uid://dwhenx27cd8av" path="res://Scenes/drag_and_drop_card_game/preset_filled_datablock.tscn" id="2_rjdag"]
 [ext_resource type="PackedScene" uid="uid://chcoql3eof581" path="res://Scenes/drag_and_drop_card_game/preset_datablock.tscn" id="3_lv113"]
 [ext_resource type="Texture2D" uid="uid://bnq4ot83w6im7" path="res://Scenes/drag_and_drop_card_game/bug_images/ALBY.png" id="4_p3erg"]
@@ -52,7 +53,7 @@ position = Vector2(12, 3)
 script = ExtResource("1_sf6y0")
 
 [node name="tutorial_state_machine" type="Node2D" parent="."]
-script = ExtResource("2_68qlm")
+script = ExtResource("2_pweam")
 
 [node name="graphics" type="Node2D" parent="."]
 
