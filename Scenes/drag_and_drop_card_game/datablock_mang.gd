@@ -22,6 +22,10 @@ var unplayed_datablock_position_ref
 var row
 var col
 
+# used to calculate the end of the L1 DS game
+var correctlyPlacedTotal = 0
+var totalBlocksBeingPlaced = bug_database_ref.total_blocks_being_placed()
+var endGame = false
 
 # gets the screen size and creates a reference to unplaced_datablocks.
 func _ready() -> void:
@@ -43,6 +47,8 @@ func _process(_delta: float) -> void:
 
 # allows for left mouse click and release to connect to start_drag and finish_drag methods.
 func _input(event):
+	if not DraggingEnabled.dragging_enabled:
+		return  # Ignore all drag events when dragging is disabled
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			var datablock = raycast_check_for_datablock()
@@ -155,6 +161,14 @@ func check_if_valid(dragged_datablock, datablock_slot_found):
 	if bug_name in bug_database_ref.get_bug_names():
 		is_valid = bug_database_ref.validate_bug_data(bug_name, col, data)
 		visualize_validation_feedback(datablock_being_dragged, is_valid)
+		if is_valid:
+			correctlyPlacedTotal += 1
+			# print(correctlyPlacedTotal, " out of ", totalBlocksBeingPlaced, " have been placed in the table.\n")
+		
+	if correctlyPlacedTotal == totalBlocksBeingPlaced:
+		endGame = true
+	if endGame:
+		print("Congrats! You completed the game!")
 
 
 # locks datablocks in slots if is_valid is true and briefly modulates the color to green, 
