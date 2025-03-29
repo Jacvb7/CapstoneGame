@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dj4br3v2pbd"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sf6y0"]
-[ext_resource type="PackedScene" uid="uid://dwhenx27cd8av" path="res://Scenes/drag_and_drop_card_game/preset_datablock_TBD.tscn" id="2_rjdag"]
+[ext_resource type="PackedScene" path="res://Scenes/drag_and_drop_card_game/preset_datablock_TBD.tscn" id="2_rjdag"]
 [ext_resource type="PackedScene" uid="uid://chcoql3eof581" path="res://Scenes/drag_and_drop_card_game/preset_datablock.tscn" id="3_lv113"]
 [ext_resource type="Texture2D" uid="uid://bnq4ot83w6im7" path="res://Scenes/drag_and_drop_card_game/bug_images/ALBY.png" id="4_p3erg"]
 [ext_resource type="Texture2D" uid="uid://0osofscb51nf" path="res://Scenes/drag_and_drop_card_game/bug_images/BIX.png" id="5_8xp7n"]

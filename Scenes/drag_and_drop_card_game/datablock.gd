@@ -27,9 +27,6 @@ const FONT_PATH = "res://assets/fonts/Roboto-Regular.ttf"
 
 # waits for datablocks to be initialized before apply text values to their RichTextLabels.
 func _ready():
-	$Area2D.collision_layer = 5  # Change to layer 5
-	$Area2D.collision_mask = 1  # Ensure it still detects the original interaction layer (or update if needed)
-	
 	await get_tree().process_frame  # Ensure the scene tree updates
 	text_label = $datablock_text  # Try assigning again in case it was null
 	
