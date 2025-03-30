@@ -33,7 +33,8 @@ func update_text():
 	var block_name
 	if !is_in_group("preset_datablocks"):
 		block_name = name  # Get the name of the node (e.g., "preset_datablock_r0c0")
-		print("PRESET_DATABLOCK NOT FOUND: ", block_name)
+		## FOR DEBUGGING
+		#print("PRESET_DATABLOCK NOT FOUND: ", block_name)
 	else:
 		block_name = name  # Get the name of the node (e.g., "preset_datablock_r0c0")
 		# print(block_name)
