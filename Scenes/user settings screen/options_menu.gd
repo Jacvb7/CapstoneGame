@@ -19,7 +19,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_exit_button_button_down() -> void:
-	
 	exit_options_menu.emit() #emit the signal
 	set_process(false)
 	

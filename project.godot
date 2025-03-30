@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameDialogueManager="*res://scripts/globals/game_dialogue_manager.gd"
 DraggingEnabled="*res://Scenes/drag_and_drop_card_game/dragging_enabled.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
@@ -39,7 +39,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [file_customization]
 
@@ -104,7 +104,7 @@ Interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://NPCTest.dialogue", "res://dialogue/conversations/NPCTest.dialogue", "res://byte.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/NPCTest.dialogue")
 
 [layer_names]
 
