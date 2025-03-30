@@ -1,6 +1,11 @@
 extends Node
 
 var waiting_for_click = false
+const SPEED_FOR_ALL_ROWS = 0.3
+const SPEED_FOR_ONE_ROW_OR_COLUMN = 1
+
+# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+var dialogue_label  # Reference to the dialogue label
 
 enum TutorialState { 
 	START, 
@@ -14,11 +19,18 @@ enum TutorialState {
 # Re-enable dragging when the tutorial is complete
 func on_tutorial_finished():
 	DraggingEnabled.dragging_enabled = true  # Enables dragging when the tutorial is finished
+	
+	# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+	update_dialogue("BTYE: Click on the variable NAME of each bug to examine them and complete the data!")
 
 var current_state = TutorialState.START
 
 func _ready():
 	print("Tutorial started.")
+	
+	# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+	dialogue_label = $"../RichTextLabel"  # Adjust the path
+	
 	transition_to(TutorialState.START)
 
 func transition_to(new_state):
@@ -27,45 +39,69 @@ func transition_to(new_state):
 
 	match current_state:
 		TutorialState.START:
-			print("Start of tutorial. Disabling drag and drop.")
+			#print("Start of tutorial. Disabling drag and drop.")
+			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+			update_dialogue("BYTE: The BugScanner 3000 must have seen the bugs! I’ll walk you through how the archive is organized so you can fill in the missing data on these bugs!")
+			
 			wait_for_click(TutorialState.ROWS_HIGHLIGHT)
 
 		TutorialState.ROWS_HIGHLIGHT:
-			print("Highlight each row, one at a time.")
+			#print("Highlight each row, one at a time.")
+			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+			update_dialogue("BYTE: In the archive, each row represents a record of a bug living in Evergrove!")
 			
 			for i in range(1, 7):
 				print("Highlighting row ", i, ".\n")
-				await highlight_row(i)
+				await highlight_row(i, SPEED_FOR_ALL_ROWS)
 			
 			print("All rows highlighted. Moving to next tutorial step.")
 			wait_for_click(TutorialState.EXAMPLE_HIGHLIGHT)
 
 		TutorialState.EXAMPLE_HIGHLIGHT:
-			print("Highlight example row.")
-			await highlight_row(1)
+			#print("Highlight example row.")
+			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+			update_dialogue("BYTE: And look! The record for ALBY is already complete! Click on Alby to take a closer look!")
+			
+			await highlight_row(1, SPEED_FOR_ONE_ROW_OR_COLUMN)
 			wait_for_click(TutorialState.COLUMN_0_HIGHLIGHT)
 
 		TutorialState.COLUMN_0_HIGHLIGHT:
-			print("Highlighting name column 0.")
-			await highlight_column(0)
+			#print("Highlighting name column 0.")
+			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+			update_dialogue("BYTE: The first column variable is NAME. Notice how each bug’s name is listed in this column?")
+			
+			await get_tree().create_timer(1).timeout  # Wait 1 seconds
+			await highlight_column(0, SPEED_FOR_ONE_ROW_OR_COLUMN)
 			wait_for_click(TutorialState.COLUMN_1_HIGHLIGHT)
 
 		TutorialState.COLUMN_1_HIGHLIGHT:
-			print("Highlighting total legs column 1.")
-			await highlight_column(1)
+			#print("Highlighting total legs column 1.")
+			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+			update_dialogue("BYTE: The next variable is TOTAL LEGS. If you count ALBY’s legs, there should be 6 in total!")
+			
+			await get_tree().create_timer(1).timeout  # Wait 1 seconds
+			await highlight_column(1, SPEED_FOR_ONE_ROW_OR_COLUMN)
 			wait_for_click(TutorialState.COLUMN_2_HIGHLIGHT)
 
 		TutorialState.COLUMN_2_HIGHLIGHT:
-			print("Highlighting color column 2.")
-			await highlight_column(2)
+			#print("Highlighting color column 2.")
+			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+			update_dialogue("BYTE: The last variable is COLOR. ALBY is mostly YELLOW, so the value in her record is also YELLOW!")
+			
+			await get_tree().create_timer(1).timeout  # Wait 1 seconds
+			await highlight_column(2, SPEED_FOR_ONE_ROW_OR_COLUMN)
 			wait_for_click(TutorialState.DONE)
 
 		TutorialState.DONE:
-			print("Tutorial finished. Enabling drag and drop.")
+			#print("Tutorial finished. Enabling drag and drop.")
+			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+			update_dialogue("BYTE: That’s all you need to know to get started!")
+			
+			await get_tree().create_timer(3).timeout  # Wait 3 seconds
 			on_tutorial_finished()
 
 # Function to wait for a click before transitioning
-func wait_for_click(next_state):
+func wait_for_click(_next_state):
 	waiting_for_click = true
 	await get_tree().process_frame  # Ensure the event system has time to process
 
@@ -152,3 +188,11 @@ func highlight_column(column: int, duration: float = 0.75):
 		tween.tween_property(node, "modulate", Color(1, 1, 1, 1), duration)  # Reset to normal
 
 	await tween.finished  # Wait for reset animation to complete
+
+
+# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+func update_dialogue(text: String):
+	if dialogue_label:
+		dialogue_label.text = text
+	else:
+		print("Dialogue label not found!")
