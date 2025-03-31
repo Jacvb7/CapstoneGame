@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b7t61xj05m40l" path="res://Scenes/Characters/Butterfly/butterfly.tscn" id="5_kkaoc"]
 [ext_resource type="PackedScene" uid="uid://b72oljiaemyss" path="res://Scenes/objects/interactable_component.tscn" id="6_8cxpj"]
 [ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="6_dwg24"]
-[ext_resource type="PackedScene" uid="uid://1djwmi0vi132" path="res://Scenes/Characters/NPC/NPC.tscn" id="7_7kmoh"]
+[ext_resource type="PackedScene" path="res://Scenes/Characters/NPC/NPC.tscn" id="7_7kmoh"]
 [ext_resource type="PackedScene" uid="uid://dj4br3v2pbd" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn" id="8_fru2v"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cbfxm"]

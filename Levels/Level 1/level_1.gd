@@ -13,11 +13,16 @@ extends Node2D
 
 func _process(delta: float) -> void:
 	on_esc_pressed()
+	on_table_pressed()
 
 func on_esc_pressed() -> void:
 	if Input.is_action_just_pressed("esc") and !get_tree().paused:
 		pause()
 		
+func on_table_pressed() -> void: 
+	if Input.is_action_just_pressed("table"):
+		get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
+
 func pause():
 	print("paused from game")
 	pause_menu.set_process(true)
