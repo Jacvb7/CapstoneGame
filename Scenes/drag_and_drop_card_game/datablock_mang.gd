@@ -32,6 +32,9 @@ func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	unplayed_datablock_position_ref = $"../unplaced_datablocks"
 
+	# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+	dialogue_label = $"../RichTextLabel"  # Adjust the path
+
 
 # get the mouse's position when datablock_being_dragged is occurring and 
 # adjusts the z-position of dragged datablocks so they appear above everything else in the scene.
@@ -168,7 +171,18 @@ func check_if_valid(dragged_datablock, datablock_slot_found):
 	if correctlyPlacedTotal == totalBlocksBeingPlaced:
 		endGame = true
 	if endGame:
-		print("Congrats! You completed the game!")
+		#print("Congrats! You completed the game!")
+		# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+		update_dialogue("BYTE: You completed the table! Great job!")
+
+
+# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+var dialogue_label = ""
+func update_dialogue(text: String):
+	if dialogue_label:
+		dialogue_label.text = text
+	else:
+		print("Dialogue label not found!")
 
 
 # locks datablocks in slots if is_valid is true and briefly modulates the color to green, 
