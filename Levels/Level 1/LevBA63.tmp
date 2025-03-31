@@ -101,6 +101,10 @@ position = Vector2(235, 137)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="butterfly group 1"]
 navigation_polygon = SubResource("NavigationPolygon_cbfxm")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_Menu2" parent="CanvasLayer" instance=ExtResource("6_dwg24")]
+
 [node name="InteractableComponent" parent="." instance=ExtResource("6_8cxpj")]
 position = Vector2(237, 132)
 
@@ -115,7 +119,3 @@ position = Vector2(145, 192)
 
 [node name="DragDropTest2" parent="CanvasLayer2" instance=ExtResource("8_fru2v")]
 visible = false
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_dwg24")]

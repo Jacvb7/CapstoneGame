@@ -5,9 +5,11 @@ extends Node2D
 
 #@onready var pause_menu: Control = $CanvasLayer/Pause_Menu
 #@onready var pause_menu: Control = $Pause_Menu
-@onready var pause_menu: Control = $CanvasLayer/Pause_Menu
+#@onready var pause_menu: Control = $CanvasLayer/Pause_Menu
 @onready var interactable_component: InteractableComponent = $InteractableComponent
-@onready var drag_drop_test: Node2D = $CanvasLayer2/DragDropTest
+#@onready var drag_drop_test: Node2D = $CanvasLayer2/DragDropTest
+@onready var pause_menu: Control = $CanvasLayer/Pause_Menu
+@onready var drag_drop_test: Node2D = $CanvasLayer2/DragDropTest2
 
 func _process(delta: float) -> void:
 	on_esc_pressed()
@@ -19,10 +21,11 @@ func on_esc_pressed() -> void:
 func pause():
 	print("paused from game")
 	pause_menu.set_process(true)
-	#get_tree().paused = true
+	get_tree().paused = true
 
 func _ready() -> void:
 	interactable_component.interactable_activated.connect(interacting)
+	pass
 
 
 func interacting() -> void:
