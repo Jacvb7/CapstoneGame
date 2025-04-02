@@ -7,6 +7,9 @@ const SPEED_FOR_ONE_ROW_OR_COLUMN = 1
 # TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
 var dialogue_label  # Reference to the dialogue label
 
+# boolean so state machine only runs once
+var flag = true
+
 enum TutorialState { 
 	START, 
 	ROWS_HIGHLIGHT, 
@@ -101,7 +104,8 @@ func transition_to(new_state):
 			on_tutorial_finished()
 
 func _process(delta: float) -> void:
-	if EnableVariables.enable_click:
+	if EnableVariables.enable_click and flag:
+		flag = false
 		transition_to(TutorialState.START)
 
 
