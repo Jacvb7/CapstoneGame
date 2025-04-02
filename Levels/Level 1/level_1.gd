@@ -35,6 +35,9 @@ func _ready() -> void:
 
 func interacting() -> void:
 	drag_drop_test.visible = true
+	
+	EnableVariables.enable_click = true
+	print("click: ", EnableVariables.enable_click)
 #Past section as of 3/7/25
 #var game_paused : bool = false:
 	#get: 

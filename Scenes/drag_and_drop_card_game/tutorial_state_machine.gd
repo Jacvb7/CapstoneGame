@@ -31,7 +31,7 @@ func _ready():
 	# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
 	dialogue_label = $"../RichTextLabel"  # Adjust the path
 	
-	transition_to(TutorialState.START)
+	#transition_to(TutorialState.START)
 
 func transition_to(new_state):
 	current_state = new_state
@@ -100,8 +100,14 @@ func transition_to(new_state):
 			await get_tree().create_timer(3).timeout  # Wait 3 seconds
 			on_tutorial_finished()
 
+func _process(delta: float) -> void:
+	if EnableVariables.enable_click:
+		transition_to(TutorialState.START)
+
+
 # Function to wait for a click before transitioning
 func wait_for_click(_next_state):
+	print("click: ", EnableVariables.enable_click)
 	if EnableVariables.enable_click:
 		waiting_for_click = true
 		await get_tree().process_frame  # Ensure the event system has time to process
