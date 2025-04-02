@@ -50,7 +50,7 @@ func _process(_delta: float) -> void:
 
 # allows for left mouse click and release to connect to start_drag and finish_drag methods.
 func _input(event):
-	if not DraggingEnabled.dragging_enabled:
+	if not EnableVariables.dragging_enabled:
 		return  # Ignore all drag events when dragging is disabled
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:

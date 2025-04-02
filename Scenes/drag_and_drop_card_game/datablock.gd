@@ -4,7 +4,6 @@
 
 extends Node2D
 
-
 signal hovered
 signal hovered_off
 

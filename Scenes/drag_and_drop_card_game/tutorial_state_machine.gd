@@ -18,7 +18,7 @@ enum TutorialState {
 
 # Re-enable dragging when the tutorial is complete
 func on_tutorial_finished():
-	DraggingEnabled.dragging_enabled = true  # Enables dragging when the tutorial is finished
+	EnableVariables.dragging_enabled = true  # Enables dragging when the tutorial is finished
 	
 	# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
 	update_dialogue("BTYE: Click on the variable NAME of each bug to examine them and complete the data!")
@@ -102,8 +102,9 @@ func transition_to(new_state):
 
 # Function to wait for a click before transitioning
 func wait_for_click(_next_state):
-	waiting_for_click = true
-	await get_tree().process_frame  # Ensure the event system has time to process
+	if EnableVariables.enable_click:
+		waiting_for_click = true
+		await get_tree().process_frame  # Ensure the event system has time to process
 
 func _input(event):
 	if waiting_for_click and event is InputEventMouseButton and event.pressed:
