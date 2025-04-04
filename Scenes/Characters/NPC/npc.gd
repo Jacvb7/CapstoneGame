@@ -29,6 +29,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
 			get_tree().current_scene.add_child(balloon)
 			balloon.start(load("res://dialogue/conversations/NPCTest.dialogue"), "start")
+			
 
 func on_enter_username() -> void:
 	pass

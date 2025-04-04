@@ -1,6 +1,8 @@
 #drag_drop_main.gd
 extends Node2D
 
+# Jacob is adding variables and functions to be used for debugging
+@onready var pause_menu: Control = $CanvasLayer/Pause_Menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +13,16 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#pass
 	on_table_pressed()
+	on_esc_pressed()
+	
+func on_esc_pressed() -> void:
+	if Input.is_action_just_pressed("esc") and !get_tree().paused:
+		pause()
+		
+func pause():
+	print("paused from game")
+	pause_menu.set_process(true)
+	get_tree().paused = true
 	
 func on_table_pressed() -> void: 
 	if Input.is_action_just_pressed("table"):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dj4br3v2pbd"]
+[gd_scene load_steps=16 format=3 uid="uid://dj4br3v2pbd"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sf6y0"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/tutorial_state_machine.gd" id="2_pweam"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_mang.gd" id="10_q1qgu"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/unplaced_datablocks.gd" id="11_mq4qx"]
 [ext_resource type="PackedScene" uid="uid://0gl5using56j" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="12_0rj87"]
+[ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="14_o38tg"]
 
 [sub_resource type="GDScript" id="GDScript_4bblq"]
 script/source = "# preset_datablock_mang.gd
@@ -296,3 +297,7 @@ offset_left = 3.0
 offset_top = 323.0
 offset_right = 613.0
 offset_bottom = 370.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("14_o38tg")]

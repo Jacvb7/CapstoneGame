@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbmk2pjnbdc7h"]
+[gd_scene load_steps=15 format=3 uid="uid://bbmk2pjnbdc7h"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_gdgta"]
 [ext_resource type="PackedScene" uid="uid://dwhenx27cd8av" path="res://Scenes/drag_and_drop_card_game/preset_filled_datablock.tscn" id="2_uhufu"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_mang.gd" id="10_dcv6k"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/unplaced_datablocks.gd" id="11_g5uyj"]
 [ext_resource type="PackedScene" uid="uid://0gl5using56j" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="12_mcgd3"]
+[ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="13_8rtjw"]
 
 [sub_resource type="GDScript" id="GDScript_4bblq"]
 script/source = "# preset_datablock_mang.gd
@@ -274,3 +275,5 @@ scale = Vector2(1.2, 1.2)
 z_index = -3
 position = Vector2(509, 248)
 scale = Vector2(1.2, 1.2)
+
+[node name="Pause_Menu" parent="." instance=ExtResource("13_8rtjw")]
