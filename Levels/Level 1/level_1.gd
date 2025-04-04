@@ -9,7 +9,7 @@ extends Node2D
 @onready var interactable_component: InteractableComponent = $InteractableComponent
 #@onready var drag_drop_test: Node2D = $CanvasLayer2/DragDropTest
 @onready var pause_menu: Control = $CanvasLayer/Pause_Menu
-@onready var drag_drop_test: Node2D = $CanvasLayer2/DragDropTest2
+#@onready var drag_drop_test: Node2D = $CanvasLayer2/DragDropTest2
 
 func _process(delta: float) -> void:
 	on_esc_pressed()
@@ -34,8 +34,11 @@ func _ready() -> void:
 
 
 func interacting() -> void:
-	drag_drop_test.visible = true
+	#drag_drop_test.visible = true
+	var mini_game = preload("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn").instantiate()
+	#var mini_game = preload("res://Scenes/drag_and_drop_card_game/drag_drop_main.tsc).instantiate()
 	
+	$CanvasLayer.add_child(mini_game)
 	EnableVariables.enable_click = true
 	print("click: ", EnableVariables.enable_click)
 #Past section as of 3/7/25

@@ -48,7 +48,7 @@ func strip_bbcode_tags(text: String) -> String:
 	return text.replace(\"[center]\", \"\").replace(\"[/center]\", \"\")
 "
 
-[node name="DragDropTest" type="Node2D"]
+[node name="DragDropMain" type="Node2D"]
 position = Vector2(12, -10)
 script = ExtResource("1_sf6y0")
 
