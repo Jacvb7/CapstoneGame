@@ -21,6 +21,7 @@ GameDialogueManager="*res://scripts/globals/game_dialogue_manager.gd"
 DraggingEnabled="*res://Scenes/drag_and_drop_card_game/dragging_enabled.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 EnableVariables="*res://Scenes/drag_and_drop_card_game/enable_variables.gd"
+GlobalVariables="*res://scripts/globals/global_variables.gd"
 
 [display]
 

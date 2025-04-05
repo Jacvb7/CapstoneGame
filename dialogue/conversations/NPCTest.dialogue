@@ -7,7 +7,7 @@ Byte: Hello! I’ve never seen you before! Are you new here?
 		- My name is… um…
 			Byte: Oh! Don’t worry! I forget things all the time too! You can create a new name instead! What can I call you?
 			do GameDialogueManager.action_enter_username()
-			Byte: < USERNAME >! That is a great name! 
+			Byte: {{GlobalVariables.username}}! That is a great name! 
 			- Thank you.
 				Byte:  I’m so glad you came to Evergrove, < USERNAME >! We really need your help!
 				- My help?

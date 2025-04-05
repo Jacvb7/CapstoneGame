@@ -48,8 +48,9 @@ func _process(_delta: float) -> void:
 		datablock_being_dragged.z_index = 10
 
 
-# allows for left mouse click and release to connect to start_drag and finish_drag methods.
-func _input(event):
+func _gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		print("Clicked on draggable: ", name)
 	if not EnableVariables.dragging_enabled:
 		return  # Ignore all drag events when dragging is disabled
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -60,6 +61,20 @@ func _input(event):
 		else: # when left click released
 			if datablock_being_dragged:
 				finish_drag()
+
+
+## allows for left mouse click and release to connect to start_drag and finish_drag methods.
+#func _input(event):
+	#if not EnableVariables.dragging_enabled:
+		#return  # Ignore all drag events when dragging is disabled
+	#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		#if event.pressed:
+			#var datablock = raycast_check_for_datablock()
+			#if datablock:
+				#start_drag(datablock)
+		#else: # when left click released
+			#if datablock_being_dragged:
+				#finish_drag()
 
 
 # assigns the datablock being dragged to datablock_being_dragged which is used 

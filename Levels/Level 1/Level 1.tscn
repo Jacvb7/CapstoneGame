@@ -110,6 +110,8 @@ shape = SubResource("RectangleShape2D_bwhdw")
 [node name="Npc" parent="." instance=ExtResource("7_7kmoh")]
 position = Vector2(145, 192)
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_dwg24")]
