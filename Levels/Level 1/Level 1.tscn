@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://gs81fpw4fbn2"]
+[gd_scene load_steps=12 format=4 uid="uid://gs81fpw4fbn2"]
 
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_b4tn8"]
 [ext_resource type="Script" path="res://Levels/Level 1/level_1.gd" id="1_prf72"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b72oljiaemyss" path="res://Scenes/objects/interactable_component.tscn" id="6_8cxpj"]
 [ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="6_dwg24"]
 [ext_resource type="PackedScene" uid="uid://1djwmi0vi132" path="res://Scenes/Characters/NPC/NPC.tscn" id="7_7kmoh"]
+[ext_resource type="PackedScene" uid="uid://dob0sbr4aawad" path="res://Scenes/objects/bug_scanner_3000.tscn" id="9_0lkad"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cbfxm"]
 vertices = PackedVector2Array(278.789, 117.711, 278.203, 145.898, 197.602, 145.094, 196.406, 115.313)
@@ -115,3 +116,9 @@ position = Vector2(145, 192)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_dwg24")]
+
+[node name="bug_scanner_3000" parent="." instance=ExtResource("9_0lkad")]
+light_mask = 512
+visibility_layer = 512
+position = Vector2(180, 258)
+scale = Vector2(0.15, 0.15)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dob0sbr4aawad"]
+
+[ext_resource type="Texture2D" uid="uid://d0b2ne4ydctc1" path="res://assets/game/objects/bug_scanner_3000.png" id="1_576b8"]
+
+[node name="bug_scanner_3000" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_576b8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
