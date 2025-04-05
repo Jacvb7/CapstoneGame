@@ -118,7 +118,7 @@ position = Vector2(145, 192)
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_dwg24")]
 
 [node name="bug_scanner_3000" parent="." instance=ExtResource("9_0lkad")]
-light_mask = 512
+light_mask = 2
 visibility_layer = 512
 position = Vector2(180, 258)
 scale = Vector2(0.15, 0.15)

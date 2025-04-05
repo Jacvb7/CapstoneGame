@@ -26,6 +26,7 @@ Byte: Hello! I’ve never seen you before! Are you new here?
 										Byte: Even so, my processor was scrambled after The Wipeout.
 										Byte: I can share what’s left in my memory of the archive with the BugScanner 3000. 
 										Byte: It’s on top of that log over there.
+										do GameDialogueManager.action_wait_for_scanner()
 
 - End the conversation => END
 Byte: For more information see the online documentation.
