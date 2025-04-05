@@ -1,33 +1,51 @@
-~ start
-Byte: Hello! I’ve never seen you before! Are you new here?
-- Where… am I? Who are… you?
-	Byte: I’m Byte the firefly! And this is my home. Welcome to Evergrove!
-	- Byte?
-		Byte: That’s me! But don’t worry! Fireflies don’t bite! Haha! What’s your name?
-		- My name is… um…
-			Byte: Oh! Don’t worry! I forget things all the time too! You can create a new name instead! What can I call you?
-			do GameDialogueManager.action_enter_username()
-			Byte: {{GlobalVariables.username}}! That is a great name! 
-			- Thank you.
-				Byte:  I’m so glad you came to Evergrove, {{GlobalVariables.username}}! We really need your help!
-				- My help?
-					Byte: Yes! Professor Byte has gone missing, and Evergrove is in trouble! You have to help us!
-					- Secrets?
-						Byte: Yes! But after the great disaster struck, without Professor Byte’s guidance, the archives scattered data across the land. 
-						- The great disaster?
-							Byte:  Yes! I call it The Wipeout. Now, the bugs roam freely, but their information is lost! All gone!
-							-  Is that bad?
-								Byte:  It’s horrible! 
-								Byte: Without this knowledge, researchers and scientists won’t be able to understand or protect all the creatures of Evergrove!
-								 - How can I help?
-									Byte: You can be a Data Explorer! I can help you learn how! Together, we can restore The Great Archive!
-									- That sounds like fun! How do we get started?
-										Byte: Professor Byte equipped me with access to the archive so I’m sort of… connected to the database? 
-										Byte: Even so, my processor was scrambled after The Wipeout.
-										Byte: I can share what’s left in my memory of the archive with the BugScanner 3000. 
-										Byte: It’s on top of that log over there.
-										do GameDialogueManager.action_wait_for_scanner()
+#using GameDialogueManager
 
-- End the conversation => END
-Byte: For more information see the online documentation.
+~ start
+Byte: Hi there!
+- Where… am I? Who are… you? => game_lore
+- What do you want me to do? => find_the_scanner
+- Nevermind. => END!
+
+~ game_lore
+Byte: I’m Byte the firefly! And this is my home. Welcome to Evergrove!
+- Byte?
+	Byte: That’s me! But don’t worry! Fireflies don’t bite! Haha! What’s your name?
+	- My name is… um…
+		Byte: Oh! Don’t worry! I forget things all the time too! 
+		Byte: I'll call you... {{GlobalVariables.username}}
+		Byte: {{GlobalVariables.username}}! Now, that is a great name!!
+		- Thank you.
+			Byte:  I’m so glad you came to Evergrove, {{GlobalVariables.username}}! We really need your help!
+			- My help?
+				Byte: Yes! Professor Byte has gone missing, and Evergrove is in trouble! You have to help us!
+				- Professor Byte?
+					Byte: Yes! Professor Byte was the guardian of the Great Data Archives! 
+					Byte: The archive contained data on every bug, beetle, and butterfly in Evergrove! 
+					Byte: It was a powerful database that kept track of every species' traits, habits, and secrets.
+					- Secrets?
+						Byte: So many secrets! But after the great disaster struck, the archives scattered data across the land. 
+						Byte:  I call it The Wipeout. Now, the bugs roam freely, but their information is lost! All gone!
+						-  Is that bad?
+							Byte: [shake rate=10.0 level=6 connected=0]IT'S HORRIBLE![/shake]
+							Byte: Without this knowledge, researchers and scientists aren't able to understand or protect the creatures of Evergrove!
+							 - How can I help?
+								Byte: You can be a Data Explorer! I can help you learn how! Together, we can restore The Great Archive!
+								- That sounds like fun! How do we get started?
+									Byte: Professor Byte equipped me with access to the archive so I’m sort of… connected to the database?
+									Byte: Even so, my processor was scrambled after The Wipeout.
+									Byte: I can share what’s left in my memory of the archive with the BugScanner 3000.
+
+~ find_the_scanner
+Byte: Go get the BugScanner 3000! It’s on top of that log over there.
+while !GlobalVariables.has_scanner
+	% Byte: The BugScanner 3000 is nearby on top of a log.
+	% Byte: The BugScanner 3000 is just south of here.
+	% Byte: Quickly! Find the BugScanner 3000!
+	% Byte: The BugScanner 3000 close but I can't pick it up.
+# Dialogue pauses until condition is met
+if GlobalVariables.has_scanner
+	Byte: Yippee! You found it!
+	Byte: Now, let’s go find some bugs and take a look at their data!
+
+
 => END

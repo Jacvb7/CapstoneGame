@@ -11,8 +11,6 @@ func _on_body_entered(body: Node) -> void:
 	if body.name != "Player":
 		return  # Ignore anything that isn't the player
 	
-	if body.name == "Player":  
-		if GameDialogueManager.scanner_awaiter:
-			GameDialogueManager.scanner_awaiter.resume()
-			GameDialogueManager.scanner_awaiter = null
+	if body.name == "Player":
 		queue_free()  # Makes the scanner disappear
+		GlobalVariables.has_scanner = true # advance the dialogue
