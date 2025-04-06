@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c0lwytkkfncny"]
 
 [ext_resource type="Script" path="res://Scenes/Menu-In-Game/pause_menu.gd" id="1_vdyjv"]
-[ext_resource type="PackedScene" path="res://Scenes/user settings screen/options_menu.tscn" id="3_snyir"]
+[ext_resource type="PackedScene" uid="uid://cwwgdf2ykqb7p" path="res://Scenes/user settings screen/options_menu.tscn" id="3_snyir"]
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")
@@ -17,6 +17,7 @@ subpixel_positioning = 0
 
 [node name="Pause_Menu" type="Control"]
 process_mode = 3
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
