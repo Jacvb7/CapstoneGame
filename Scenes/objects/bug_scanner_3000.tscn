@@ -7,6 +7,7 @@
 radius = 33.0606
 
 [node name="bug_scanner_3000" type="Node2D"]
+position = Vector2(311, 178)
 script = ExtResource("1_8j0nh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
