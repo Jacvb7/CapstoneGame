@@ -2,6 +2,9 @@
 extends Node2D
 
 signal tut_finished
+
+@onready var exit: Button = $VBoxContainer2/exit
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -16,6 +19,9 @@ func _process(_delta: float) -> void:
 func on_table_pressed() -> void: 
 	if Input.is_action_just_pressed("table"):
 		get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
+		
+func _on_exit_button_down() -> void: 
+	get_tree().quit()
 
 #func _on_resolutions_item_selected(index: int) -> void:
 	#match index:

@@ -7,6 +7,15 @@ var bug_database_ref = preload("res://scripts/bug_database.gd").new()
 @onready var FIZZGIG: Sprite2D = $"../Fizzgig"
 @onready var NOX: Sprite2D = $"../Nox"
 @onready var TAFFY: Sprite2D = $"../Taffy"
+
+#new added
+@onready var ember_label: Label = $"../../EmberLabel"
+@onready var bix_label: Label = $"../../BixLabel"
+@onready var fizzgig_label: Label = $"../../FizzgigLabel"
+@onready var nox_label: Label = $"../../NoxLabel"
+@onready var taffy_label: Label = $"../../TaffyLabel"
+@onready var alby_label: Label = $"../../AlbyLabel"
+
 var bug_images = {
 	"Alby": ALBY,
 	"Bix": BIX,
@@ -77,21 +86,27 @@ func _on_bug_button_pressed() -> void:
 		"ALBY":
 			hide_bugs()
 			ALBY.show()
+			alby_label.show()
 		"BIX":
 			hide_bugs()
 			BIX.show()
+			bix_label.show()
 		"EMBER":
 			hide_bugs()
 			EMBER.show()
+			ember_label.show()
 		"FIZZGIG":
 			hide_bugs()
 			FIZZGIG.show()
+			fizzgig_label.show()
 		"NOX":
 			hide_bugs()
 			NOX.show()
+			nox_label.show()
 		"TAFFY":
 			hide_bugs()
 			TAFFY.show()
+			taffy_label.show()
 #function to hide all bugs
 func hide_bugs() -> void:
 	ALBY.hide()
@@ -100,6 +115,12 @@ func hide_bugs() -> void:
 	FIZZGIG.hide()
 	NOX.hide()
 	TAFFY.hide()
+	alby_label.hide()
+	bix_label.hide()
+	ember_label.hide()
+	fizzgig_label.hide()
+	nox_label.hide()
+	taffy_label.hide()
 # Dynamic text sizing (similar to your datablock implementation)
 func set_text():
 	var font = load(FONT_PATH)
