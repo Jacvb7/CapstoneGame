@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dj4br3v2pbd"]
+[gd_scene load_steps=16 format=3 uid="uid://dj4br3v2pbd"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sf6y0"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/tutorial_state_machine.gd" id="2_pweam"]
@@ -47,6 +47,10 @@ func print_preset_datablock_text(group_name: String):
 func strip_bbcode_tags(text: String) -> String:
 	return text.replace(\"[center]\", \"\").replace(\"[/center]\", \"\")
 "
+
+[sub_resource type="SystemFont" id="SystemFont_0co6o"]
+font_names = PackedStringArray("SimSun")
+subpixel_positioning = 0
 
 [node name="DragDropMain" type="Node2D"]
 process_mode = 3
@@ -317,3 +321,87 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = -10.0
+offset_top = 12.0
+offset_right = 140.0
+offset_bottom = 51.0
+scale = Vector2(0.434897, 0.629508)
+
+[node name="exit" type="Button" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("SystemFont_0co6o")
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+
+[node name="EmberLabel" type="Label" parent="."]
+visible = false
+offset_left = 143.0
+offset_top = 248.0
+offset_right = 204.0
+offset_bottom = 274.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "EMBER"
+horizontal_alignment = 1
+
+[node name="BixLabel" type="Label" parent="."]
+visible = false
+offset_left = 136.0
+offset_top = 248.0
+offset_right = 197.0
+offset_bottom = 274.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "BIX"
+horizontal_alignment = 1
+
+[node name="FizzgigLabel" type="Label" parent="."]
+visible = false
+offset_left = 140.0
+offset_top = 248.0
+offset_right = 208.0
+offset_bottom = 274.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "FIZZGIG"
+horizontal_alignment = 1
+
+[node name="NoxLabel" type="Label" parent="."]
+visible = false
+offset_left = 138.0
+offset_top = 248.0
+offset_right = 199.0
+offset_bottom = 274.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "NOX"
+horizontal_alignment = 1
+
+[node name="TaffyLabel" type="Label" parent="."]
+visible = false
+offset_left = 142.0
+offset_top = 248.0
+offset_right = 203.0
+offset_bottom = 274.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "TAFFY"
+horizontal_alignment = 1
+
+[node name="AlbyLabel" type="Label" parent="."]
+visible = false
+offset_left = 141.0
+offset_top = 248.0
+offset_right = 202.0
+offset_bottom = 274.0
+localize_numeral_system = false
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "ALBY"
+horizontal_alignment = 1
+
+[connection signal="button_down" from="VBoxContainer2/exit" to="." method="_on_exit_button_down"]
