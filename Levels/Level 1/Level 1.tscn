@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://gs81fpw4fbn2"]
+[gd_scene load_steps=12 format=4 uid="uid://gs81fpw4fbn2"]
 
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_b4tn8"]
 [ext_resource type="Script" path="res://Levels/Level 1/level_1.gd" id="1_prf72"]
 [ext_resource type="PackedScene" uid="uid://bhscvpkwhrjjm" path="res://Scenes/Characters/player/player.tscn" id="3_dxccb"]
 [ext_resource type="PackedScene" uid="uid://cax7fe0vlwndk" path="res://Scenes/Characters/player/byte/byte.tscn" id="4_bmhvp"]
 [ext_resource type="PackedScene" uid="uid://b7t61xj05m40l" path="res://Scenes/Characters/Butterfly/butterfly.tscn" id="5_kkaoc"]
+[ext_resource type="PackedScene" uid="uid://clrbailh4ktq1" path="res://Scenes/Characters/Bix/Bix.tscn" id="6_6y03i"]
 [ext_resource type="PackedScene" uid="uid://b72oljiaemyss" path="res://Scenes/objects/interactable_component.tscn" id="6_8cxpj"]
 [ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="6_dwg24"]
 [ext_resource type="PackedScene" uid="uid://1djwmi0vi132" path="res://Scenes/Characters/NPC/NPC.tscn" id="7_7kmoh"]
@@ -73,37 +74,45 @@ y_sort_enabled = true
 
 [node name="butterfly" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
 y_sort_enabled = true
-position = Vector2(235, 137)
+position = Vector2(240, 143)
 
 [node name="butterfly8" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
 y_sort_enabled = true
-position = Vector2(235, 137)
+position = Vector2(235, 127)
 
 [node name="butterfly7" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(235, 137)
+position = Vector2(264, 134)
 
 [node name="butterfly6" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(235, 137)
+position = Vector2(230, 143)
 
 [node name="butterfly5" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(235, 137)
+position = Vector2(222, 141)
 
 [node name="butterfly4" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(235, 137)
+position = Vector2(249, 140)
 
 [node name="butterfly3" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(235, 137)
+position = Vector2(246, 130)
 
 [node name="butterfly2" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(235, 137)
+position = Vector2(227, 130)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="butterfly group 1"]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_cbfxm")
+
+[node name="butterfly9" parent="butterfly group 1" instance=ExtResource("6_6y03i")]
+position = Vector2(252, 121)
+
+[node name="butterfly10" parent="butterfly group 1" instance=ExtResource("6_6y03i")]
+position = Vector2(232, 152)
 
 [node name="InteractableComponent" parent="." instance=ExtResource("6_8cxpj")]
 position = Vector2(237, 132)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+visible = false
 position = Vector2(2.5, 4)
 shape = SubResource("RectangleShape2D_bwhdw")
 
@@ -113,3 +122,8 @@ position = Vector2(145, 192)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_dwg24")]
+visible = false
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0

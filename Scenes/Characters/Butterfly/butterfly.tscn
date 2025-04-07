@@ -6,19 +6,19 @@
 [ext_resource type="Script" path="res://Scenes/Characters/Chicken/idle_state.gd" id="4_7mcch"]
 [ext_resource type="Script" path="res://Scenes/Characters/Chicken/walk_state.gd" id="5_36y3r"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xmsc3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv4r8"]
 atlas = ExtResource("2_p8cr8")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qeynl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq5qj"]
 atlas = ExtResource("2_p8cr8")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b8b0p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps2j2"]
 atlas = ExtResource("2_p8cr8")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k1og3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v28t6"]
 atlas = ExtResource("2_p8cr8")
 region = Rect2(32, 0, 32, 32)
 
@@ -26,10 +26,10 @@ region = Rect2(32, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xmsc3")
+"texture": SubResource("AtlasTexture_kv4r8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qeynl")
+"texture": SubResource("AtlasTexture_oq5qj")
 }],
 "loop": true,
 "name": &"idle",
@@ -37,10 +37,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b8b0p")
+"texture": SubResource("AtlasTexture_ps2j2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k1og3")
+"texture": SubResource("AtlasTexture_v28t6")
 }],
 "loop": true,
 "name": &"walk",
@@ -54,9 +54,8 @@ script = ExtResource("1_o6y6o")
 position = Vector2(9.53674e-07, -3.8147e-06)
 scale = Vector2(0.15625, 0.15625)
 sprite_frames = SubResource("SpriteFrames_4esog")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.607869
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
