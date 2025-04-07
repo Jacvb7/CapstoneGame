@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3jqamr4pph5j"]
+
+[ext_resource type="Script" path="res://data_table.gd" id="1_3skpq"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/tutorial_state_machine.gd" id="2_ybtv2"]
+[ext_resource type="PackedScene" uid="uid://bbmk2pjnbdc7h" path="res://Scenes/Debug Scenes/drag_drop_main.tscn" id="3_a81ua"]
+
+[node name="DataTable" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3skpq")
+
+[node name="DragDropTest" parent="." instance=ExtResource("3_a81ua")]
+position = Vector2(8, -9)
+
+[node name="tutorial_state_machine" type="Node2D" parent="."]
+process_mode = 3
+script = ExtResource("2_ybtv2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 312.0
+offset_right = 623.0
+offset_bottom = 359.0
+grow_horizontal = 0
+grow_vertical = 0

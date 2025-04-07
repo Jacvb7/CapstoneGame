@@ -10,6 +10,12 @@ extends Node2D
 #@onready var drag_drop_test: Node2D = $CanvasLayer2/DragDropTest
 @onready var pause_menu: Control = $CanvasLayer/Pause_Menu
 #@onready var drag_drop_test: Node2D = $CanvasLayer2/DragDropTest2
+#var mini_game = preload("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
+@onready var button: Button = $Player/Camera2D2/Button
+var mini_game: Node = null  # <- Store a reference to the instance
+@onready var drag_drop_main: Node2D = $GameOverlayRoot/DragDropMain
+
+
 
 func _process(delta: float) -> void:
 	on_esc_pressed()
@@ -30,17 +36,46 @@ func pause():
 
 func _ready() -> void:
 	interactable_component.interactable_activated.connect(interacting)
+	interactable_component.interactable_deactivated.connect(deactivating)
 	pass
 
+#
+func deactivating() -> void:
+	button.visible = false
+	if mini_game:
+		mini_game.queue_free()
+		mini_game = null  # Clear the reference
+	EnableVariables.enable_click = false
+	$Player/Camera2D2.enabled = true
+	$Player/Camera2D2.make_current()
 
 func interacting() -> void:
+	button.visible = true
 	#drag_drop_test.visible = true
-	var mini_game = preload("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn").instantiate()
-	#var mini_game = preload("res://Scenes/drag_and_drop_card_game/drag_drop_main.tsc).instantiate()
+	#var mini_game = preload("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn").instantiate()
+	##var mini_game = preload("res://Scenes/drag_and_drop_card_game/drag_drop_main.tsc).instantiate()
+	#$CanvasLayer2.add_child(mini_game)
+	#EnableVariables.enable_click = true
+	#print("click: ", EnableVariables.enable_click)
+	#get_tree().paused = true
 	
-	$CanvasLayer.add_child(mini_game)
-	EnableVariables.enable_click = true
-	print("click: ", EnableVariables.enable_click)
+	
+func _on_button_pressed() -> void:
+	#drag_drop_main.visible = true
+	if mini_game == null:
+		mini_game = preload("res://Scenes/Debug Scenes/data_table.tscn").instantiate()
+		#$CanvasLayer2/GameOverlayRoot.add_child(mini_game)
+		$GameOverlayRoot.add_child(mini_game)
+		$Player/Camera2D2.enabled = false 
+		#get_tree().paused = true
+		#drag_drop_main.visible = true
+		mini_game.z_index = 10
+		EnableVariables.enable_click = true
+		#get_tree().paused = true
+		
+		#mini_game.pause_mode = Node.PauseModeEnum.PROCESS  # this keeps drag/drop working while world is paused
+		#mini_game.set("pause_mode", 2)
+		#print(mini_game)
 #Past section as of 3/7/25
 #var game_paused : bool = false:
 	#get: 

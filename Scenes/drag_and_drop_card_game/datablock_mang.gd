@@ -40,7 +40,8 @@ func _ready() -> void:
 # adjusts the z-position of dragged datablocks so they appear above everything else in the scene.
 func _process(_delta: float) -> void:
 	if datablock_being_dragged:
-		var mouse_pos = get_global_mouse_position()
+		#var mouse_pos = get_global_mouse_position()
+		var mouse_pos = get_viewport().get_mouse_position()
 		# keep player from dragging datablock offscreen where they cannot click on it
 		datablock_being_dragged.position = Vector2(clamp(mouse_pos.x, 0, screen_size.x), 
 			clamp(mouse_pos.y, 0, screen_size.y))
@@ -48,23 +49,9 @@ func _process(_delta: float) -> void:
 		datablock_being_dragged.z_index = 10
 
 
-func _gui_input(event):
-	if event is InputEventMouseButton and event.pressed:
-		print("Clicked on draggable: ", name)
-	if not EnableVariables.dragging_enabled:
-		return  # Ignore all drag events when dragging is disabled
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			var datablock = raycast_check_for_datablock()
-			if datablock:
-				start_drag(datablock)
-		else: # when left click released
-			if datablock_being_dragged:
-				finish_drag()
-
-
-## allows for left mouse click and release to connect to start_drag and finish_drag methods.
-#func _input(event):
+#func _gui_input(event):
+	#if event is InputEventMouseButton and event.pressed:
+		#print("Clicked on draggable: ", name)
 	#if not EnableVariables.dragging_enabled:
 		#return  # Ignore all drag events when dragging is disabled
 	#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -75,6 +62,20 @@ func _gui_input(event):
 		#else: # when left click released
 			#if datablock_being_dragged:
 				#finish_drag()
+
+
+# allows for left mouse click and release to connect to start_drag and finish_drag methods.
+func _input(event):
+	#if not EnableVariables.dragging_enabled:
+		#return  # Ignore all drag events when dragging is disabled
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			var datablock = raycast_check_for_datablock()
+			if datablock:
+				start_drag(datablock)
+		else: # when left click released
+			if datablock_being_dragged:
+				finish_drag()
 
 
 # assigns the datablock being dragged to datablock_being_dragged which is used 
@@ -265,7 +266,8 @@ func highlight_datablock(datablock, hovered):
 func raycast_check_for_datablock_slot():
 	var space_state = get_world_2d().direct_space_state
 	var parameters = PhysicsPointQueryParameters2D.new()
-	parameters.position = get_global_mouse_position()
+	#parameters.position = get_global_mouse_position()
+	parameters.position = get_viewport().get_mouse_position()
 	parameters.collide_with_areas = true
 	parameters.collision_mask = COLLISION_MASK_DATABLOCK_SLOT
 	var result = space_state.intersect_point(parameters)
