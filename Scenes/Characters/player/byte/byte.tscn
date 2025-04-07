@@ -66,6 +66,7 @@ collision_layer = 2
 script = ExtResource("1_7exsn")
 parent = NodePath(".")
 animated_sprite_2d = NodePath("AnimatedSprite2D")
+is_byte_visable = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4.76837e-07, 0)

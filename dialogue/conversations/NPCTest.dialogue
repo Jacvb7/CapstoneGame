@@ -46,6 +46,9 @@ while !GlobalVariables.has_scanner
 if GlobalVariables.has_scanner
 	Byte: Yippee! You found it!
 	Byte: Now, let’s go find some bugs and take a look at their data!
+	do SignalBus._show_byte()
+	do SignalBus._hide_npc_byte()
+	
 
 
 => END

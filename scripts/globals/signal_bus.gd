@@ -1,0 +1,24 @@
+extends Node
+
+signal show_byte
+signal hide_byte
+signal hide_npc_byte
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+func _show_byte() -> void:
+	show_byte.emit()
+	print("showing byte")
+	
+func _hide_byte() -> void:
+	hide_byte.emit()
+	
+func _hide_npc_byte() -> void:
+	hide_npc_byte.emit()

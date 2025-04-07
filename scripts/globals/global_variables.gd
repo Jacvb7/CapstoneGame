@@ -2,12 +2,26 @@ extends Node
 
 var username = ""
 var has_scanner: bool = false
+var isByteVisable: bool = false
+var isNPCVisable: bool = false
+
+signal byte_show
+signal byte_hide
 
 func _ready():
 	randomize() # Ensure different results each run
 	var name_keys = Name.keys()
 	username = name_keys[randi() % name_keys.size()]
 	print("Assigned username:", username)
+	
+func hideByte() -> void:
+	#print("entered")
+	byte_hide.emit()
+
+
+func showByte() -> void:
+	#print("exited")
+	byte_show.emit()
 
 enum Name { ORBIT, ASHBY, ASTRO, AZUL, BAP, BIM, 
 	BISCUIT, BLIP, BO, BOON, BRAMBLE, BUBBLES, CALYX, CEDAR, CLOVER, CRUMPET, 
