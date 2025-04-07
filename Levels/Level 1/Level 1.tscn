@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://gs81fpw4fbn2"]
+[gd_scene load_steps=13 format=4 uid="uid://gs81fpw4fbn2"]
 
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_b4tn8"]
 [ext_resource type="Script" path="res://Levels/Level 1/level_1.gd" id="1_prf72"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b72oljiaemyss" path="res://Scenes/objects/interactable_component.tscn" id="6_8cxpj"]
 [ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="6_dwg24"]
 [ext_resource type="PackedScene" uid="uid://1djwmi0vi132" path="res://Scenes/Characters/NPC/NPC.tscn" id="7_7kmoh"]
+[ext_resource type="PackedScene" uid="uid://dob0sbr4aawad" path="res://Scenes/objects/bug_scanner_3000.tscn" id="9_0lkad"]
+[ext_resource type="PackedScene" uid="uid://dj4br3v2pbd" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn" id="10_a37f0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cbfxm"]
 vertices = PackedVector2Array(278.789, 117.711, 278.203, 145.898, 197.602, 145.094, 196.406, 115.313)
@@ -55,7 +57,8 @@ position = Vector2(134, 129)
 current_tool = 0
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
-position = Vector2(-6, -11)
+position = Vector2(-6, -10)
+scale = Vector2(0.383894, 1.87167)
 zoom = Vector2(4, 4)
 limit_left = 0
 limit_top = 0
@@ -63,6 +66,20 @@ limit_right = 950
 limit_bottom = 400
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Button" type="Button" parent="Player/Camera2D2"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 143.0
+offset_top = 14.0
+offset_right = 182.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="Byte" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("4_bmhvp")]
 y_sort_enabled = true
@@ -123,7 +140,28 @@ position = Vector2(145, 192)
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_dwg24")]
 visible = false
-offset_left = -1.0
 offset_top = -1.0
-offset_right = -1.0
 offset_bottom = -1.0
+
+[node name="bug_scanner_3000" parent="." instance=ExtResource("9_0lkad")]
+light_mask = 2
+visibility_layer = 512
+position = Vector2(180, 258)
+scale = Vector2(0.15, 0.15)
+
+[node name="GameOverlayRoot" type="Node2D" parent="."]
+process_mode = 3
+light_mask = 2
+visibility_layer = 2
+position = Vector2(50, 20)
+scale = Vector2(0.5, 0.5)
+
+[node name="DragDropMain" parent="GameOverlayRoot" instance=ExtResource("10_a37f0")]
+visible = false
+z_index = 10
+position = Vector2(-28, 40)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[connection signal="pressed" from="Player/Camera2D2/Button" to="." method="_on_button_pressed"]

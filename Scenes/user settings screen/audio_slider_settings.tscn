@@ -4,9 +4,11 @@
 
 [sub_resource type="SystemFont" id="SystemFont_pd4hr"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_3nyfq"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [node name="Audio_slider_settings" type="Control"]
 layout_mode = 3
@@ -40,6 +42,7 @@ layout_mode = 2
 size_flags_vertical = 1
 max_value = 1.0
 step = 0.001
+editable = false
 
 [node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2

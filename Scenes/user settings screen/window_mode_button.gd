@@ -6,8 +6,8 @@ extends Control
 const WINDOW_MODE_ARRAY : Array[String] = [
 	"Full-Screen",
 	"Window mode",
-	"Boderless Window",
-	"Boderless Full-Screen"
+	"Borderless Window",
+	"Borderless Full-Screen"
 ]
 
 # Called when the node enters the scene tree for the first time.

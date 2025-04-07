@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 
 [node name="GameDialogueBalloon" type="CanvasLayer"]
+process_mode = 3
 layer = 100
 script = ExtResource("1_lot25")
 

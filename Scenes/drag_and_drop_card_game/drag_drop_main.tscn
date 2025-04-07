@@ -49,15 +49,26 @@ func strip_bbcode_tags(text: String) -> String:
 "
 
 [node name="DragDropMain" type="Node2D"]
+process_mode = 3
 position = Vector2(12, -10)
 script = ExtResource("1_sf6y0")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
+visible = false
+position = Vector2(307, 190)
+rotation = 3.14159
+scale = Vector2(11.732, 4.5178)
+
 [node name="tutorial_state_machine" type="Node2D" parent="."]
+process_mode = 3
 script = ExtResource("2_pweam")
 
 [node name="graphics" type="Node2D" parent="."]
+process_mode = 3
 
 [node name="ColorRect" type="ColorRect" parent="graphics"]
+process_mode = 3
 z_index = -5
 offset_left = -16.0
 offset_top = 7.0
@@ -134,6 +145,7 @@ color = Color(0.0575887, 0.626515, 0.652203, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="preset_datablocks" type="Node2D" parent="."]
+process_mode = 3
 
 [node name="preset_datablock_r0c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 z_index = -1
@@ -231,9 +243,11 @@ scale = Vector2(3.02778, 3.27778)
 texture = ExtResource("9_sqtt6")
 
 [node name="datablock_mang" type="Node2D" parent="."]
+process_mode = 3
 script = ExtResource("10_q1qgu")
 
 [node name="preset_datablock_mang" type="Node2D" parent="."]
+process_mode = 3
 script = SubResource("GDScript_4bblq")
 
 [node name="unplaced_datablocks" type="Node2D" parent="."]
@@ -296,3 +310,10 @@ offset_left = 3.0
 offset_top = 323.0
 offset_right = 613.0
 offset_bottom = 370.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

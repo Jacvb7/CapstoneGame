@@ -4,9 +4,11 @@
 
 [sub_resource type="SystemFont" id="SystemFont_26hkv"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_fmj6l"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [node name="Text_to_speech_button" type="Control"]
 layout_mode = 3
@@ -37,6 +39,7 @@ theme_override_constants/separation = 25
 
 [node name="CheckButton" type="CheckButton" parent="HBoxContainer"]
 layout_mode = 2
+disabled = true
 
 [node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2

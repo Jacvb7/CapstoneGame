@@ -58,9 +58,14 @@ func _ready() -> void:
 	for datablock in all_datablocks:
 		datablock.scale = Vector2(1, 1)
 		$"../datablock_mang".add_child(datablock)
+		#datablock.raise()
+		print(datablock.z_index)
 		add_new_datablock_to_place(datablock)
 
-
+func input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed:
+		print("Datablock clicked!")
+		
 #############################################################
 ## FOR DEBUGGING                                           ##
 ## FUNCTION TO PRINT DATABLOCK NAMES AND THEIR TEXT LABELS ##

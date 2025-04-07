@@ -4,6 +4,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_3oj3f"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [node name="Subtitles_Toggle_Button" type="Control"]
 layout_mode = 3
@@ -25,7 +26,8 @@ custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_3oj3f")
 theme_override_font_sizes/font_size = 25
-text = "Subtitles"
+text = "Subtitles
+"
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
@@ -33,6 +35,7 @@ theme_override_constants/separation = 25
 
 [node name="CheckButton" type="CheckButton" parent="HBoxContainer"]
 layout_mode = 2
+disabled = true
 
 [node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
