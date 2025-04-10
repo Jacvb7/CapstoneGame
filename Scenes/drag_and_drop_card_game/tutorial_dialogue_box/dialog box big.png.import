@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4rj4yn6iuakb"
-path="res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-63d093db4f191b592bc6fdc363508e04.ctex"
+uid="uid://b1v8w6lryn7fu"
+path="res://.godot/imported/dialog box big.png-5133b9065d012ddb954ae116652ea2e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg"
-dest_files=["res://.godot/imported/solid-light-blue-background-53xkyn7gnrw2373e.jpg-63d093db4f191b592bc6fdc363508e04.ctex"]
+source_file="res://Scenes/drag_and_drop_card_game/tutorial_dialogue_box/dialog box big.png"
+dest_files=["res://.godot/imported/dialog box big.png-5133b9065d012ddb954ae116652ea2e2.ctex"]
 
 [params]
 

@@ -187,9 +187,8 @@ func check_if_valid(dragged_datablock, datablock_slot_found):
 	if correctlyPlacedTotal == totalBlocksBeingPlaced:
 		endGame = true
 	if endGame:
-		#print("Congrats! You completed the game!")
 		# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
-		#update_dialogue("BYTE: You completed the table! Great job!")
+		update_dialogue("BYTE: You completed the table! Great job!")
 		GlobalVariables.finish_mini_game = true
 
 
