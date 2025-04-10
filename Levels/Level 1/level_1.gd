@@ -26,9 +26,10 @@ func on_esc_pressed() -> void:
 		pause()
 		
 func on_table_pressed() -> void: 
-	if Input.is_action_just_pressed("table"):
+	if Input.is_action_just_pressed("table") and GlobalVariables.has_scanner and not GlobalVariables.finish_mini_game:
 		get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
-
+		GlobalVariables.enable_click = true
+		
 func pause():
 	print("paused from game")
 	pause_menu.set_process(true)
@@ -45,7 +46,7 @@ func deactivating() -> void:
 	if mini_game:
 		mini_game.queue_free()
 		mini_game = null  # Clear the reference
-	EnableVariables.enable_click = false
+	GlobalVariables.enable_click = false
 	$Player/Camera2D2.enabled = true
 	$Player/Camera2D2.make_current()
 
@@ -55,7 +56,7 @@ func interacting() -> void:
 	#var mini_game = preload("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn").instantiate()
 	##var mini_game = preload("res://Scenes/drag_and_drop_card_game/drag_drop_main.tsc).instantiate()
 	#$CanvasLayer2.add_child(mini_game)
-	#EnableVariables.enable_click = true
+	#GlobalVariables.enable_click = true change from 4/10
 	#print("click: ", EnableVariables.enable_click)
 	#get_tree().paused = true
 	
@@ -70,7 +71,7 @@ func _on_button_pressed() -> void:
 		#get_tree().paused = true
 		#drag_drop_main.visible = true
 		mini_game.z_index = 10
-		EnableVariables.enable_click = true
+		GlobalVariables.enable_click = true
 		#get_tree().paused = true
 		
 		#mini_game.pause_mode = Node.PauseModeEnum.PROCESS  # this keeps drag/drop working while world is paused

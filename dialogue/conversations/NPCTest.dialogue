@@ -45,10 +45,35 @@ while !GlobalVariables.has_scanner
 # Dialogue pauses until condition is met
 if GlobalVariables.has_scanner
 	Byte: Yippee! You found it!
-	Byte: Now, let’s go find some bugs and take a look at their data!
 	do SignalBus._show_byte()
 	do SignalBus._hide_npc_byte()
+# Addition from 4/10
+# click is enabled when the tutorial begins
+	while !EnableVariables.enable_click
+		Byte: Now, let’s go find some bugs and take a look at their data!
+		Byte: They won't be far from where we met!
+		Byte: I can't wait for you to meet the others!
+		Byte: I hope we find the other bugs soon...
+		Byte: The BugScanner 3000 should pick up on other bugs any minute!
+		Byte: {{GlobalVariables.username}} is a great name for you!
+		Byte: You definitely seem like a {{GlobalVariables.username}}!
+	if EnableVariables.enable_click
+		Byte: The BugScanner 3000 must have seen the bugs! => mini_game
 	
-
+~ mini_game
+# drag is enabled when the tutorial_state_machine finishes
+if !EnableVariables.dragging_enabled
+	Byte: I’ll walk you through how the archive is organized so you can fill in the missing data on these bugs!
+	Byte: In the archive, each row represents a record of a bug living in Evergrove!
+	Byte: And look! The record for ALBY is already complete! Click on Alby to take a closer look!
+	Byte: The first column variable is NAME. Notice how each bug’s name is listed in this column?
+	Byte: The next variable is TOTAL LEGS. If you count ALBY’s legs, there should be 6 in total!
+	Byte: The last variable is COLOR. ALBY is mostly YELLOW, so the value in her record is also YELLOW!
+	Byte: That’s all you need to know to get started!
+	Byte: Click on the variable NAME of each bug to examine them and complete the data!
+	# finish_mini_game is set to true after the last correst datablock is placed into the last open slot
+	if GlobalVariables.finish_mini_game
+		Byte: You completed the table! Great job!
+		=> END!
 
 => END

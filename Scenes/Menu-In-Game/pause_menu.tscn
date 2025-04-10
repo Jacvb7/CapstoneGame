@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c0lwytkkfncny"]
 
 [ext_resource type="Script" path="res://Scenes/Menu-In-Game/pause_menu.gd" id="1_vdyjv"]
-[ext_resource type="PackedScene" path="res://Scenes/user settings screen/options_menu.tscn" id="3_snyir"]
+[ext_resource type="PackedScene" uid="uid://cwwgdf2ykqb7p" path="res://Scenes/user settings screen/options_menu.tscn" id="3_snyir"]
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")
