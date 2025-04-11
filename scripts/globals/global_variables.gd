@@ -6,6 +6,9 @@ var isByteVisable: bool = false
 var isNPCVisable: bool = false
 var finish_mini_game: bool = false
 
+var player_pos_x = 134
+var player_pos_y = 129
+
 var minigame_ready: bool = false
 #var level_script_ref = preload().new()
 #@onready var interactable_component: InteractableComponent = $root/Level1/%InteractableComponent

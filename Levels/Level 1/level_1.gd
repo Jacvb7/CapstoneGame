@@ -14,16 +14,22 @@ extends Node2D
 @onready var button: Button = $Player/Camera2D2/Button
 var mini_game: Node = null  # <- Store a reference to the instance
 @onready var drag_drop_main: Node2D = $GameOverlayRoot/DragDropMain
+@onready var player: Player = $Player
+@onready var bug_scanner_3000: Node2D = $bug_scanner_3000
 
 
 
 func _process(delta: float) -> void:
 	on_esc_pressed()
 	on_table_pressed()
+	#if GlobalVariables.finish_mini_game:
+		#player.position = Vector2(GlobalVariables.player_pos_x, GlobalVariables.player_pos_y)
 
+	
 func on_esc_pressed() -> void:
 	if Input.is_action_just_pressed("esc") and !get_tree().paused:
 		pause()
+		
 		
 func on_table_pressed() -> void: 
 	if Input.is_action_just_pressed("table") and GlobalVariables.has_scanner and not GlobalVariables.finish_mini_game:
@@ -34,11 +40,14 @@ func pause():
 	print("paused from game")
 	pause_menu.set_process(true)
 	get_tree().paused = true
+	
 
 func _ready() -> void:
 	interactable_component.interactable_activated.connect(interacting)
 	interactable_component.interactable_deactivated.connect(deactivating)
-	pass
+	if GlobalVariables.finish_mini_game:
+		player.position = Vector2(GlobalVariables.player_pos_x, GlobalVariables.player_pos_y)
+		bug_scanner_3000.visible = false
 
 #
 func deactivating() -> void:
@@ -53,6 +62,10 @@ func deactivating() -> void:
 	#$Player/Camera2D2.make_current()
 
 func interacting() -> void:
+	GlobalVariables.player_pos_x = player.global_position.x
+	GlobalVariables.player_pos_y = player.global_position.y
+	#var pos_y = player.global_position.y
+	
 	GlobalVariables.minigame_ready = true
 	print(GlobalVariables.minigame_ready)
 	#button.visible = true
