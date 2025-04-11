@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp1yoxiqvixo2"
-path="res://.godot/imported/run-6.png-63886d3ed1a11c53a9df31b1c46c10cc.ctex"
+uid="uid://dt5k78s68pw07"
+path="res://.godot/imported/ember_spritesheet.png-94c2dd91470c9bbf252325f9dd993b1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/2d_sprite_animation_assets/2d_sprite_animation_assets/run_animation/run-6.png"
-dest_files=["res://.godot/imported/run-6.png-63886d3ed1a11c53a9df31b1c46c10cc.ctex"]
+source_file="res://assets/sprites/2d_sprite_animation_assets/ember_spritesheet.png"
+dest_files=["res://.godot/imported/ember_spritesheet.png-94c2dd91470c9bbf252325f9dd993b1a.ctex"]
 
 [params]
 

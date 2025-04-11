@@ -1,0 +1,104 @@
+[gd_scene load_steps=15 format=3 uid="uid://ent46w5m3mpq"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/Chicken/chicken.gd" id="1_fxd5g"]
+[ext_resource type="Texture2D" uid="uid://cy6dgi5v80i3q" path="res://assets/sprites/2d_sprite_animation_assets/taffy_spritesheet.png" id="2_7lpva"]
+[ext_resource type="Script" path="res://scripts/state_machine/node_state_machine.gd" id="3_75bn1"]
+[ext_resource type="Script" path="res://Scenes/Characters/Chicken/idle_state.gd" id="4_dsu13"]
+[ext_resource type="Script" path="res://Scenes/Characters/Chicken/walk_state.gd" id="5_wb3t5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0bta"]
+atlas = ExtResource("2_7lpva")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0wqb"]
+atlas = ExtResource("2_7lpva")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lei3"]
+atlas = ExtResource("2_7lpva")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_652y6"]
+atlas = ExtResource("2_7lpva")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg1jx"]
+atlas = ExtResource("2_7lpva")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjdc2"]
+atlas = ExtResource("2_7lpva")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nigk"]
+atlas = ExtResource("2_7lpva")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nli5s"]
+atlas = ExtResource("2_7lpva")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4esog"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0bta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0wqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lei3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_652y6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg1jx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjdc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nigk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nli5s")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="butterfly" type="CharacterBody2D"]
+script = ExtResource("1_fxd5g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, -3.8147e-06)
+scale = Vector2(0.15625, 0.15625)
+sprite_frames = SubResource("SpriteFrames_4esog")
+animation = &"walk"
+autoplay = "idle"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("3_75bn1")
+initial_node_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+script = ExtResource("4_dsu13")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d", "navigation_agent_2d")]
+script = ExtResource("5_wb3t5")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+navigation_agent_2d = NodePath("../../NavigationAgent2D")

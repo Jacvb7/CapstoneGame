@@ -1,23 +1,26 @@
-[gd_scene load_steps=16 format=4 uid="uid://gs81fpw4fbn2"]
+[gd_scene load_steps=19 format=4 uid="uid://gs81fpw4fbn2"]
 
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_b4tn8"]
 [ext_resource type="Script" path="res://Levels/Level 1/level_1.gd" id="1_prf72"]
 [ext_resource type="AudioStream" uid="uid://bfcy5niamyn6u" path="res://Morning.mp3" id="2_tq2v3"]
 [ext_resource type="PackedScene" uid="uid://bhscvpkwhrjjm" path="res://Scenes/Characters/player/player.tscn" id="3_dxccb"]
 [ext_resource type="PackedScene" uid="uid://cax7fe0vlwndk" path="res://Scenes/Characters/player/byte/byte.tscn" id="4_bmhvp"]
-[ext_resource type="PackedScene" uid="uid://b7t61xj05m40l" path="res://Scenes/Characters/Butterfly/butterfly.tscn" id="5_kkaoc"]
-[ext_resource type="PackedScene" uid="uid://clrbailh4ktq1" path="res://Scenes/Characters/Bix/Bix.tscn" id="6_6y03i"]
+[ext_resource type="PackedScene" uid="uid://clrbailh4ktq1" path="res://Scenes/Characters/Bugs/Bix.tscn" id="6_6y03i"]
 [ext_resource type="PackedScene" uid="uid://b72oljiaemyss" path="res://Scenes/objects/interactable_component.tscn" id="6_8cxpj"]
 [ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="6_dwg24"]
 [ext_resource type="PackedScene" uid="uid://1djwmi0vi132" path="res://Scenes/Characters/NPC/NPC.tscn" id="7_7kmoh"]
+[ext_resource type="PackedScene" uid="uid://u7vfiw8pwfpi" path="res://Scenes/Characters/Bugs/Ember.tscn" id="8_47kwa"]
 [ext_resource type="PackedScene" uid="uid://dob0sbr4aawad" path="res://Scenes/objects/bug_scanner_3000.tscn" id="9_0lkad"]
+[ext_resource type="PackedScene" uid="uid://c2a3e116iht3r" path="res://Scenes/Characters/Bugs/Fizzgig.tscn" id="9_syx46"]
 [ext_resource type="PackedScene" uid="uid://dj4br3v2pbd" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn" id="10_a37f0"]
+[ext_resource type="PackedScene" uid="uid://deq40nd4d8c15" path="res://Scenes/Characters/Bugs/Nox.tscn" id="10_avh70"]
+[ext_resource type="PackedScene" uid="uid://ent46w5m3mpq" path="res://Scenes/Characters/Bugs/Taffy.tscn" id="10_tlj24"]
 [ext_resource type="PackedScene" uid="uid://d2esvyiirkt77" path="res://morning.tscn" id="13_i5b3g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cbfxm"]
-vertices = PackedVector2Array(278.789, 117.711, 278.203, 145.898, 197.602, 145.094, 196.406, 115.313)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(186, 105, 289, 108, 288, 156, 188, 155)])
+vertices = PackedVector2Array(261.039, 121.18, 266.961, 127.102, 257.828, 140, 218.461, 140, 213.719, 129.461, 216.68, 120.578, 237.039, 116.211)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(209, 112, 237, 106, 266, 112, 280, 126, 263, 150, 212, 150, 203, 130)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bwhdw"]
 size = Vector2(57, 42)
@@ -91,49 +94,35 @@ y_sort_enabled = true
 position = Vector2(66, 115)
 parent = NodePath("../Player")
 
-[node name="butterfly group 1" type="Node2D" parent="."]
+[node name="bugs" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="butterfly" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-y_sort_enabled = true
-position = Vector2(240, 143)
-
-[node name="butterfly8" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-y_sort_enabled = true
-position = Vector2(235, 127)
-
-[node name="butterfly7" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(264, 134)
-
-[node name="butterfly6" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(230, 143)
-
-[node name="butterfly5" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(222, 141)
-
-[node name="butterfly4" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(249, 140)
-
-[node name="butterfly3" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(246, 130)
-
-[node name="butterfly2" parent="butterfly group 1" instance=ExtResource("5_kkaoc")]
-position = Vector2(227, 130)
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="butterfly group 1"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="bugs"]
 visible = false
+position = Vector2(2, 4)
 navigation_polygon = SubResource("NavigationPolygon_cbfxm")
 
-[node name="butterfly9" parent="butterfly group 1" instance=ExtResource("6_6y03i")]
-position = Vector2(252, 121)
+[node name="bix" parent="bugs" instance=ExtResource("6_6y03i")]
+position = Vector2(252, 127)
 
-[node name="butterfly10" parent="butterfly group 1" instance=ExtResource("6_6y03i")]
-position = Vector2(232, 152)
+[node name="ember" parent="bugs" instance=ExtResource("8_47kwa")]
+position = Vector2(227, 143)
+
+[node name="fizzgig" parent="bugs" instance=ExtResource("9_syx46")]
+position = Vector2(225, 127)
+
+[node name="nox" parent="bugs" instance=ExtResource("10_avh70")]
+position = Vector2(253, 143)
+
+[node name="taffy" parent="bugs" instance=ExtResource("10_tlj24")]
+position = Vector2(240, 132)
 
 [node name="InteractableComponent" parent="." instance=ExtResource("6_8cxpj")]
+visible = false
 position = Vector2(237, 132)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+visible = false
 position = Vector2(2.5, 4)
 shape = SubResource("RectangleShape2D_bwhdw")
 

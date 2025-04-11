@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmfy7e4xt7omc"
-path="res://.godot/imported/run-4.png-159690d4e211ffe221f732dfae99615c.ctex"
+uid="uid://ccrb0rcr803xm"
+path="res://.godot/imported/fizzgig_spritesheet.png-5ba94b85faae46ab75b514997c12797f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/2d_sprite_animation_assets/2d_sprite_animation_assets/run_animation/run-4.png"
-dest_files=["res://.godot/imported/run-4.png-159690d4e211ffe221f732dfae99615c.ctex"]
+source_file="res://assets/sprites/2d_sprite_animation_assets/fizzgig_spritesheet.png"
+dest_files=["res://.godot/imported/fizzgig_spritesheet.png-5ba94b85faae46ab75b514997c12797f.ctex"]
 
 [params]
 

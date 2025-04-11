@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1qy7td8aoba"
-path="res://.godot/imported/run-1.png-0964941feced0e5bf521ff83b88db3d0.ctex"
+uid="uid://cy6dgi5v80i3q"
+path="res://.godot/imported/taffy_spritesheet.png-42a4b3a096b3130076434defd379b995.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/2d_sprite_animation_assets/2d_sprite_animation_assets/run_animation/run-1.png"
-dest_files=["res://.godot/imported/run-1.png-0964941feced0e5bf521ff83b88db3d0.ctex"]
+source_file="res://assets/sprites/2d_sprite_animation_assets/taffy_spritesheet.png"
+dest_files=["res://.godot/imported/taffy_spritesheet.png-42a4b3a096b3130076434defd379b995.ctex"]
 
 [params]
 
