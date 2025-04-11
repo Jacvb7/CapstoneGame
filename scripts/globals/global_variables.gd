@@ -10,7 +10,7 @@ var finish_mini_game: bool = false
 # used in state machine to enable and disable dragging on click
 var dragging_enabled = false  # Set to false during the tutorial
 
-var enable_click = true # stop tutorial state machine from advancing on click until player enters the scene
+var enable_click = false # stop tutorial state machine from advancing on click until player enters the scene
 
 signal byte_show
 signal byte_hide

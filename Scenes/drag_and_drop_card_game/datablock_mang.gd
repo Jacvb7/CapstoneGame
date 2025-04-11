@@ -49,25 +49,10 @@ func _process(_delta: float) -> void:
 		datablock_being_dragged.z_index = 10
 
 
-#func _gui_input(event):
-	#if event is InputEventMouseButton and event.pressed:
-		#print("Clicked on draggable: ", name)
-	#if not EnableVariables.dragging_enabled:
-		#return  # Ignore all drag events when dragging is disabled
-	#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		#if event.pressed:
-			#var datablock = raycast_check_for_datablock()
-			#if datablock:
-				#start_drag(datablock)
-		#else: # when left click released
-			#if datablock_being_dragged:
-				#finish_drag()
-
-
 # allows for left mouse click and release to connect to start_drag and finish_drag methods.
 func _input(event):
-	#if not EnableVariables.dragging_enabled:
-		#return  # Ignore all drag events when dragging is disabled
+	if not GlobalVariables.dragging_enabled:
+		return  # Ignore all drag events when dragging is disabled
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			var datablock = raycast_check_for_datablock()
@@ -188,7 +173,9 @@ func check_if_valid(dragged_datablock, datablock_slot_found):
 		endGame = true
 	if endGame:
 		# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
-		update_dialogue("BYTE: You completed the table! Great job!")
+		update_dialogue("Byte: You completed the table! Press 't' to put away the BugScanner 3000!")
+		#await get_tree().create_timer(3).timeout  # Wait 3 seconds
+		#update_dialogue("Byte: Press 't' to put away the BugScanner 3000!")
 		GlobalVariables.finish_mini_game = true
 
 

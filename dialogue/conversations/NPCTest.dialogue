@@ -1,6 +1,8 @@
 #using GameDialogueManager
 
 ~ start
+if GlobalVariables.finish_mini_game:
+	=> finished_mini_game
 Byte: Hi there!
 - Where… am I? Who are… you? => game_lore
 - What do you want me to do? => find_the_scanner
@@ -57,23 +59,44 @@ if GlobalVariables.has_scanner
 		Byte: The BugScanner 3000 should pick up on other bugs any minute!
 		Byte: {{GlobalVariables.username}} is a great name for you!
 		Byte: You definitely seem like a {{GlobalVariables.username}}!
-	if EnableVariables.enable_click
-		Byte: The BugScanner 3000 must have seen the bugs! => mini_game
+if EnableVariables.enable_click and GlobalVariables.has_scanner
+	# Plan B will not use this part of the dialogue script
+#		Byte: The BugScanner 3000 must have seen the bugs! => mini_game
+	# Plan B:
+	Byte: The BugScanner 3000 must have seen the bugs!
+	Byte: Press 't' to use the BugScanner 3000! => plan_b_mini_game
 	
-~ mini_game
+#~ mini_game
 # drag is enabled when the tutorial_state_machine finishes
-if !EnableVariables.dragging_enabled
-	Byte: I’ll walk you through how the archive is organized so you can fill in the missing data on these bugs!
-	Byte: In the archive, each row represents a record of a bug living in Evergrove!
-	Byte: And look! The record for ALBY is already complete! Click on Alby to take a closer look!
-	Byte: The first column variable is NAME. Notice how each bug’s name is listed in this column?
-	Byte: The next variable is TOTAL LEGS. If you count ALBY’s legs, there should be 6 in total!
-	Byte: The last variable is COLOR. ALBY is mostly YELLOW, so the value in her record is also YELLOW!
-	Byte: That’s all you need to know to get started!
-	Byte: Click on the variable NAME of each bug to examine them and complete the data!
-	# finish_mini_game is set to true after the last correst datablock is placed into the last open slot
-	if GlobalVariables.finish_mini_game
-		Byte: You completed the table! Great job!
-		=> END!
+#if !EnableVariables.dragging_enabled
+#	Byte: I’ll walk you through how the archive is organized so you can fill in the missing data on these bugs!
+#	Byte: In the archive, each row represents a record of a bug living in Evergrove!
+#	Byte: And look! The record for ALBY is already complete! Click on Alby to take a closer look!
+#	Byte: The first column variable is NAME. Notice how each bug’s name is listed in this column?
+#	Byte: The next variable is TOTAL LEGS. If you count ALBY’s legs, there should be 6 in total!
+#	Byte: The last variable is COLOR. ALBY is mostly YELLOW, so the value in her record is also YELLOW!
+#	Byte: That’s all you need to know to get started!
+#	Byte: Click on the variable NAME of each bug to examine them and complete the data!
+#	# finish_mini_game is set to true after the last correst datablock is placed into the last open slot
+#	if GlobalVariables.finish_mini_game
+#		Byte: You completed the table! Great job!
+#		=> END!
+
+~ plan_b_mini_game
+Byte: Testing ability to use text in minigame via key binding.
+
+~ finished_mini_game
+if GlobalVariables.finish_mini_game
+	Byte: Oh! Something is happening to me! 
+	Byte: My processing power is increasing and I can see that there is more data in the archive now! 
+	Byte: Much more data, {{GlobalVariables.username}}!
+	- Really? What does that mean?
+		Byte: It means that all the data we need is back! We just have to collect it by tracking down the bugs! 
+		Byte: Now, whenever we find new groups of bugs, I can teach you how to use that data to understand or protect the creatures of Evergrove like a real scientist!
+		- Can I become a real scientist?
+			Byte: You’re still a Data Explorer, {{GlobalVariables.username}} for now! 
+			Byte: But with more experience, you can become a scientist in no time! 
+			Byte: Come on! There’s no time to waste! Let’s go look for some more bugs!
+			=> END!
 
 => END

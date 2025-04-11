@@ -10,7 +10,7 @@ extends Node2D
 
 const TOTAL_DATABLOCKS = 10
 # controls the animation of blocks appearing on screen
-const SPEED_OF_MOVEMENT = 0.4 # smaller values move the blocks faster
+const SPEED_OF_MOVEMENT = 0.3 # smaller values move the blocks faster
 const DATABLOCK_SCENE_PATH = "res://Scenes/drag_and_drop_card_game/datablock.tscn"
 const DATABLOCK_WIDTH = 63 # space between datablocks
 const UNPLAYED_Y_POSITION = 298 # position of blocks from the bottom of the scene

@@ -44,14 +44,13 @@ func transition_to(new_state):
 		TutorialState.START:
 			#print("Start of tutorial. Disabling drag and drop.")
 			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
-			update_dialogue("BYTE: The BugScanner 3000 must have seen the bugs! I’ll walk you through how the archive is organized so you can fill in the missing data on these bugs!")
-			
+			update_dialogue("Byte: The BugScanner 3000 must have seen the bugs! I’ll walk you through how the archive is organized so you can fill in the missing data on these bugs!")
 			wait_for_click(TutorialState.ROWS_HIGHLIGHT)
 
 		TutorialState.ROWS_HIGHLIGHT:
 			#print("Highlight each row, one at a time.")
 			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
-			update_dialogue("BYTE: In the archive, each row represents a record of a bug living in Evergrove!")
+			update_dialogue("Byte: In the archive, each row represents a record of a bug living in Evergrove!")
 			
 			for i in range(1, 7):
 				print("Highlighting row ", i, ".\n")
@@ -63,7 +62,7 @@ func transition_to(new_state):
 		TutorialState.EXAMPLE_HIGHLIGHT:
 			#print("Highlight example row.")
 			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
-			update_dialogue("BYTE: And look! The record for ALBY is already complete! Click on Alby to take a closer look!")
+			update_dialogue("Byte: And look! The record for ALBY is already complete! Click on Alby to take a closer look!")
 			
 			await highlight_row(1, SPEED_FOR_ONE_ROW_OR_COLUMN)
 			wait_for_click(TutorialState.COLUMN_0_HIGHLIGHT)
@@ -71,7 +70,7 @@ func transition_to(new_state):
 		TutorialState.COLUMN_0_HIGHLIGHT:
 			#print("Highlighting name column 0.")
 			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
-			update_dialogue("BYTE: The first column variable is NAME. Notice how each bug’s name is listed in this column?")
+			update_dialogue("Byte: The first column variable is NAME. Notice how each bug’s name is listed in this column?")
 			
 			await get_tree().create_timer(1).timeout  # Wait 1 seconds
 			await highlight_column(0, SPEED_FOR_ONE_ROW_OR_COLUMN)
@@ -80,7 +79,7 @@ func transition_to(new_state):
 		TutorialState.COLUMN_1_HIGHLIGHT:
 			#print("Highlighting total legs column 1.")
 			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
-			update_dialogue("BYTE: The next variable is TOTAL LEGS. If you count ALBY’s legs, there should be 6 in total!")
+			update_dialogue("Byte: The next variable is TOTAL LEGS. If you count ALBY’s legs, there should be 6 in total!")
 			
 			await get_tree().create_timer(1).timeout  # Wait 1 seconds
 			await highlight_column(1, SPEED_FOR_ONE_ROW_OR_COLUMN)
@@ -89,7 +88,7 @@ func transition_to(new_state):
 		TutorialState.COLUMN_2_HIGHLIGHT:
 			#print("Highlighting color column 2.")
 			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
-			update_dialogue("BYTE: The last variable is COLOR. ALBY is mostly YELLOW, so the value in her record is also YELLOW!")
+			update_dialogue("Byte: The last variable is COLOR. ALBY is mostly YELLOW, so the value in her record is also YELLOW!")
 			
 			await get_tree().create_timer(1).timeout  # Wait 1 seconds
 			await highlight_column(2, SPEED_FOR_ONE_ROW_OR_COLUMN)
@@ -98,7 +97,7 @@ func transition_to(new_state):
 		TutorialState.DONE:
 			#print("Tutorial finished. Enabling drag and drop.")
 			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
-			update_dialogue("BYTE: That’s all you need to know to get started!")
+			update_dialogue("Byte: That’s all you need to know to get started!")
 			
 			await get_tree().create_timer(3).timeout  # Wait 3 seconds
 			on_tutorial_finished()
