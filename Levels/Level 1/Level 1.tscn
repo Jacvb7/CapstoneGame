@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://gs81fpw4fbn2"]
+[gd_scene load_steps=20 format=4 uid="uid://gs81fpw4fbn2"]
 
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_b4tn8"]
 [ext_resource type="Script" path="res://Levels/Level 1/level_1.gd" id="1_prf72"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dj4br3v2pbd" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn" id="10_a37f0"]
 [ext_resource type="PackedScene" uid="uid://deq40nd4d8c15" path="res://Scenes/Characters/Bugs/Nox.tscn" id="10_avh70"]
 [ext_resource type="PackedScene" uid="uid://ent46w5m3mpq" path="res://Scenes/Characters/Bugs/Taffy.tscn" id="10_tlj24"]
+[ext_resource type="PackedScene" uid="uid://yinhkkktsoor" path="res://Scenes/Characters/Bugs/Alby.tscn" id="11_uwqar"]
 [ext_resource type="PackedScene" uid="uid://d2esvyiirkt77" path="res://morning.tscn" id="13_i5b3g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cbfxm"]
@@ -104,18 +105,27 @@ navigation_polygon = SubResource("NavigationPolygon_cbfxm")
 
 [node name="bix" parent="bugs" instance=ExtResource("6_6y03i")]
 position = Vector2(252, 127)
+scale = Vector2(1.5, 1.5)
 
 [node name="ember" parent="bugs" instance=ExtResource("8_47kwa")]
 position = Vector2(227, 143)
+scale = Vector2(1.5, 1.5)
 
 [node name="fizzgig" parent="bugs" instance=ExtResource("9_syx46")]
 position = Vector2(225, 127)
+scale = Vector2(1.5, 1.5)
 
 [node name="nox" parent="bugs" instance=ExtResource("10_avh70")]
 position = Vector2(253, 143)
+scale = Vector2(1.5, 1.5)
 
 [node name="taffy" parent="bugs" instance=ExtResource("10_tlj24")]
 position = Vector2(240, 132)
+scale = Vector2(1.5, 1.5)
+
+[node name="alby" parent="bugs" instance=ExtResource("11_uwqar")]
+position = Vector2(242, 143)
+scale = Vector2(1.5, 1.5)
 
 [node name="InteractableComponent" parent="." instance=ExtResource("6_8cxpj")]
 visible = false
@@ -132,6 +142,7 @@ position = Vector2(160, 185)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_dwg24")]
+visible = false
 offset_top = -1.0
 offset_bottom = -1.0
 
