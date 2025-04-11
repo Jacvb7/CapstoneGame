@@ -42,16 +42,20 @@ func _ready() -> void:
 
 #
 func deactivating() -> void:
-	button.visible = false
-	if mini_game:
-		mini_game.queue_free()
-		mini_game = null  # Clear the reference
-	GlobalVariables.enable_click = false
-	$Player/Camera2D2.enabled = true
-	$Player/Camera2D2.make_current()
+	GlobalVariables.minigame_ready = false
+	print(GlobalVariables.minigame_ready)
+	#button.visible = false
+	#if mini_game:
+		#mini_game.queue_free()
+		#mini_game = null  # Clear the reference
+	#GlobalVariables.enable_click = false
+	#$Player/Camera2D2.enabled = true
+	#$Player/Camera2D2.make_current()
 
 func interacting() -> void:
-	button.visible = true
+	GlobalVariables.minigame_ready = true
+	print(GlobalVariables.minigame_ready)
+	#button.visible = true
 	#drag_drop_test.visible = true
 	#var mini_game = preload("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn").instantiate()
 	##var mini_game = preload("res://Scenes/drag_and_drop_card_game/drag_drop_main.tsc).instantiate()

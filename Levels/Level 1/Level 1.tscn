@@ -126,10 +126,10 @@ position = Vector2(252, 121)
 position = Vector2(232, 152)
 
 [node name="InteractableComponent" parent="." instance=ExtResource("6_8cxpj")]
+unique_name_in_owner = true
 position = Vector2(237, 132)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
-visible = false
 position = Vector2(2.5, 4)
 shape = SubResource("RectangleShape2D_bwhdw")
 
@@ -137,7 +137,6 @@ shape = SubResource("RectangleShape2D_bwhdw")
 position = Vector2(160, 185)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_dwg24")]
 offset_top = -1.0

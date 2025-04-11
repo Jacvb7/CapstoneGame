@@ -45,6 +45,8 @@ func transition_to(new_state):
 			#print("Start of tutorial. Disabling drag and drop.")
 			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
 			update_dialogue("Byte: The BugScanner 3000 must have seen the bugs! I’ll walk you through how the archive is organized so you can fill in the missing data on these bugs!")
+			await get_tree().create_timer(6).timeout  # Wait 3 seconds
+			update_dialogue("Byte: Click the mouse to continue.")
 			wait_for_click(TutorialState.ROWS_HIGHLIGHT)
 
 		TutorialState.ROWS_HIGHLIGHT:

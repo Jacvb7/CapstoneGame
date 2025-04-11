@@ -49,22 +49,23 @@ if GlobalVariables.has_scanner
 	Byte: Yippee! You found it!
 	do SignalBus._show_byte()
 	do SignalBus._hide_npc_byte()
+	=> find_the_bugs
+	
+~ find_the_bugs
 # Addition from 4/10
 # click is enabled when the tutorial begins
-	while !EnableVariables.enable_click
-		Byte: Now, let’s go find some bugs and take a look at their data!
-		Byte: They won't be far from where we met!
-		Byte: I can't wait for you to meet the others!
-		Byte: I hope we find the other bugs soon...
-		Byte: The BugScanner 3000 should pick up on other bugs any minute!
-		Byte: {{GlobalVariables.username}} is a great name for you!
-		Byte: You definitely seem like a {{GlobalVariables.username}}!
-if EnableVariables.enable_click and GlobalVariables.has_scanner
-	# Plan B will not use this part of the dialogue script
-#		Byte: The BugScanner 3000 must have seen the bugs! => mini_game
-	# Plan B:
-	Byte: The BugScanner 3000 must have seen the bugs!
-	Byte: Press 't' to use the BugScanner 3000! => plan_b_mini_game
+while !GlobalVariables.minigame_ready
+	% Byte: Now, let’s go find some bugs and take a look at their data!
+	% Byte: They won't be far from where we met!
+	% Byte: I can't wait for you to meet the others!
+	% Byte: I hope we find the other bugs soon...
+	% Byte: The BugScanner 3000 should pick up on other bugs any minute!
+	if GlobalVariables.minigame_ready
+		# Plan B will not use this part of the dialogue script
+	#		Byte: The BugScanner 3000 must have seen the bugs! => mini_game
+		# Plan B:
+		Byte: The BugScanner 3000 must have seen the bugs!
+		Byte: Press 't' to use the BugScanner 3000!
 	
 #~ mini_game
 # drag is enabled when the tutorial_state_machine finishes
@@ -81,9 +82,6 @@ if EnableVariables.enable_click and GlobalVariables.has_scanner
 #	if GlobalVariables.finish_mini_game
 #		Byte: You completed the table! Great job!
 #		=> END!
-
-~ plan_b_mini_game
-Byte: Testing ability to use text in minigame via key binding.
 
 ~ finished_mini_game
 if GlobalVariables.finish_mini_game
