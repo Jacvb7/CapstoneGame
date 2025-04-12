@@ -7,7 +7,7 @@ var isNPCVisable: bool = false
 # set to true when the player finishes the DS minigame on level 1
 # Default: SET TO FALSE
 var finish_mini_game: bool = false
-
+var disable_T = false
 var player_pos_x = 134
 var player_pos_y = 129
 

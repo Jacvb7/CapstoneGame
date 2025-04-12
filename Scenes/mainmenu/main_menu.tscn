@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://beb5ly8wb4u2s"]
+[gd_scene load_steps=10 format=3 uid="uid://beb5ly8wb4u2s"]
 
 [ext_resource type="Script" path="res://Scenes/mainmenu/main_menu.gd" id="1_ti2el"]
-[ext_resource type="Texture2D" uid="uid://bnsvoauwftylp" path="res://MainMenuBcg.png" id="2_rxhvd"]
+[ext_resource type="PackedScene" uid="uid://c5t0cl5ujvraa" path="res://MainMenuMusic.tscn" id="2_80d1v"]
+[ext_resource type="Shader" path="res://Scenes/mainmenu/pan.gdshader" id="3_2v2c0"]
 [ext_resource type="PackedScene" uid="uid://cwwgdf2ykqb7p" path="res://Scenes/user settings screen/options_menu.tscn" id="3_12owe"]
+[ext_resource type="Texture2D" uid="uid://bnsvoauwftylp" path="res://Scenes/Backgrounds/MainMenuBcg.png" id="4_ngr2i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yc17o"]
+shader = ExtResource("3_2v2c0")
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")
@@ -25,6 +30,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ti2el")
 
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("2_80d1v")]
+attenuation = 0.026278
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -34,9 +42,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="background" type="Sprite2D" parent="TextureRect"]
-position = Vector2(319.5, 172)
-scale = Vector2(0.668945, 0.39553)
-texture = ExtResource("2_rxhvd")
+texture_repeat = 2
+material = SubResource("ShaderMaterial_yc17o")
+position = Vector2(317.5, 177.436)
+scale = Vector2(0.643555, 0.381961)
+texture = ExtResource("4_ngr2i")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

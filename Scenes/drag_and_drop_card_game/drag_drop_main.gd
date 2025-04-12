@@ -17,8 +17,9 @@ func _process(_delta: float) -> void:
 	on_table_pressed()
 	
 func on_table_pressed() -> void: 
-	if Input.is_action_just_pressed("table"):
+	if Input.is_action_just_pressed("table") and not GlobalVariables.disable_T:
 		get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
+		GlobalVariables.disable_T = true
 		
 func _on_exit_button_down() -> void: 
 	get_tree().quit()

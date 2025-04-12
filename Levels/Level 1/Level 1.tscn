@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=4 uid="uid://gs81fpw4fbn2"]
+[gd_scene load_steps=19 format=4 uid="uid://gs81fpw4fbn2"]
 
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_b4tn8"]
 [ext_resource type="Script" path="res://Levels/Level 1/level_1.gd" id="1_prf72"]
-[ext_resource type="AudioStream" uid="uid://bfcy5niamyn6u" path="res://Morning.mp3" id="2_tq2v3"]
 [ext_resource type="PackedScene" uid="uid://bhscvpkwhrjjm" path="res://Scenes/Characters/player/player.tscn" id="3_dxccb"]
 [ext_resource type="PackedScene" uid="uid://cax7fe0vlwndk" path="res://Scenes/Characters/player/byte/byte.tscn" id="4_bmhvp"]
 [ext_resource type="PackedScene" uid="uid://clrbailh4ktq1" path="res://Scenes/Characters/Bugs/Bix.tscn" id="6_6y03i"]
@@ -29,9 +28,6 @@ size = Vector2(57, 42)
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_prf72")
-
-[node name="Morning" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_tq2v3")
 
 [node name="Level 1 Tile Map" type="Node2D" parent="."]
 y_sort_enabled = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://672ladi7rvee"]
 
 [ext_resource type="Script" path="res://settings.gd" id="1_dc2jk"]
-[ext_resource type="Texture2D" uid="uid://cjymt0r6kxw1y" path="res://9dd25a2b-7683-4d8a-8618-f293bb7a1c08.jpg" id="2_gb1du"]
+[ext_resource type="Texture2D" uid="uid://cjymt0r6kxw1y" path="res://Scenes/Backgrounds/9dd25a2b-7683-4d8a-8618-f293bb7a1c08.jpg" id="2_gb1du"]
 [ext_resource type="Script" path="res://Scenes/user settings screen/volume.gd" id="3_cmsqf"]
 [ext_resource type="AudioStream" uid="uid://32fant6cycgk" path="res://assets/sounds/On the Farm.wav" id="3_n64g1"]
 
