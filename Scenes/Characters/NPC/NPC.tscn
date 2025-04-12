@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Scenes/Characters/NPC/npc.gd" id="1_ruqbk"]
 [ext_resource type="Shader" path="res://Scenes/Characters/NPC/NPC.gdshader" id="1_tt7ks"]
-[ext_resource type="Texture2D" uid="uid://dwqpvavn1r4je" path="res://assets/farming_game/characters/basic_charakter_spritesheet.png" id="2_4gmaf"]
 [ext_resource type="PackedScene" path="res://Scenes/objects/interactable_label_component.tscn" id="2_wie4m"]
 [ext_resource type="PackedScene" uid="uid://b72oljiaemyss" path="res://Scenes/objects/interactable_component.tscn" id="3_33pt7"]
 [ext_resource type="Texture2D" uid="uid://cr5sb500wiixp" path="res://Scenes/Characters/player/byte/byte beta.png" id="4_ey8te"]
