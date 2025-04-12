@@ -38,12 +38,14 @@ Byte: I’m Byte the firefly! And this is my home. Welcome to Evergrove!
 									Byte: I can share what’s left in my memory of the archive with the BugScanner 3000.
 
 ~ find_the_scanner
-Byte: Go get the BugScanner 3000! It’s on top of that log over there.
+if !GlobalVariables.has_scanner
+	Byte: Go get the BugScanner 3000! It’s on top of a log nearby.
 while !GlobalVariables.has_scanner
-	% Byte: The BugScanner 3000 is nearby on top of a log.
-	% Byte: The BugScanner 3000 is just south of here.
+	% Byte: The BugScanner 3000 is close by. It's on top of a log.
+	% Byte: The BugScanner 3000 is near the southern path.
 	% Byte: Quickly! Find the BugScanner 3000!
-	% Byte: The BugScanner 3000 is close, but I can't pick it up.
+	% Byte: The BugScanner 3000 is close by, but I can't pick it up.
+	=> find_the_scanner
 
 # Dialogue pauses until condition is met
 if GlobalVariables.has_scanner
@@ -55,18 +57,22 @@ if GlobalVariables.has_scanner
 ~ find_the_bugs
 # Addition from 4/10
 # click is enabled when the tutorial begins
+if !GlobalVariables.minigame_ready
+	Byte: Now, let’s go find some bugs and take a look at their data!
 while !GlobalVariables.minigame_ready
-	% Byte: Now, let’s go find some bugs and take a look at their data!
-	% Byte: They won't be far from where we met!
-	% Byte: I can't wait for you to meet the others!
+	% Byte: The other bugs won't be far from where we met!
 	% Byte: I hope we find the other bugs soon...
+	% Byte: I can't wait for you to meet the other creatures in Evergrove!
 	% Byte: The BugScanner 3000 should pick up on other bugs any minute!
-	if GlobalVariables.minigame_ready
-		=> found_the_bugs
+	=> find_the_bugs
+if GlobalVariables.minigame_ready
+	=> found_the_bugs
 
 ~ found_the_bugs
-Byte: The BugScanner 3000 must have seen the bugs!
-Byte: Press 't' to use the BugScanner 3000!
+while GlobalVariables.minigame_ready
+	Byte: The BugScanner 3000 must have seen the bugs!
+	Byte: Press 't' to use the BugScanner 3000!
+	=> found_the_bugs
 
 #~ mini_game
 # drag is enabled when the tutorial_state_machine finishes

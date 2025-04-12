@@ -213,8 +213,8 @@ func animate_dialogue_label():
 		base_tween.tween_property(dialogue_label, "modulate", color, color_duration).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 
 	# Bouncy pop animation (runs in parallel)
-	pop_tween.parallel().tween_property(dialogue_label, "scale", Vector2(1.3, 1.3), 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	pop_tween.tween_property(dialogue_label, "scale", Vector2(1.0, 1.0), 0.3).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	pop_tween.parallel().tween_property(dialogue_label, "scale", Vector2(1.3, 1.3), 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	pop_tween.tween_property(dialogue_label, "scale", Vector2(1.0, 1.0), 0.4).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 
 
 # locks datablocks in slots if is_valid is true and briefly modulates the color to green, 
