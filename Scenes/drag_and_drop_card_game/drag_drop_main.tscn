@@ -218,19 +218,20 @@ visible = false
 position = Vector2(235, 73)
 
 [node name="Alby" type="Sprite2D" parent="preset_datablocks"]
-position = Vector2(168, 129)
+visible = false
+position = Vector2(171, 129)
 scale = Vector2(3.26389, 3.35541)
 texture = ExtResource("4_p3erg")
 
 [node name="Bix" type="Sprite2D" parent="preset_datablocks"]
 visible = false
-position = Vector2(172, 119)
+position = Vector2(175, 119)
 scale = Vector2(2.70185, 3.18055)
 texture = ExtResource("5_8xp7n")
 
 [node name="Ember" type="Sprite2D" parent="preset_datablocks"]
 visible = false
-position = Vector2(165, 137)
+position = Vector2(170, 137)
 scale = Vector2(2.55556, 2.55556)
 texture = ExtResource("6_hexqq")
 
@@ -248,7 +249,7 @@ texture = ExtResource("8_nombl")
 
 [node name="Taffy" type="Sprite2D" parent="preset_datablocks"]
 visible = false
-position = Vector2(163.5, 129.5)
+position = Vector2(167.5, 129.5)
 scale = Vector2(3.02778, 3.27778)
 texture = ExtResource("9_sqtt6")
 
@@ -345,9 +346,9 @@ text = "Exit"
 
 [node name="EmberLabel" type="Label" parent="."]
 visible = false
-offset_left = 135.0
+offset_left = 140.0
 offset_top = 205.0
-offset_right = 196.0
+offset_right = 201.0
 offset_bottom = 231.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
@@ -356,9 +357,9 @@ horizontal_alignment = 1
 
 [node name="BixLabel" type="Label" parent="."]
 visible = false
-offset_left = 135.0
+offset_left = 138.0
 offset_top = 205.0
-offset_right = 196.0
+offset_right = 199.0
 offset_bottom = 231.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
@@ -378,9 +379,9 @@ horizontal_alignment = 1
 
 [node name="NoxLabel" type="Label" parent="."]
 visible = false
-offset_left = 135.0
+offset_left = 138.0
 offset_top = 205.0
-offset_right = 196.0
+offset_right = 199.0
 offset_bottom = 231.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
@@ -389,9 +390,9 @@ horizontal_alignment = 1
 
 [node name="TaffyLabel" type="Label" parent="."]
 visible = false
-offset_left = 135.0
+offset_left = 139.0
 offset_top = 205.0
-offset_right = 196.0
+offset_right = 200.0
 offset_bottom = 231.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 18
@@ -399,9 +400,10 @@ text = "TAFFY"
 horizontal_alignment = 1
 
 [node name="AlbyLabel" type="Label" parent="."]
-offset_left = 135.0
+visible = false
+offset_left = 138.0
 offset_top = 205.0
-offset_right = 196.0
+offset_right = 199.0
 offset_bottom = 231.0
 localize_numeral_system = false
 theme_override_colors/font_color = Color(0, 0, 0, 1)
