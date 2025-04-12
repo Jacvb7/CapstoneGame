@@ -184,8 +184,37 @@ var dialogue_label = ""
 func update_dialogue(text: String):
 	if dialogue_label:
 		dialogue_label.text = text
+		dialogue_label.modulate = Color.BLACK
+		animate_dialogue_label()
 	else:
 		print("Dialogue label not found!")
+
+# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
+func animate_dialogue_label():
+	var base_tween = create_tween()
+	var pop_tween = create_tween()
+	dialogue_label.scale = Vector2(1, 1)
+	dialogue_label.modulate = Color.BLACK  # reset base color
+
+	# Color celebration (rainbow)
+	var colors = [
+		Color.DARK_BLUE,
+		Color.PURPLE,
+		Color.RED,
+		Color.ORANGE,
+		Color.YELLOW,
+		Color.DARK_GREEN,
+		Color.INDIGO,
+		Color.BLACK
+	]
+
+	var color_duration := 0.5
+	for color in colors:
+		base_tween.tween_property(dialogue_label, "modulate", color, color_duration).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+
+	# Bouncy pop animation (runs in parallel)
+	pop_tween.parallel().tween_property(dialogue_label, "scale", Vector2(1.3, 1.3), 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	pop_tween.tween_property(dialogue_label, "scale", Vector2(1.0, 1.0), 0.3).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 
 
 # locks datablocks in slots if is_valid is true and briefly modulates the color to green, 

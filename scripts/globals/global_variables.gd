@@ -4,20 +4,23 @@ var username = ""
 var has_scanner: bool = false
 var isByteVisable: bool = false
 var isNPCVisable: bool = false
+# set to true when the player finishes the DS minigame on level 1
+# Default: SET TO FALSE
 var finish_mini_game: bool = false
 
 var player_pos_x = 134
 var player_pos_y = 129
 
+# Default: SET TO FALSE
 var minigame_ready: bool = false
-#var level_script_ref = preload().new()
-#@onready var interactable_component: InteractableComponent = $root/Level1/%InteractableComponent
-#@onready var interactable_component: InteractableComponent = $levelInteractableComponent
-# Taken from enable_variables
+
+# Default: SET TO FALSE
 # used in state machine to enable and disable dragging on click
 var dragging_enabled = false  # Set to false during the tutorial
-
-var enable_click = false # stop tutorial state machine from advancing on click until player enters the scene
+# Originally used to stop tutorial state machine from advancing on click until player enters the scene
+# Now used as part of logic for plan B! 
+# Default: SET TO FALSE
+var enable_click = false 
 
 signal byte_show
 signal byte_hide

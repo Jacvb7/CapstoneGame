@@ -92,6 +92,23 @@ func _ready() -> void:
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
+	# 🌟 Added this line to set the text color to BLACK on 04/12/25
+	dialogue_label.add_theme_color_override("default_color", Color.BLACK)
+	# Set response menu text color (if using buttons or labels inside)
+	for child in responses_menu.get_children():
+		if child is Button:
+			child.add_theme_color_override("font_color", Color.DARK_SLATE_GRAY) # normal
+			child.add_theme_color_override("font_hover_color", Color.BLACK)     # hovered
+			child.add_theme_color_override("font_pressed_color", Color.BLACK)   # pressed
+			child.add_theme_color_override("font_focus_color", Color.BLACK)     # focused
+	# 🌟 Added this line to set the NAME PLATE text color to darker brown color
+	#var deep_brown = Color("#3D1F1F") # Mahogany
+	#var deep_brown = Color("#5A2D0C") # Chestnut
+	var deep_brown = Color("#381819") # Chocolate
+	#var deep_brown = Color("#4B2E1F") # Coffee
+	character_label.add_theme_color_override("default_color", deep_brown)
+
+
 	# If the responses menu doesn't have a next action set, use this one
 	if responses_menu.next_action.is_empty():
 		responses_menu.next_action = next_action

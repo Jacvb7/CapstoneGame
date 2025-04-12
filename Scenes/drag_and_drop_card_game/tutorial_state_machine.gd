@@ -44,8 +44,8 @@ func transition_to(new_state):
 		TutorialState.START:
 			#print("Start of tutorial. Disabling drag and drop.")
 			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
-			update_dialogue("Byte: The BugScanner 3000 must have seen the bugs! I’ll walk you through how the archive is organized so you can fill in the missing data on these bugs!")
-			await get_tree().create_timer(6).timeout  # Wait 3 seconds
+			update_dialogue("Byte: I’ll walk you through how the archive is organized so you can fill in the missing data on these bugs!")
+			await get_tree().create_timer(4).timeout  # Wait 3 seconds
 			update_dialogue("Byte: Click the mouse to continue.")
 			wait_for_click(TutorialState.ROWS_HIGHLIGHT)
 
@@ -206,5 +206,6 @@ func highlight_column(column: int, duration: float = 0.75):
 func update_dialogue(text: String):
 	if dialogue_label:
 		dialogue_label.text = text
+		dialogue_label.modulate = Color.BLACK
 	else:
 		print("Dialogue label not found!")
