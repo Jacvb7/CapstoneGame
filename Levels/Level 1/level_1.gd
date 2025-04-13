@@ -17,7 +17,7 @@ var mini_game: Node = null  # <- Store a reference to the instance
 @onready var player: Player = $Player
 @onready var bug_scanner_3000: Node2D = $bug_scanner_3000
 
-
+var enable_T: bool = false
 
 func _process(delta: float) -> void:
 	on_esc_pressed()
@@ -32,7 +32,7 @@ func on_esc_pressed() -> void:
 		
 		
 func on_table_pressed() -> void: 
-	if Input.is_action_just_pressed("table") and GlobalVariables.has_scanner and not GlobalVariables.finish_mini_game:
+	if Input.is_action_just_pressed("table") and GlobalVariables.has_scanner and not GlobalVariables.finish_mini_game and enable_T:
 		get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
 		GlobalVariables.enable_click = true
 		
@@ -52,7 +52,8 @@ func _ready() -> void:
 #
 func deactivating() -> void:
 	GlobalVariables.minigame_ready = false
-	print(GlobalVariables.minigame_ready)
+	enable_T = false
+	#print(GlobalVariables.minigame_ready)
 	#button.visible = false
 	#if mini_game:
 		#mini_game.queue_free()
@@ -64,6 +65,7 @@ func deactivating() -> void:
 func interacting() -> void:
 	GlobalVariables.player_pos_x = player.global_position.x
 	GlobalVariables.player_pos_y = player.global_position.y
+	enable_T = true
 	#var pos_y = player.global_position.y
 	
 	GlobalVariables.minigame_ready = true

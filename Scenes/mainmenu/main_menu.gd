@@ -9,7 +9,6 @@ extends Control
 @onready var options_menu: OptionsMenu = $Options_Menu
 @onready var margin_container: MarginContainer = $MarginContainer
 
-
 @onready var start_level = preload("res://Scenes/mainmenu/main_menu.tscn") as PackedScene
 
 
@@ -27,7 +26,7 @@ func _ready():
 func on_exit_pressed() -> void:
 	get_tree().quit()
 
-func _on_settings_pressed() -> void:
+func _on_settings_pressed() -> void:	
 	get_tree().change_scene_to_file("res://Scenes/user settings screen/settings.tscn")
 
 
@@ -46,6 +45,8 @@ func _on_start_game_button_down() -> void:
 	get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
 	
 	
+	
+	
 #Reeha: Added this to change the visibility upon pressing settings button. Connection to settings menu
 func _on_settings_button_down() -> void:
 	margin_container.visible = false
@@ -58,3 +59,6 @@ func _on_exit_game_button_down() -> void:
 
 #func _on_load_game_button_down() -> void:
 #	get_tree().change_scene_to_file("res://Scenes/load_game_screen/load_game.tscn")
+
+
+		
