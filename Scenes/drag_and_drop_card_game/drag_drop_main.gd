@@ -21,9 +21,6 @@ func on_table_pressed() -> void:
 		get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
 		GlobalVariables.disable_T = true
 		
-func _on_exit_button_down() -> void: 
-	get_tree().quit()
-
 #func _on_resolutions_item_selected(index: int) -> void:
 	#match index:
 		#0:
