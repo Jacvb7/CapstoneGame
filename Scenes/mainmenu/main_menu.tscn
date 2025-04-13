@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c5t0cl5ujvraa" path="res://MainMenuMusic.tscn" id="2_80d1v"]
 [ext_resource type="Shader" path="res://Scenes/mainmenu/pan.gdshader" id="3_2v2c0"]
 [ext_resource type="PackedScene" uid="uid://cwwgdf2ykqb7p" path="res://Scenes/user settings screen/options_menu.tscn" id="3_12owe"]
-[ext_resource type="Texture2D" uid="uid://bnsvoauwftylp" path="res://Scenes/Backgrounds/MainMenuBcg.png" id="4_ngr2i"]
+[ext_resource type="Texture2D" uid="uid://bsaqn6g5r81gh" path="res://Scenes/Backgrounds/Backgorund9.png" id="4_4c11l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yc17o"]
 shader = ExtResource("3_2v2c0")
@@ -44,9 +44,9 @@ grow_vertical = 2
 [node name="background" type="Sprite2D" parent="TextureRect"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_yc17o")
-position = Vector2(317.5, 177.436)
-scale = Vector2(0.643555, 0.381961)
-texture = ExtResource("4_ngr2i")
+position = Vector2(325.5, 178.436)
+scale = Vector2(0.457682, 0.383914)
+texture = ExtResource("4_4c11l")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
