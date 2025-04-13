@@ -17,9 +17,13 @@ func _process(_delta: float) -> void:
 	on_table_pressed()
 	
 func on_table_pressed() -> void: 
-	if Input.is_action_just_pressed("table") and not GlobalVariables.disable_T:
+	if Input.is_action_just_pressed("table") and not GlobalVariables.disable_T and GlobalVariables.minigame_ready == true:
 		get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
-		GlobalVariables.disable_T = true
+		if GlobalVariables.finish_mini_game == true:
+			GlobalVariables.disable_T = true	
+	# Used to make sure that the "t" button press isn't disabled until the game is completed
+	#else:
+	#	get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
 		
 #func _on_resolutions_item_selected(index: int) -> void:
 	#match index:
