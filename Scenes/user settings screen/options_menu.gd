@@ -1,24 +1,25 @@
-class_name OptionsMenu #create its own class
+#This script handles logic for the settings screen
+class_name OptionsMenu #Create a custom class for the Options Menu
 extends Control
 
-@onready var exit_button: Button = $MarginContainer/VBoxContainer/Exit_button
+# Reference to the Back button inside the options menu
+@onready var back_button: Button = $MarginContainer/VBoxContainer/Back_button
 
-#create a signal because this will not be able to go back entirely to the main menu and set everything correctly
-#by itself
+# Custom signal to inform the main menu to restore visibility and state
+# (since this scene cannot fully reset the main menu by itself)
 signal exit_options_menu
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#connecting the exit button on button down to the function _on_exit_button_button_down
-	exit_button.button_down.connect(_on_exit_button_button_down)
-	#To avoid an error where the button is still clickable even when the options menu is gone
-	set_process(false)	#This code will not run at all unless the process is running or set to true.
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func _on_exit_button_button_down() -> void:
-	exit_options_menu.emit() #emit the signal
+	back_button.button_down.connect(_on_exit_button_button_down)
+	# Disable processing initially, so this script does not run until explicitly activated
+	# Helps avoid input issues when the options menu is hidden
 	set_process(false)
+
+
+# Function triggered when the Exit button is pressed
+func _on_exit_button_button_down() -> void:
+	exit_options_menu.emit() # Emit the custom signal so the main menu can respond
+	set_process(false) # Disable processing again, since the menu is being exited
 	
