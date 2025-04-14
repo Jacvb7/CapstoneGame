@@ -1,9 +1,19 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=16 format=3 uid="uid://dj4br3v2pbd"]
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sf6y0"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/tutorial_state_machine.gd" id="2_pweam"]
 [ext_resource type="PackedScene" uid="uid://dwhenx27cd8av" path="res://Scenes/drag_and_drop_card_game/preset_filled_datablock.tscn" id="2_rjdag"]
+=======
+[gd_scene load_steps=19 format=3 uid="uid://dj4br3v2pbd"]
+
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sf6y0"]
+[ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/tutorial_state_machine.gd" id="2_pweam"]
+[ext_resource type="PackedScene" uid="uid://ch5ugrigbvrxb" path="res://Scenes/drag_and_drop_card_game/preset_filled_datablock.tscn" id="2_rjdag"]
+[ext_resource type="Texture2D" uid="uid://b1v8w6lryn7fu" path="res://Scenes/drag_and_drop_card_game/tutorial_dialogue_box/dialog box big.png" id="3_dwli4"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://chcoql3eof581" path="res://Scenes/drag_and_drop_card_game/preset_datablock.tscn" id="3_lv113"]
+[ext_resource type="Texture2D" uid="uid://eumlc0lwgnt3" path="res://Scenes/drag_and_drop_card_game/Bug Scanner.jpg" id="3_o8vqx"]
 [ext_resource type="Texture2D" uid="uid://bnq4ot83w6im7" path="res://Scenes/drag_and_drop_card_game/bug_images/ALBY.png" id="4_p3erg"]
 [ext_resource type="Texture2D" uid="uid://0osofscb51nf" path="res://Scenes/drag_and_drop_card_game/bug_images/BIX.png" id="5_8xp7n"]
 [ext_resource type="Texture2D" uid="uid://5h1ibs7chodg" path="res://Scenes/drag_and_drop_card_game/bug_images/EMBER.png" id="6_hexqq"]
@@ -13,6 +23,8 @@
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/datablock_mang.gd" id="10_q1qgu"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/unplaced_datablocks.gd" id="11_mq4qx"]
 [ext_resource type="PackedScene" uid="uid://0gl5using56j" path="res://Scenes/drag_and_drop_card_game/datablock_slot.tscn" id="12_0rj87"]
+[ext_resource type="FontFile" uid="uid://b3nexd3poynn4" path="res://Scenes/fonts/PixelOperator8.ttf" id="16_5r7ab"]
+[ext_resource type="AudioStream" uid="uid://d3gttbsjtq6ki" path="res://assets/music/bugscanner.wav" id="17_t22lt"]
 
 [sub_resource type="GDScript" id="GDScript_4bblq"]
 script/source = "# preset_datablock_mang.gd
@@ -48,10 +60,6 @@ func strip_bbcode_tags(text: String) -> String:
 	return text.replace(\"[center]\", \"\").replace(\"[/center]\", \"\")
 "
 
-[sub_resource type="SystemFont" id="SystemFont_0co6o"]
-font_names = PackedStringArray("SimSun")
-subpixel_positioning = 0
-
 [node name="DragDropMain" type="Node2D"]
 process_mode = 3
 position = Vector2(12, -10)
@@ -71,8 +79,15 @@ script = ExtResource("2_pweam")
 [node name="graphics" type="Node2D" parent="."]
 process_mode = 3
 
+[node name="Sprite2D" type="Sprite2D" parent="graphics"]
+z_index = -12
+position = Vector2(307.875, 182)
+scale = Vector2(3.78906, 2.46875)
+texture = ExtResource("3_o8vqx")
+
 [node name="ColorRect" type="ColorRect" parent="graphics"]
 process_mode = 3
+visible = false
 z_index = -5
 offset_left = -16.0
 offset_top = 7.0
@@ -85,24 +100,39 @@ z_index = -5
 offset_left = 334.0
 offset_top = 25.0
 offset_right = 555.0
+<<<<<<< Updated upstream
 offset_bottom = 280.0
 color = Color(0.00230388, 0.134173, 0.170083, 1)
+=======
+offset_bottom = 275.0
+color = Color(0.188235, 0.235294, 0.105882, 1)
+>>>>>>> Stashed changes
 
 [node name="lower_table_background" type="ColorRect" parent="graphics"]
 z_index = -5
 offset_left = 338.0
 offset_top = 29.0
 offset_right = 551.0
+<<<<<<< Updated upstream
 offset_bottom = 276.0
 color = Color(0.0100097, 0.269909, 0.282558, 1)
+=======
+offset_bottom = 271.0
+color = Color(0.286275, 0.34902, 0.168627, 1)
+>>>>>>> Stashed changes
 
 [node name="upper_table_outline" type="ColorRect" parent="graphics"]
 z_index = -5
 offset_left = 341.0
 offset_top = 32.0
 offset_right = 548.0
+<<<<<<< Updated upstream
 offset_bottom = 273.0
 color = Color(0.034265, 0.468276, 0.487221, 1)
+=======
+offset_bottom = 268.0
+color = Color(0.360784, 0.439216, 0.219608, 1)
+>>>>>>> Stashed changes
 metadata/_edit_use_anchors_ = true
 
 [node name="upper_table_background" type="ColorRect" parent="graphics"]
@@ -110,8 +140,13 @@ z_index = -5
 offset_left = 343.0
 offset_top = 34.0
 offset_right = 546.0
+<<<<<<< Updated upstream
 offset_bottom = 271.0
 color = Color(0.0575887, 0.626515, 0.652203, 1)
+=======
+offset_bottom = 266.0
+color = Color(0.52549, 0.627451, 0.345098, 1)
+>>>>>>> Stashed changes
 metadata/_edit_use_anchors_ = true
 
 [node name="lower_table_outline2" type="ColorRect" parent="graphics"]
@@ -119,24 +154,39 @@ z_index = -5
 offset_left = 61.0
 offset_top = 25.0
 offset_right = 282.0
+<<<<<<< Updated upstream
 offset_bottom = 280.0
 color = Color(0.00230388, 0.134173, 0.170083, 1)
+=======
+offset_bottom = 275.0
+color = Color(0.190296, 0.235805, 0.104642, 1)
+>>>>>>> Stashed changes
 
 [node name="lower_table_background2" type="ColorRect" parent="graphics"]
 z_index = -5
 offset_left = 65.0
 offset_top = 29.0
 offset_right = 278.0
+<<<<<<< Updated upstream
 offset_bottom = 276.0
 color = Color(0.0100097, 0.269909, 0.282558, 1)
+=======
+offset_bottom = 271.0
+color = Color(0.284864, 0.349765, 0.167448, 1)
+>>>>>>> Stashed changes
 
 [node name="upper_table_outline2" type="ColorRect" parent="graphics"]
 z_index = -5
 offset_left = 68.0
 offset_top = 32.0
 offset_right = 275.0
+<<<<<<< Updated upstream
 offset_bottom = 273.0
 color = Color(0.034265, 0.468276, 0.487221, 1)
+=======
+offset_bottom = 268.0
+color = Color(0.360624, 0.438129, 0.220349, 1)
+>>>>>>> Stashed changes
 metadata/_edit_use_anchors_ = true
 
 [node name="upper_table_background2" type="ColorRect" parent="graphics"]
@@ -144,8 +194,13 @@ z_index = -5
 offset_left = 70.0
 offset_top = 34.0
 offset_right = 273.0
+<<<<<<< Updated upstream
 offset_bottom = 271.0
 color = Color(0.0575887, 0.626515, 0.652203, 1)
+=======
+offset_bottom = 266.0
+color = Color(0.527524, 0.62962, 0.346307, 1)
+>>>>>>> Stashed changes
 metadata/_edit_use_anchors_ = true
 
 [node name="preset_datablocks" type="Node2D" parent="."]
@@ -153,41 +208,62 @@ process_mode = 3
 
 [node name="preset_datablock_r0c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 z_index = -1
+<<<<<<< Updated upstream
 position = Vector2(381, 56)
+=======
+position = Vector2(380, 50)
+>>>>>>> Stashed changes
 scale = Vector2(1, 1)
 
 [node name="preset_datablock_r0c1" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 z_index = -1
+<<<<<<< Updated upstream
 position = Vector2(445, 56)
+=======
+position = Vector2(445, 50)
+>>>>>>> Stashed changes
 scale = Vector2(1, 1)
 
 [node name="preset_datablock_r0c2" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 z_index = -1
+<<<<<<< Updated upstream
 position = Vector2(508, 56)
+=======
+position = Vector2(510, 50)
+>>>>>>> Stashed changes
 scale = Vector2(1, 1)
 
 [node name="preset_datablock_r1c4" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 visible = false
 z_index = -1
-position = Vector2(381, 88)
+position = Vector2(380, 88)
 scale = Vector2(1, 1)
 
 [node name="preset_datablock_r1c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+<<<<<<< Updated upstream
 position = Vector2(381, 88)
+=======
+position = Vector2(380, 82)
+>>>>>>> Stashed changes
 
 [node name="preset_datablock_r1c3" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 visible = false
 z_index = -1
-position = Vector2(382, 89)
+position = Vector2(380, 82)
 scale = Vector2(1, 1)
 
 [node name="preset_datablock_r1c1" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 z_index = -1
+<<<<<<< Updated upstream
 position = Vector2(445, 89)
+=======
+position = Vector2(445, 82)
+>>>>>>> Stashed changes
 scale = Vector2(1, 1)
 
 [node name="preset_datablock_r1c2" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 z_index = -1
+<<<<<<< Updated upstream
 position = Vector2(509, 88)
 scale = Vector2(1, 1)
 
@@ -205,6 +281,25 @@ position = Vector2(382, 216)
 
 [node name="preset_datablock_r6c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
 position = Vector2(382, 248)
+=======
+position = Vector2(510, 82)
+scale = Vector2(1, 1)
+
+[node name="preset_datablock_r2c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+position = Vector2(380, 114)
+
+[node name="preset_datablock_r3c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+position = Vector2(380, 146)
+
+[node name="preset_datablock_r4c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+position = Vector2(380, 178)
+
+[node name="preset_datablock_r5c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+position = Vector2(380, 210)
+
+[node name="preset_datablock_r6c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
+position = Vector2(380, 242)
+>>>>>>> Stashed changes
 
 [node name="preset_name_datablock" parent="preset_datablocks" instance=ExtResource("3_lv113")]
 visible = false
@@ -261,59 +356,104 @@ script = ExtResource("11_mq4qx")
 
 [node name="datablock_slot_r2c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
+<<<<<<< Updated upstream
 position = Vector2(445, 120)
+=======
+position = Vector2(445, 114)
+>>>>>>> Stashed changes
 scale = Vector2(1.2, 1.2)
 
 [node name="datablock_slot_r2c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
+<<<<<<< Updated upstream
 position = Vector2(509, 120)
+=======
+position = Vector2(509, 114)
+>>>>>>> Stashed changes
 scale = Vector2(1.2, 1.2)
 
 [node name="datablock_slot_r3c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
+<<<<<<< Updated upstream
 position = Vector2(445, 152)
+=======
+position = Vector2(445, 146)
+>>>>>>> Stashed changes
 scale = Vector2(1.2, 1.2)
 
 [node name="datablock_slot_r3c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
+<<<<<<< Updated upstream
 position = Vector2(509, 152)
+=======
+position = Vector2(509, 146)
+>>>>>>> Stashed changes
 scale = Vector2(1.2, 1.2)
 
 [node name="datablock_slot_r4c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
+<<<<<<< Updated upstream
 position = Vector2(445, 184)
+=======
+position = Vector2(445, 178)
+>>>>>>> Stashed changes
 scale = Vector2(1.2, 1.2)
 
 [node name="datablock_slot_r4c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
+<<<<<<< Updated upstream
 position = Vector2(509, 184)
+=======
+position = Vector2(509, 178)
+>>>>>>> Stashed changes
 scale = Vector2(1.2, 1.2)
 
 [node name="datablock_slot_r5c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
+<<<<<<< Updated upstream
 position = Vector2(445, 216)
+=======
+position = Vector2(445, 210)
+>>>>>>> Stashed changes
 scale = Vector2(1.2, 1.2)
 
 [node name="datablock_slot_r5c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
+<<<<<<< Updated upstream
 position = Vector2(509, 216)
+=======
+position = Vector2(509, 210)
+>>>>>>> Stashed changes
 scale = Vector2(1.2, 1.2)
 
 [node name="datablock_slot_r6c1" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
+<<<<<<< Updated upstream
 position = Vector2(445, 248)
+=======
+position = Vector2(445, 242)
+>>>>>>> Stashed changes
 scale = Vector2(1.2, 1.2)
 
 [node name="datablock_slot_r6c2" parent="datablock_slots" groups=["datablock_slots"] instance=ExtResource("12_0rj87")]
 z_index = -3
+<<<<<<< Updated upstream
 position = Vector2(509, 248)
+=======
+position = Vector2(509, 242)
+>>>>>>> Stashed changes
 scale = Vector2(1.2, 1.2)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 3.0
 offset_top = 323.0
 offset_right = 613.0
+<<<<<<< Updated upstream
 offset_bottom = 370.0
+=======
+offset_bottom = 369.0
+theme_override_fonts/normal_font = ExtResource("16_5r7ab")
+>>>>>>> Stashed changes
 metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="Control" parent="."]
@@ -333,7 +473,7 @@ scale = Vector2(0.434897, 0.629508)
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = SubResource("SystemFont_0co6o")
+theme_override_fonts/font = ExtResource("16_5r7ab")
 theme_override_font_sizes/font_size = 30
 text = "Exit"
 
@@ -344,6 +484,7 @@ offset_top = 248.0
 offset_right = 204.0
 offset_bottom = 274.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_5r7ab")
 theme_override_font_sizes/font_size = 18
 text = "EMBER"
 horizontal_alignment = 1
@@ -355,6 +496,7 @@ offset_top = 248.0
 offset_right = 197.0
 offset_bottom = 274.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_5r7ab")
 theme_override_font_sizes/font_size = 18
 text = "BIX"
 horizontal_alignment = 1
@@ -366,6 +508,7 @@ offset_top = 248.0
 offset_right = 208.0
 offset_bottom = 274.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_5r7ab")
 theme_override_font_sizes/font_size = 18
 text = "FIZZGIG"
 horizontal_alignment = 1
@@ -377,6 +520,7 @@ offset_top = 248.0
 offset_right = 199.0
 offset_bottom = 274.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_5r7ab")
 theme_override_font_sizes/font_size = 18
 text = "NOX"
 horizontal_alignment = 1
@@ -388,6 +532,7 @@ offset_top = 248.0
 offset_right = 203.0
 offset_bottom = 274.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_5r7ab")
 theme_override_font_sizes/font_size = 18
 text = "TAFFY"
 horizontal_alignment = 1
@@ -400,8 +545,15 @@ offset_right = 202.0
 offset_bottom = 274.0
 localize_numeral_system = false
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_5r7ab")
 theme_override_font_sizes/font_size = 18
 text = "ALBY"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-289, 19)
+stream = ExtResource("17_t22lt")
+volume_db = -7.345
+autoplay = true
 
 [connection signal="button_down" from="VBoxContainer2/exit" to="." method="_on_exit_button_down"]

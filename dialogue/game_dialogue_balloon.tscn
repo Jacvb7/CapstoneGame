@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://btmycwvcouydw"]
+[gd_scene load_steps=6 format=3 uid="uid://eey2unrq6625"]
 
 [ext_resource type="Script" path="res://dialogue/game_dialogue_balloon.gd" id="1_lot25"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Theme" uid="uid://ebjy7shai0pg" path="res://dialogue/dialogue_balloon_theme.tres" id="2_oov1i"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
+[ext_resource type="FontFile" uid="uid://b3nexd3poynn4" path="res://Scenes/fonts/PixelOperator8.ttf" id="3_ajkf3"]
 
 [node name="GameDialogueBalloon" type="CanvasLayer"]
 process_mode = 3
@@ -56,6 +57,7 @@ layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("2_oov1i")
 theme_type_variation = &"CharacterNameText"
+theme_override_fonts/normal_font = ExtResource("3_ajkf3")
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -66,6 +68,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"DialogueText"
+theme_override_fonts/normal_font = ExtResource("3_ajkf3")
 text = "Dialogue..."
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
@@ -92,6 +95,7 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ajkf3")
 text = "Response example"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

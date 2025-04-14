@@ -10,8 +10,19 @@
 [ext_resource type="PackedScene" uid="uid://b72oljiaemyss" path="res://Scenes/objects/interactable_component.tscn" id="6_8cxpj"]
 [ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="6_dwg24"]
 [ext_resource type="PackedScene" uid="uid://1djwmi0vi132" path="res://Scenes/Characters/NPC/NPC.tscn" id="7_7kmoh"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://dob0sbr4aawad" path="res://Scenes/objects/bug_scanner_3000.tscn" id="9_0lkad"]
 [ext_resource type="PackedScene" uid="uid://dj4br3v2pbd" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn" id="10_a37f0"]
+=======
+[ext_resource type="PackedScene" uid="uid://u7vfiw8pwfpi" path="res://Scenes/Characters/Bugs/Ember.tscn" id="8_47kwa"]
+[ext_resource type="PackedScene" uid="uid://cddbb88fkcb86" path="res://Scenes/objects/bug_scanner_3000.tscn" id="9_0lkad"]
+[ext_resource type="PackedScene" uid="uid://c2a3e116iht3r" path="res://Scenes/Characters/Bugs/Fizzgig.tscn" id="9_syx46"]
+[ext_resource type="PackedScene" uid="uid://dj4br3v2pbd" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn" id="10_a37f0"]
+[ext_resource type="PackedScene" uid="uid://deq40nd4d8c15" path="res://Scenes/Characters/Bugs/Nox.tscn" id="10_avh70"]
+[ext_resource type="PackedScene" uid="uid://ent46w5m3mpq" path="res://Scenes/Characters/Bugs/Taffy.tscn" id="10_tlj24"]
+[ext_resource type="PackedScene" uid="uid://yinhkkktsoor" path="res://Scenes/Characters/Bugs/Alby.tscn" id="11_uwqar"]
+[ext_resource type="PackedScene" path="res://morning.tscn" id="13_i5b3g"]
+>>>>>>> Stashed changes
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cbfxm"]
 vertices = PackedVector2Array(278.789, 117.711, 278.203, 145.898, 197.602, 145.094, 196.406, 115.313)

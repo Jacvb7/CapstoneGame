@@ -1,7 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://beb5ly8wb4u2s"]
 
 [ext_resource type="Script" path="res://Scenes/mainmenu/main_menu.gd" id="1_ti2el"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://4rj4yn6iuakb" path="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg" id="2_mx22y"]
+=======
+[ext_resource type="PackedScene" path="res://MainMenuMusic.tscn" id="2_80d1v"]
+[ext_resource type="Shader" path="res://Scenes/mainmenu/pan.gdshader" id="3_2v2c0"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://cwwgdf2ykqb7p" path="res://Scenes/user settings screen/options_menu.tscn" id="3_12owe"]
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
