@@ -10,23 +10,28 @@ func _ready() -> void:
 	#pass # Replace with function body.
 	if !GlobalVariables.minigame_ready and !GlobalVariables.has_scanner:
 		set_process(false)
-
+	if GlobalVariables.finish_mini_game:
+		set_process(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	#pass
-	set_process(true)
-	on_table_pressed()
+	#if (GlobalVariables.disable_T):
+		#GlobalVariables.enable_click = false
+	if (!GlobalVariables.disable_T):
+		on_table_pressed()
+	
 	
 func on_table_pressed() -> void: 
-	if Input.is_action_just_pressed("table") and !GlobalVariables.disable_T and GlobalVariables.minigame_ready and !GlobalVariables.finish_mini_game:
-		get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
+	#if Input.is_action_just_pressed("table") and !GlobalVariables.disable_T and GlobalVariables.minigame_ready and !GlobalVariables.finish_mini_game:
+		#get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
 		
 	if Input.is_action_just_pressed("table") and GlobalVariables.finish_mini_game:
 		get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
-		if GlobalVariables.finish_mini_game:
-			GlobalVariables.disable_T = true
-				
+		GlobalVariables.disable_T = true
+		GlobalVariables.dragging_enabled = false
+		set_process(false)
+
 	# Used to make sure that the "t" button press isn't disabled until the game is completed
 	#else:
 	#	get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
