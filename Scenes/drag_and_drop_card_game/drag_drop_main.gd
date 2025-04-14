@@ -7,7 +7,9 @@ signal tut_finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	#pass # Replace with function body.
+	if !GlobalVariables.minigame_ready and !GlobalVariables.has_scanner:
+		set_process(false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,12 +19,12 @@ func _process(_delta: float) -> void:
 	on_table_pressed()
 	
 func on_table_pressed() -> void: 
-	if Input.is_action_just_pressed("table") and GlobalVariables.disable_T == false and GlobalVariables.minigame_ready == true and GlobalVariables.finish_mini_game == false:
+	if Input.is_action_just_pressed("table") and !GlobalVariables.disable_T and GlobalVariables.minigame_ready and !GlobalVariables.finish_mini_game:
 		get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
 		
-	if Input.is_action_just_pressed("table") and GlobalVariables.finish_mini_game == true:
+	if Input.is_action_just_pressed("table") and GlobalVariables.finish_mini_game:
 		get_tree().change_scene_to_file("res://Levels/Level 1/Level 1.tscn")
-		if GlobalVariables.finish_mini_game == true:
+		if GlobalVariables.finish_mini_game:
 			GlobalVariables.disable_T = true
 				
 	# Used to make sure that the "t" button press isn't disabled until the game is completed

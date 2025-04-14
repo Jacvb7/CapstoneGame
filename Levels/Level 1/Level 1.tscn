@@ -124,7 +124,8 @@ position = Vector2(160, 185)
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_dwg24")]
 offset_top = -1.0
-offset_bottom = -1.0
+offset_right = 19.0
+offset_bottom = 18.0
 
 [node name="bug_scanner_3000" parent="." instance=ExtResource("9_0lkad")]
 light_mask = 2
