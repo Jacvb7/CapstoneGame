@@ -72,20 +72,6 @@ limit_bottom = 400
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="Button" type="Button" parent="Player/Camera2D2"]
-visible = false
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 143.0
-offset_top = 14.0
-offset_right = 182.0
-offset_bottom = 22.0
-grow_horizontal = 0
-grow_vertical = 0
-
 [node name="Byte" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("4_bmhvp")]
 y_sort_enabled = true
 position = Vector2(66, 115)
@@ -162,5 +148,3 @@ position = Vector2(-28, 40)
 process_mode = 3
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("13_i5b3g")]
-
-[connection signal="pressed" from="Player/Camera2D2/Button" to="." method="_on_button_pressed"]
