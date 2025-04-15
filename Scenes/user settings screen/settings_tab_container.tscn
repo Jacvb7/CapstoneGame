@@ -33,9 +33,10 @@ offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -106,7 +107,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -122,12 +122,18 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
+[node name="Label2" type="Label" parent="TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Coming Soon"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer"]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_constants/separation = 45
 
@@ -156,12 +162,12 @@ layout_mode = 2
 theme_override_constants/separation = 5
 theme_override_styles/separator = SubResource("StyleBoxEmpty_hfbkv")
 
-[node name="Accesibilty" type="TabBar" parent="TabContainer"]
+[node name="Accessibility" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Accesibilty"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Accessibility"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -173,25 +179,25 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="Label" type="Label" parent="TabContainer/Accesibilty/MarginContainer"]
+[node name="Label" type="Label" parent="TabContainer/Accessibility/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Coming Soon"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Accesibilty/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Accessibility/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Subtitles_Toggle_Button" parent="TabContainer/Accesibilty/MarginContainer/VBoxContainer" instance=ExtResource("5_8qv5e")]
+[node name="Subtitles_Toggle_Button" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer" instance=ExtResource("5_8qv5e")]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="TabContainer/Accesibilty/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 0
 theme_override_styles/separator = SubResource("StyleBoxEmpty_sr10q")
 
-[node name="Text_to_speech_button" parent="TabContainer/Accesibilty/MarginContainer/VBoxContainer" instance=ExtResource("6_65bpf")]
+[node name="Text_to_speech_button" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer" instance=ExtResource("6_65bpf")]
 layout_mode = 2
