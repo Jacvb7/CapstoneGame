@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://deq40nd4d8c15" path="res://Scenes/Characters/Bugs/Nox.tscn" id="10_avh70"]
 [ext_resource type="PackedScene" uid="uid://ent46w5m3mpq" path="res://Scenes/Characters/Bugs/Taffy.tscn" id="10_tlj24"]
 [ext_resource type="PackedScene" uid="uid://yinhkkktsoor" path="res://Scenes/Characters/Bugs/Alby.tscn" id="11_uwqar"]
-[ext_resource type="PackedScene" path="res://morning.tscn" id="13_i5b3g"]
+[ext_resource type="PackedScene" uid="uid://yjsrbaeimu7k" path="res://morning.tscn" id="13_i5b3g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cbfxm"]
 vertices = PackedVector2Array(261.039, 121.18, 266.961, 127.102, 257.828, 140, 218.461, 140, 213.719, 129.461, 216.68, 120.578, 237.039, 116.211)
