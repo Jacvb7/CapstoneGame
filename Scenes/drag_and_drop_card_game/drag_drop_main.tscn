@@ -75,7 +75,7 @@ offset_left = -16.0
 offset_top = 7.0
 offset_right = 630.0
 offset_bottom = 375.0
-color = Color(0.356863, 0.482353, 0.611765, 0.447059)
+color = Color(0.27451, 0.509804, 0.705882, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="lower_table_outline" type="ColorRect" parent="graphics"]
