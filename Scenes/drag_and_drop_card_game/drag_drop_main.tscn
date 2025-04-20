@@ -54,13 +54,6 @@ process_mode = 3
 position = Vector2(12, -10)
 script = ExtResource("1_sf6y0")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-process_mode = 3
-visible = false
-position = Vector2(307, 190)
-rotation = 3.14159
-scale = Vector2(11.732, 4.5178)
-
 [node name="tutorial_state_machine" type="Node2D" parent="."]
 process_mode = 3
 script = ExtResource("2_pweam")
