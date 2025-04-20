@@ -39,16 +39,8 @@ func _ready():
 		flag = false
 		transition_to(TutorialState.START)
 
-# MOVED THIS LOGIC FROM _PROCESS() TO _READY() 4/16
-#func _process(delta: float) -> void:
-	#if GlobalVariables.enable_click and flag:
-		#flag = false
-		#transition_to(TutorialState.START)
-		
-
 func transition_to(new_state):
 	current_state = new_state
-	#print("Transitioned to state:", new_state)
 
 	match current_state:
 		TutorialState.START:

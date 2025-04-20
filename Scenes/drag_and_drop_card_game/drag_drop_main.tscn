@@ -203,7 +203,6 @@ position = Vector2(382, 211)
 position = Vector2(382, 243)
 
 [node name="preset_name_datablock" parent="preset_datablocks" instance=ExtResource("3_lv113")]
-visible = false
 position = Vector2(235, 73)
 
 [node name="Alby" type="Sprite2D" parent="preset_datablocks"]
