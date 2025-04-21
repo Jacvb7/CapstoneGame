@@ -14,6 +14,7 @@ config/name="DataScienceGame"
 run/main_scene="res://Scenes/mainmenu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+config/windows_native_icon="res://assets/icon.ico"
 
 [autoload]
 
@@ -42,20 +43,22 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot_icon/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
-"res://Scenes/": "green",
+"res://Levels/": "purple",
+"res://Scenes/": "gray",
 "res://Scenes/Backgrounds/": "orange",
 "res://Scenes/Characters/": "orange",
 "res://Scenes/fonts/": "orange",
 "res://Scenes/objects/": "orange",
-"res://Tilesets/": "yellow",
-"res://addons/": "purple",
-"res://assets/": "orange",
-"res://scripts/": "pink"
+"res://Tilesets/": "green",
+"res://addons/": "red",
+"res://assets/": "yellow",
+"res://dialogue/": "teal",
+"res://scripts/": "orange"
 }
 
 [global_group]

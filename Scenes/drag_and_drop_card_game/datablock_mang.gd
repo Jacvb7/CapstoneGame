@@ -59,7 +59,7 @@ func _input(event):
 			if datablock:
 				start_drag(datablock)
 		else: # when left click released
-			if datablock_being_dragged:
+			if datablock_being_dragged and not endGame:
 				finish_drag()
 
 
