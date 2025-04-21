@@ -15,7 +15,6 @@ func _process(delta: float) -> void:
 	
 func _show_byte() -> void:
 	show_byte.emit()
-	print("showing byte")
 	
 func _hide_byte() -> void:
 	hide_byte.emit()
