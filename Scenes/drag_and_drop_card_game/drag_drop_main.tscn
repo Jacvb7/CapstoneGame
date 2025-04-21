@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.gd" id="1_sf6y0"]
 [ext_resource type="Script" path="res://Scenes/drag_and_drop_card_game/tutorial_state_machine.gd" id="2_pweam"]
-[ext_resource type="PackedScene" uid="uid://dwhenx27cd8av" path="res://Scenes/drag_and_drop_card_game/preset_filled_datablock.tscn" id="2_rjdag"]
+[ext_resource type="PackedScene" uid="uid://ch5ugrigbvrxb" path="res://Scenes/drag_and_drop_card_game/preset_filled_datablock.tscn" id="2_rjdag"]
 [ext_resource type="Texture2D" uid="uid://b1v8w6lryn7fu" path="res://Scenes/drag_and_drop_card_game/tutorial_dialogue_box/dialog box big.png" id="3_dwli4"]
 [ext_resource type="PackedScene" uid="uid://chcoql3eof581" path="res://Scenes/drag_and_drop_card_game/preset_datablock.tscn" id="3_lv113"]
 [ext_resource type="Texture2D" uid="uid://bnq4ot83w6im7" path="res://Scenes/drag_and_drop_card_game/bug_images/ALBY.png" id="4_p3erg"]
