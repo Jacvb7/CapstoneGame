@@ -1,6 +1,8 @@
 #using GameDialogueManager
 
 ~ start
+if GlobalVariables.minigame_ready
+	=> found_the_bugs
 if GlobalVariables.finish_mini_game:
 	=> finished_mini_game
 Byte: Hi there!
@@ -59,12 +61,12 @@ if GlobalVariables.has_scanner
 # click is enabled when the tutorial begins
 if !GlobalVariables.minigame_ready
 	Byte: Now, let’s go find some bugs and take a look at their data!
-while !GlobalVariables.minigame_ready
-	% Byte: The other bugs won't be far from where we met!
-	% Byte: I hope we find the other bugs soon...
-	% Byte: I can't wait for you to meet the other creatures in Evergrove!
-	% Byte: The BugScanner 3000 should pick up on other bugs any minute!
-	=> find_the_bugs
+#while !GlobalVariables.minigame_ready
+#	% Byte: The other bugs won't be far from where we met!
+#	% Byte: I hope we find the other bugs soon...
+#	% Byte: I can't wait for you to meet the other creatures in Evergrove!
+#	% Byte: The BugScanner 3000 should pick up on other bugs any minute!
+#	=> find_the_bugs
 if GlobalVariables.minigame_ready
 	=> found_the_bugs
 
