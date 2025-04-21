@@ -14,12 +14,7 @@ func _ready() -> void:
 	interactable_component.interactable_deactivated.connect(on_interactable_dectivated)
 	interactable_component.hide()
 	
-	SignalBus.hide_npc_byte.connect(_hide_npc_byte)
 	#GameDialogueManager.action_enter_username.connect(on_enter_username)
-	
-func _hide_npc_byte() -> void:
-	is_visable = false
-	animated_sprite_2d.hide()
 	
 func on_interactable_activated() -> void:
 	if is_visable:
