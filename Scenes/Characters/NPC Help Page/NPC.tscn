@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bodshy1sh7fat"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/NPC Help Page/usermanualnpc.gd" id="1_e6b1y"]
-[ext_resource type="PackedScene" path="res://Scenes/objects/interactable_label_component.tscn" id="2_ryyn2"]
+[ext_resource type="PackedScene" uid="uid://dfw5plv8bx0f0" path="res://Scenes/objects/interactable_label_component.tscn" id="2_ryyn2"]
 [ext_resource type="Shader" path="res://Scenes/Characters/NPC/NPC.gdshader" id="3_jhqh2"]
 [ext_resource type="Texture2D" uid="uid://bj3oas6jq7ix8" path="res://assets/Sophie.png" id="4_hg0se"]
 [ext_resource type="PackedScene" uid="uid://b72oljiaemyss" path="res://Scenes/objects/interactable_component.tscn" id="5_dw76x"]
