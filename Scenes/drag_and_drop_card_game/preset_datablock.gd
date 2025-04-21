@@ -1,6 +1,10 @@
 # preset_datablock.gd
 extends Node2D
+
+# Create an instance of the bug database to access bug-related data
 var bug_database_ref = preload("res://scripts/bug_database.gd").new()
+
+# References to the bug image sprites
 @onready var ALBY: Sprite2D = $"../Alby"
 @onready var BIX: Sprite2D = $"../Bix"
 @onready var EMBER: Sprite2D = $"../Ember"
@@ -8,7 +12,7 @@ var bug_database_ref = preload("res://scripts/bug_database.gd").new()
 @onready var NOX: Sprite2D = $"../Nox"
 @onready var TAFFY: Sprite2D = $"../Taffy"
 
-#new added
+# References to the labels that display bug names
 @onready var ember_label: Label = $"../../EmberLabel"
 @onready var bix_label: Label = $"../../BixLabel"
 @onready var fizzgig_label: Label = $"../../FizzgigLabel"
@@ -16,6 +20,7 @@ var bug_database_ref = preload("res://scripts/bug_database.gd").new()
 @onready var taffy_label: Label = $"../../TaffyLabel"
 @onready var alby_label: Label = $"../../AlbyLabel"
 
+# A dictionary mapping bug names (strings) to their corresponding Sprite2D nodes
 var bug_images = {
 	"Alby": ALBY,
 	"Bix": BIX,
@@ -24,20 +29,32 @@ var bug_images = {
 	"Nox": NOX,
 	"Taffy": TAFFY
 }
+
+# Label node attached to the datablock 
 @onready var text_label = $preset_datablock_text
+# Button that displays a bug image based on the bug name in the datablock 
+@onready var button: Button = $ButtonD
+
+# Font scaling configuration for dynamic text sizing
 @export var max_font_size: int = 24
 @export var min_font_size: int = 10
 @export var max_width: int = 60
-@onready var button: Button = $Button
-@onready var sprite_2d: Sprite2D = $Button/Sprite2D
+
+var display_text = ""
+# Stores the name of the bug that is to be displayed (the bug that is selected)
+var bug = ""
+
 # Font path
 const FONT_PATH = "res://assets/fonts/Roboto-Regular.ttf"
-var display_text = ""
+
+
 func _ready():
+	# Waits for initialization and calls update_text and set_text.
 	await get_tree().process_frame  # Ensure nodes are initialized
 	update_text()
 	set_text()
-var bug = ""
+
+
 func update_text():
 	var block_name
 	if !is_in_group("preset_datablocks"):
@@ -64,7 +81,7 @@ func update_text():
 					var example_bug = bug_database_ref.preset_bug_data["EXAMPLE_BUG"]
 					if col < example_bug.size():
 						text_label.text = "[center]" + example_bug[col] + "[/center]"
-						bug = example_bug[col] #Store the name in a global variable
+						bug = example_bug[col] #Store the name in the variable
 						button.button_down.connect(_on_bug_button_pressed) #When the name is pressed.
 						button.modulate.a = 0.1 # Changing visibility of the button. Only for aesthetics.
 				# Fill in the rest of the first column with bug names
@@ -78,6 +95,7 @@ func update_text():
 						bug = bug_name	#Store the name in a global variable
 						button.button_down.connect(_on_bug_button_pressed)	#When the name is pressed.
 						
+
 # Function that displays the selected bugs.
 # It just uses a switch statement with the bug variable.
 # The bug variable stores the name of the bug currently selected.
@@ -107,6 +125,8 @@ func _on_bug_button_pressed() -> void:
 			hide_bugs()
 			TAFFY.show()
 			taffy_label.show()
+
+
 #function to hide all bugs
 func hide_bugs() -> void:
 	ALBY.hide()
@@ -121,7 +141,8 @@ func hide_bugs() -> void:
 	fizzgig_label.hide()
 	nox_label.hide()
 	taffy_label.hide()
-# Dynamic text sizing (similar to your datablock implementation)
+
+
 func set_text():
 	var font = load(FONT_PATH)
 	if not font:

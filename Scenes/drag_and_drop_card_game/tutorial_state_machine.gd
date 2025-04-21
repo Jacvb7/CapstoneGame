@@ -2,7 +2,7 @@ extends Node
 
 var waiting_for_click = false
 const SPEED_FOR_ALL_ROWS = 0.3
-const SPEED_FOR_ONE_ROW_OR_COLUMN = 1
+const SPEED_FOR_ONE_ROW_OR_COLUMN = 0.75
 
 # TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
 var dialogue_label  # Reference to the dialogue label
@@ -34,18 +34,20 @@ func _ready():
 	# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
 	dialogue_label = $"../RichTextLabel"  # Adjust the path
 	
-	#transition_to(TutorialState.START)
+	# MOVED FROM _PROCESS() TO _READY() 4/16
+	if GlobalVariables.enable_click and flag:
+		flag = false
+		transition_to(TutorialState.START)
 
 func transition_to(new_state):
 	current_state = new_state
-	print("Transitioned to state:", new_state)
 
 	match current_state:
 		TutorialState.START:
 			#print("Start of tutorial. Disabling drag and drop.")
 			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
 			update_dialogue("Byte: I’ll walk you through how the archive is organized so you can fill in the missing data on these bugs!")
-			await get_tree().create_timer(4).timeout  # Wait 3 seconds
+			await get_tree().create_timer(3).timeout  # Wait 3 seconds
 			update_dialogue("Byte: Click the mouse to continue.")
 			wait_for_click(TutorialState.ROWS_HIGHLIGHT)
 
@@ -55,10 +57,10 @@ func transition_to(new_state):
 			update_dialogue("Byte: In the archive, each row represents a record of a bug living in Evergrove!")
 			
 			for i in range(1, 7):
-				print("Highlighting row ", i, ".\n")
+				#print("Highlighting row ", i, ".\n")
 				await highlight_row(i, SPEED_FOR_ALL_ROWS)
 			
-			print("All rows highlighted. Moving to next tutorial step.")
+			#print("All rows highlighted. Moving to next tutorial step.")
 			wait_for_click(TutorialState.EXAMPLE_HIGHLIGHT)
 
 		TutorialState.EXAMPLE_HIGHLIGHT:
@@ -100,19 +102,13 @@ func transition_to(new_state):
 			#print("Tutorial finished. Enabling drag and drop.")
 			# TEMPORARY WAY TO DISPLAY TEXT IN THE SCENE FOR THE TUTORIAL
 			update_dialogue("Byte: That’s all you need to know to get started!")
-			
-			await get_tree().create_timer(3).timeout  # Wait 3 seconds
+			await get_tree().create_timer(2).timeout  # Wait 3 seconds
 			on_tutorial_finished()
-
-func _process(delta: float) -> void:
-	if GlobalVariables.enable_click and flag:
-		flag = false
-		transition_to(TutorialState.START)
 
 
 # Function to wait for a click before transitioning
 func wait_for_click(_next_state):
-	print("click: ", GlobalVariables.enable_click)
+	#print("click: ", GlobalVariables.enable_click)
 	if GlobalVariables.enable_click:
 		waiting_for_click = true
 		await get_tree().process_frame  # Ensure the event system has time to process

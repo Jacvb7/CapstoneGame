@@ -95,11 +95,11 @@ if GlobalVariables.finish_mini_game
 	Byte: [wave rate=10.0 level=10 connected=0][color=#6A1B9A]You did it!!! Great Job!!![/color][/wave]
 	Byte: Oh {{GlobalVariables.username}}... I feel... STRANGE...
 	Byte: [shake rate=7.0 level=6 connected=1]SOMETHING IS HAPPENING TO ME!!![/shake]
-	Byte: Oh my! My processing power just spiked— there's *so much* more data in the archive now!
+	Byte: Oh my! My processing power just spiked— [b]there's so much more data in the archive now![/b]
 	- Really? What does that mean?
 		Byte: It means that all the data we need is back! We just have to collect it by tracking down the bugs! 
 		Byte: Now, whenever we find new groups of bugs, I can show you how to work with their data!
-		Byte: Together, we'll learn to protect and understand the creatures of Evergrove—just like real scientists do!
+		Byte: Together, we'll learn to protect and understand the creatures of Evergrove— just like real scientists do!
 		- Can I become a real scientist?
 			Byte: You’re still a Data Explorer for now! 
 			Byte: But with more experience, you can become a scientist in no time! 

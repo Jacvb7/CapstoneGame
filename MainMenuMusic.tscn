@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5t0cl5ujvraa"]
+[gd_scene load_steps=2 format=3 uid="uid://dy48pq6so3oou"]
 
 [ext_resource type="AudioStream" uid="uid://mgeq8gyiobi" path="res://assets/music/time_for_adventure.mp3" id="1_22mft"]
 
@@ -9,3 +9,4 @@ autoplay = true
 max_distance = 2004.0
 attenuation = 0.0441942
 panning_strength = 1.7
+bus = &"Music"

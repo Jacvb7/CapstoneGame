@@ -6,6 +6,7 @@ var preset_bug_data = {
 	"EXAMPLE_BUG": ["ALBY", "6", "Yellow"] # "res://Scenes/drag_and_drop_card_game/bug_images/yellow_beetle.png"
 }
 
+
 var bug_data = {
 	"BIX": { "legs": 4, "color": "Blue" }, 
 	"EMBER": { "legs": 8, "color": "Purple" }, 
@@ -13,6 +14,7 @@ var bug_data = {
 	"NOX": { "legs": 6, "color": "Red" }, 
 	"TAFFY": { "legs": 4, "color": "Green" } 
 }
+
 
 # retrieve key values from the bug_data dictionary.
 func get_bug_names():
@@ -28,7 +30,8 @@ func validate_bug_data(bug_name, col, value):
 		elif col == 2:
 			return bug_data[bug_name]["color"] == value
 	return false
-	
+
+
 func total_blocks_being_placed():
 	var count = 0
 	if bug_data.is_empty():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwg3g1r4bxxm0"]
+[gd_scene load_steps=7 format=3 uid="uid://dplgbs4bca4nv"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_4xx2o"]
 [ext_resource type="Texture2D" uid="uid://4rj4yn6iuakb" path="res://Scenes/Backgrounds/solid-light-blue-background-53xkyn7gnrw2373e.jpg" id="2_ir47e"]

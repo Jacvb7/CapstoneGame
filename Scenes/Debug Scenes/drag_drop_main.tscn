@@ -134,20 +134,8 @@ z_index = -1
 position = Vector2(508, 56)
 scale = Vector2(1, 1)
 
-[node name="preset_datablock_r1c4" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_uhufu")]
-visible = false
-z_index = -1
-position = Vector2(381, 88)
-scale = Vector2(1, 1)
-
 [node name="preset_datablock_r1c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_hmpv0")]
 position = Vector2(381, 88)
-
-[node name="preset_datablock_r1c3" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_uhufu")]
-visible = false
-z_index = -1
-position = Vector2(382, 89)
-scale = Vector2(1, 1)
 
 [node name="preset_datablock_r1c1" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_uhufu")]
 z_index = -1

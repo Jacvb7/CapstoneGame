@@ -29,7 +29,7 @@ func animate_scanner() -> void:
 		.set_trans(Tween.TRANS_BOUNCE)\
 		.set_ease(Tween.EASE_OUT)
 
-	# scales the scanner to 150% it's normal size
+	# scales the scanner to 150% its normal size
 	tween.parallel().tween_property(sprite_2d, "scale", Vector2(1.5, 1.5), 0.6)\
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_OUT)
