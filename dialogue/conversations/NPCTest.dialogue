@@ -42,6 +42,7 @@ Byte: I’m Byte the firefly! And this is my home. Welcome to Evergrove!
 ~ find_the_scanner
 if !GlobalVariables.has_scanner
 	Byte: Go get the BugScanner 3000! It’s on top of a log nearby.
+	do SignalBus._show_objectives()
 while !GlobalVariables.has_scanner
 	% Byte: The BugScanner 3000 is close by. It's on top of a log.
 	% Byte: The BugScanner 3000 is near the southern path.
@@ -54,6 +55,7 @@ if GlobalVariables.has_scanner
 	Byte: Yippee! You found it!
 	do SignalBus._show_byte()
 	do SignalBus._hide_npc_byte()
+	do SignalBus._hide_objectives()
 	=> find_the_bugs
 	
 ~ find_the_bugs

@@ -14,6 +14,8 @@ var speed = 40
 func _ready():
 	SignalBus.show_byte.connect(_show_byte)
 	SignalBus.hide_byte.connect(_hide_byte)
+	SignalBus.show_objectives.connect(_show_objectives)
+	SignalBus.hide_objectives.connect(_hide_objectives)
 	byte.hide()
 	objectives.hide()
 
@@ -22,6 +24,12 @@ func _show_byte():
 
 func _hide_byte():
 	byte.hide()
+	
+func _show_objectives():
+	objectives.show()
+	
+func _hide_objectives():
+	objectives.hide()
 	
 func _physics_process(delta):
 	var target = follow_point.global_position
