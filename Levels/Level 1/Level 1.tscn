@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://gs81fpw4fbn2"]
+[gd_scene load_steps=21 format=4 uid="uid://gs81fpw4fbn2"]
 
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_b4tn8"]
 [ext_resource type="Script" path="res://Levels/Level 1/level_1.gd" id="1_prf72"]
@@ -9,13 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://c0lwytkkfncny" path="res://Scenes/Menu-In-Game/pause_menu.tscn" id="6_dwg24"]
 [ext_resource type="PackedScene" uid="uid://1djwmi0vi132" path="res://Scenes/Characters/NPC/NPC.tscn" id="7_7kmoh"]
 [ext_resource type="PackedScene" uid="uid://u7vfiw8pwfpi" path="res://Scenes/Characters/Bugs/Ember.tscn" id="8_47kwa"]
-[ext_resource type="PackedScene" uid="uid://cddbb88fkcb86" path="res://Scenes/objects/bug_scanner_3000.tscn" id="9_0lkad"]
+[ext_resource type="PackedScene" uid="uid://dob0sbr4aawad" path="res://Scenes/objects/bug_scanner_3000.tscn" id="9_0lkad"]
 [ext_resource type="PackedScene" uid="uid://c2a3e116iht3r" path="res://Scenes/Characters/Bugs/Fizzgig.tscn" id="9_syx46"]
 [ext_resource type="PackedScene" uid="uid://dj4br3v2pbd" path="res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn" id="10_a37f0"]
 [ext_resource type="PackedScene" uid="uid://deq40nd4d8c15" path="res://Scenes/Characters/Bugs/Nox.tscn" id="10_avh70"]
 [ext_resource type="PackedScene" uid="uid://ent46w5m3mpq" path="res://Scenes/Characters/Bugs/Taffy.tscn" id="10_tlj24"]
 [ext_resource type="PackedScene" uid="uid://yinhkkktsoor" path="res://Scenes/Characters/Bugs/Alby.tscn" id="11_uwqar"]
-[ext_resource type="PackedScene" uid="uid://d2esvyiirkt77" path="res://morning.tscn" id="13_i5b3g"]
+[ext_resource type="PackedScene" uid="uid://yjsrbaeimu7k" path="res://morning.tscn" id="13_i5b3g"]
+[ext_resource type="PackedScene" uid="uid://m1rr4jfxcwik" path="res://Scenes/Objectives.tscn" id="16_d8bym"]
 [ext_resource type="PackedScene" uid="uid://bodshy1sh7fat" path="res://Scenes/Characters/NPC Help Page/NPC.tscn" id="17_b6e6d"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cbfxm"]
@@ -122,6 +123,7 @@ shape = SubResource("RectangleShape2D_bwhdw")
 position = Vector2(160, 185)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_dwg24")]
 offset_top = -1.0
@@ -148,6 +150,9 @@ position = Vector2(-28, 40)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 process_mode = 3
+
+[node name="Objectives" parent="CanvasLayer2" instance=ExtResource("16_d8bym")]
+scale = Vector2(0.607521, 0.68396)
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("13_i5b3g")]
 

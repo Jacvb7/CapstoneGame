@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bhscvpkwhrjjm"]
+[gd_scene load_steps=49 format=3 uid="uid://bhscvpkwhrjjm"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/player/player.gd" id="1_ascqp"]
 [ext_resource type="Texture2D" uid="uid://csyccvdhlrxwq" path="res://assets/game/characters/basic_charakter_actions.png" id="1_fvrmw"]
@@ -6,9 +6,6 @@
 [ext_resource type="Script" path="res://scripts/state_machine/node_state_machine.gd" id="3_surqo"]
 [ext_resource type="Script" path="res://Scenes/Characters/player/idle_state.gd" id="4_1hrc4"]
 [ext_resource type="Script" path="res://Scenes/Characters/player/walk_state.gd" id="5_ktbxm"]
-[ext_resource type="Script" path="res://Scenes/Characters/player/chopping_state.gd" id="7_0w2wx"]
-[ext_resource type="Script" path="res://Scenes/Characters/player/tilling_state.gd" id="8_u5kff"]
-[ext_resource type="Script" path="res://Scenes/Characters/player/watering_state.gd" id="9_j5p02"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fnlpe"]
 atlas = ExtResource("1_fvrmw")
@@ -423,21 +420,6 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("5_ktbxm")
-player = NodePath("../..")
-animated_sprite_2d = NodePath("../../AnimatedSprite2D")
-
-[node name="Chopping" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
-script = ExtResource("7_0w2wx")
-player = NodePath("../..")
-animated_sprite_2d = NodePath("../../AnimatedSprite2D")
-
-[node name="Tilling" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
-script = ExtResource("8_u5kff")
-player = NodePath("../..")
-animated_sprite_2d = NodePath("../../AnimatedSprite2D")
-
-[node name="Watering" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
-script = ExtResource("9_j5p02")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 

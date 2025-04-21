@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://m1rr4jfxcwik"]
+
+[node name="Objectives" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.96752, 3.24396)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 10004.0
+offset_bottom = 45.0
+text = "Objective:
+-Collect the Bugscanner 3000"
