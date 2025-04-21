@@ -47,7 +47,7 @@ func on_table_pressed() -> void:
 	if Input.is_action_just_pressed("table") and GlobalVariables.has_scanner and !GlobalVariables.finish_mini_game and !GlobalVariables.disable_T and GlobalVariables.minigame_ready:
 		get_tree().change_scene_to_file("res://Scenes/drag_and_drop_card_game/drag_drop_main.tscn")
 		GlobalVariables.enable_click = true
-		
+
 
 # Called when player enters interaction zone
 func interacting() -> void:

@@ -37,13 +37,17 @@ scroll_active = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
-modulate = Color(0, 0, 0, 1)
-show_behind_parent = true
 offset_left = -29.0
 offset_top = -15.0
 offset_right = 29.0
 offset_bottom = 15.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0.605274, 0.605274, 0.605274, 1)
+theme_override_colors/font_hover_color = Color(0.603922, 0.603922, 0.603922, 1)
+theme_override_colors/font_pressed_color = Color(0.603922, 0.603922, 0.603922, 1)
 toggle_mode = true
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(-102.579, 12.8947)
