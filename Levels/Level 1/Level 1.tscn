@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://gs81fpw4fbn2"]
+[gd_scene load_steps=22 format=4 uid="uid://gs81fpw4fbn2"]
 
 [ext_resource type="TileSet" uid="uid://qww2eqjct2pi" path="res://Tilesets/game_tile_set.tres" id="1_b4tn8"]
 [ext_resource type="Script" path="res://Levels/Level 1/level_1.gd" id="1_prf72"]
@@ -16,8 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://ent46w5m3mpq" path="res://Scenes/Characters/Bugs/Taffy.tscn" id="10_tlj24"]
 [ext_resource type="PackedScene" uid="uid://yinhkkktsoor" path="res://Scenes/Characters/Bugs/Alby.tscn" id="11_uwqar"]
 [ext_resource type="PackedScene" uid="uid://yjsrbaeimu7k" path="res://morning.tscn" id="13_i5b3g"]
-[ext_resource type="PackedScene" uid="uid://m1rr4jfxcwik" path="res://Scenes/Objectives.tscn" id="16_d8bym"]
+[ext_resource type="PackedScene" uid="uid://dvt6jlmgk7tf4" path="res://Scenes/UI/Find Bug Scanner Objective.tscn" id="16_ml7c5"]
 [ext_resource type="PackedScene" uid="uid://bodshy1sh7fat" path="res://Scenes/Characters/NPC Help Page/NPC.tscn" id="17_b6e6d"]
+[ext_resource type="PackedScene" uid="uid://6filow87assc" path="res://Scenes/UI/Use Bug Scanner objective.tscn" id="17_vabxe"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_cbfxm"]
 vertices = PackedVector2Array(261.039, 121.18, 266.961, 127.102, 257.828, 140, 218.461, 140, 213.719, 129.461, 216.68, 120.578, 237.039, 116.211)
@@ -151,8 +152,9 @@ position = Vector2(-28, 40)
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 process_mode = 3
 
-[node name="Objectives" parent="CanvasLayer2" instance=ExtResource("16_d8bym")]
-scale = Vector2(0.607521, 0.68396)
+[node name="FindBugScannerObjective" parent="CanvasLayer2" instance=ExtResource("16_ml7c5")]
+
+[node name="UseBugScannerObjective" parent="CanvasLayer2" instance=ExtResource("17_vabxe")]
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("13_i5b3g")]
 

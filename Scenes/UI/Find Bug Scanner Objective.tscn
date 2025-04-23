@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvt6jlmgk7tf4"]
+
+[ext_resource type="Texture2D" uid="uid://crtks3k34a6it" path="res://assets/Sprite sheet for Basic Pack.png" id="1_gd7wj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxh70"]
+atlas = ExtResource("1_gd7wj")
+region = Rect2(275, 212, 90, 25)
+
+[node name="FindBugScannerObjective" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(119.5, 25.48)
+scale = Vector2(2.65556, 2.04)
+texture = SubResource("AtlasTexture_pxh70")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 7.0
+offset_top = 2.0
+offset_right = 280.0
+offset_bottom = 81.0
+text = "Objective:
+-Collect the Bugscanner 3000"

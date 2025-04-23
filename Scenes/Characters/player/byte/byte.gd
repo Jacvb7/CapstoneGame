@@ -4,7 +4,9 @@ extends Player
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var is_byte_visable: bool = GlobalVariables.isByteVisable
 @onready var byte: CharacterBody2D = $"."
-@onready var objectives: Control = $"../CanvasLayer2/Objectives"
+@onready var find_bug_scanner_objective: Control = $"../CanvasLayer2/FindBugScannerObjective"
+@onready var use_bug_scanner_objective: Control = $"../CanvasLayer2/UseBugScannerObjective"
+
 
 
 var speed = 40
@@ -17,7 +19,8 @@ func _ready():
 	SignalBus.show_objectives.connect(_show_objectives)
 	SignalBus.hide_objectives.connect(_hide_objectives)
 	byte.hide()
-	objectives.hide()
+	find_bug_scanner_objective.hide()
+	use_bug_scanner_objective.hide()
 
 func _show_byte():
 	byte.show()
@@ -26,10 +29,11 @@ func _hide_byte():
 	byte.hide()
 	
 func _show_objectives():
-	objectives.show()
+	find_bug_scanner_objective.show()
 	
 func _hide_objectives():
-	objectives.hide()
+	find_bug_scanner_objective.hide()
+	use_bug_scanner_objective.show()
 	
 func _physics_process(delta):
 	var target = follow_point.global_position

@@ -13,5 +13,9 @@ scale = Vector2(4.96752, 3.24396)
 layout_mode = 0
 offset_right = 10004.0
 offset_bottom = 45.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_right = 273.0
+offset_bottom = 79.0
 text = "Objective:
 -Collect the Bugscanner 3000"

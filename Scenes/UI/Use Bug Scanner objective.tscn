@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://6filow87assc"]
+
+[ext_resource type="Texture2D" uid="uid://crtks3k34a6it" path="res://assets/Sprite sheet for Basic Pack.png" id="1_10i1v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qumop"]
+atlas = ExtResource("1_10i1v")
+region = Rect2(275, 212, 90, 25)
+
+[node name="UseBugScannerObjective" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(133.5, 40.84)
+scale = Vector2(2.94444, 3.32)
+texture = SubResource("AtlasTexture_qumop")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 283.0
+offset_bottom = 84.0
+text = "Objective:
+-Press 't' to use the bug scanner when nearby a group of bugs."
