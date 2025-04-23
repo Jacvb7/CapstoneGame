@@ -25,5 +25,6 @@ offset_left = 10.0
 offset_top = 5.0
 offset_right = 283.0
 offset_bottom = 84.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Objective:
 -Press 't' to use the bug scanner when nearby a group of bugs."

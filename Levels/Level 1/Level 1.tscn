@@ -123,6 +123,13 @@ shape = SubResource("RectangleShape2D_bwhdw")
 [node name="Npc" parent="." instance=ExtResource("7_7kmoh")]
 position = Vector2(160, 185)
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="FindBugScannerObjective" parent="CanvasLayer2" instance=ExtResource("16_ml7c5")]
+
+[node name="UseBugScannerObjective" parent="CanvasLayer2" instance=ExtResource("17_vabxe")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("6_dwg24")]
@@ -147,13 +154,6 @@ scale = Vector2(0.5, 0.5)
 visible = false
 z_index = 10
 position = Vector2(-28, 40)
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-process_mode = 3
-
-[node name="FindBugScannerObjective" parent="CanvasLayer2" instance=ExtResource("16_ml7c5")]
-
-[node name="UseBugScannerObjective" parent="CanvasLayer2" instance=ExtResource("17_vabxe")]
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("13_i5b3g")]
 

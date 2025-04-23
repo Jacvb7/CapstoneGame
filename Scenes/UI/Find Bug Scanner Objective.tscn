@@ -24,5 +24,6 @@ offset_left = 7.0
 offset_top = 2.0
 offset_right = 280.0
 offset_bottom = 81.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Objective:
 -Collect the Bugscanner 3000"
