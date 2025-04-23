@@ -6,6 +6,7 @@ extends Control
 @onready var start_game: Button = $MarginContainer/HBoxContainer/VBoxContainer/start_game
 @onready var settings: Button = $MarginContainer/HBoxContainer/VBoxContainer/settings
 @onready var exit_game: Button = $MarginContainer/HBoxContainer/VBoxContainer/exit_game
+@onready var help_button: Button = $MarginContainer/VBoxContainer2/HelpButton
 
 # Reference to the options/settings menu scene and container
 @onready var options_menu: OptionsMenu = $Options_Menu
@@ -18,7 +19,7 @@ func _ready():
 	start_game.button_down.connect(_on_start_game_button_down)
 	settings.button_down.connect(_on_settings_button_down)
 	options_menu.exit_options_menu.connect(on_exit_options_menu)
-
+	help_button.button_down.connect(_on_help_button_button_down)
 
 # Loads Level 1 when the Start Game button is pressed
 func _on_start_game_button_down() -> void:
@@ -41,3 +42,7 @@ func on_exit_options_menu() -> void:
 #Allows the game to be exited from the main menu
 func _on_exit_game_button_down() -> void: 
 	get_tree().quit()
+
+
+func _on_help_button_button_down() -> void:
+	OS.shell_open("https://docs.google.com/document/d/1JglxoCD9LgmA5xCS-_VFxYuatIop8Nm1U663883mTa4/edit?usp=sharing")

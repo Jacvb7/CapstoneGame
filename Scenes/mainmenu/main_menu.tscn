@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://beb5ly8wb4u2s"]
+[gd_scene load_steps=11 format=3 uid="uid://beb5ly8wb4u2s"]
 
 [ext_resource type="Script" path="res://Scenes/mainmenu/main_menu.gd" id="1_ti2el"]
 [ext_resource type="PackedScene" uid="uid://c5t0cl5ujvraa" path="res://MainMenuMusic.tscn" id="2_80d1v"]
@@ -8,6 +8,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yc17o"]
 shader = ExtResource("3_2v2c0")
+
+[sub_resource type="SystemFont" id="SystemFont_13hlt"]
+font_names = PackedStringArray("SimSun")
 
 [sub_resource type="SystemFont" id="SystemFont_ml8si"]
 font_names = PackedStringArray("SimSun")
@@ -50,15 +53,9 @@ texture = ExtResource("4_4c11l")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -2.074
-anchor_top = -2.318
-anchor_right = 2.164
-anchor_bottom = 2.819
-offset_left = 1744.79
-offset_top = 1015.42
-offset_right = -1166.08
-offset_bottom = -863.351
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12
@@ -66,8 +63,21 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="HelpButton" type="Button" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_13hlt")
+text = "HELP"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 15
 
 [node name="Game_Title" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -137,6 +147,7 @@ text = "EXIT GAME
 visible = false
 layout_mode = 1
 
+[connection signal="button_down" from="MarginContainer/VBoxContainer2/HelpButton" to="." method="_on_help_button_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/start_game" to="." method="_on_start_game_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_settings_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/exit_game" to="." method="_on_exit_game_button_down"]
