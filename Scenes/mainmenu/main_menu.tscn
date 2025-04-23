@@ -50,15 +50,9 @@ texture = ExtResource("4_4c11l")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -2.074
-anchor_top = -2.318
-anchor_right = 2.164
-anchor_bottom = 2.819
-offset_left = 1744.79
-offset_top = 1015.42
-offset_right = -1166.08
-offset_bottom = -863.351
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12
@@ -97,6 +91,24 @@ theme_override_font_sizes/font_size = 20
 text = "And The Lost Data Archives"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="HelpButton2" type="Button" parent="MarginContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_75lln")
+theme_override_font_sizes/font_size = 30
+text = "START GAME"
+
+[node name="HelpButton" type="Button" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 0
+text = "Help"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -137,6 +149,8 @@ text = "EXIT GAME
 visible = false
 layout_mode = 1
 
+[connection signal="button_down" from="MarginContainer/VBoxContainer2/HelpButton2" to="." method="_on_start_game_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer2/HelpButton" to="." method="_on_help_button_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/start_game" to="." method="_on_start_game_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/settings" to="." method="_on_settings_button_down"]
 [connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer/exit_game" to="." method="_on_exit_game_button_down"]
