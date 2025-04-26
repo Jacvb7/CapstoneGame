@@ -37,6 +37,7 @@ scroll_active = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
+show_behind_parent = true
 offset_left = -29.0
 offset_top = -15.0
 offset_right = 29.0
