@@ -102,7 +102,7 @@ func set_text():
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7gfs"]
 size = Vector2(64, 32)
 
-[node name="preset_datablock" type="Node2D"]
+[node name="preset_filled_datablock" type="Node2D"]
 position = Vector2(29, 16)
 scale = Vector2(0.95, 0.95)
 script = SubResource("GDScript_j27ww")

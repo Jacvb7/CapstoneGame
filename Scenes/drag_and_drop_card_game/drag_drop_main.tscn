@@ -169,20 +169,8 @@ z_index = -1
 position = Vector2(508, 51)
 scale = Vector2(1, 1)
 
-[node name="preset_datablock_r1c4" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
-visible = false
-z_index = -1
-position = Vector2(381, 88)
-scale = Vector2(1, 1)
-
 [node name="preset_datablock_r1c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
 position = Vector2(381, 83)
-
-[node name="preset_datablock_r1c3" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
-visible = false
-z_index = -1
-position = Vector2(382, 89)
-scale = Vector2(1, 1)
 
 [node name="preset_datablock_r1c1" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("2_rjdag")]
 z_index = -1
@@ -208,10 +196,6 @@ position = Vector2(382, 211)
 
 [node name="preset_datablock_r6c0" parent="preset_datablocks" groups=["preset_datablocks"] instance=ExtResource("3_lv113")]
 position = Vector2(382, 243)
-
-[node name="preset_name_datablock" parent="preset_datablocks" instance=ExtResource("3_lv113")]
-visible = false
-position = Vector2(235, 73)
 
 [node name="Alby" type="Sprite2D" parent="preset_datablocks"]
 visible = false

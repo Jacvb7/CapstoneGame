@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7gfs"]
 size = Vector2(64, 32)
 
-[node name="preset_name_datablock" type="Node2D"]
+[node name="preset_datablock" type="Node2D"]
 position = Vector2(230, 26)
 scale = Vector2(0.95, 0.95)
 script = ExtResource("1_cbevw")
