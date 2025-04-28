@@ -5,10 +5,9 @@ extends Control
 
 # Array of window mode options available to the player
 const WINDOW_MODE_ARRAY : Array[String] = [
+	"Windowed",
 	"Full-Screen",
-	"Window mode",
-	"Borderless Window",
-	"Borderless Full-Screen"
+	"Borderless Windowed"
 ]
 
 # Called when the node enters the scene tree for the first time
@@ -26,15 +25,12 @@ func add_window_mode_items() -> void:
 # Called when a window mode is selected from the OptionButton
 func on_window_mode_selected(index : int) -> void:
 	match index:
-		0: # Full-screen mode
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
-		1: # Windowed mode with borders
+		0: # Windowed mode with borders
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		1: # Full-screen mode
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 		2: # Borderless windowed mode
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
-		3: # Borderless full-screen mode
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)

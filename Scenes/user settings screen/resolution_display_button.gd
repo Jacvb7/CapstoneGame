@@ -5,8 +5,8 @@ extends Control
 
 # Dictionary mapping resolution text to actual Vector2i screen sizes
 const RESOLUTION_DICTIONARY : Dictionary = {
-	"1152 x 648" : Vector2i(1152, 648),   # Vector2i ensures resolution values are integers
 	"1280 x 720" : Vector2i(1280, 720),
+	"1152 x 648" : Vector2i(1152, 648),   # Vector2i ensures resolution values are integers
 	"1920 x 1080" : Vector2i(1920, 1080)
 }
 

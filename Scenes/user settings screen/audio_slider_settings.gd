@@ -6,7 +6,7 @@ extends Control
 @onready var audio_num_lbl: Label = $HBoxContainer/Audio_num_lbl
 
 # Exported dropdown (enum) to select which audio bus this slider controls
-@export_enum("Master", "Music", "Sfx") var bus_name : String
+@export_enum("Master", "Music") var bus_name : String
 
 # Index of the audio bus in the AudioServer
 var bus_index : int = 0
