@@ -12,7 +12,7 @@ var is_visable: bool = true
 func _ready() -> void:
 	interactable_component.interactable_activated.connect(on_interactable_activated)
 	interactable_component.interactable_deactivated.connect(on_interactable_dectivated)
-	interactable_component.hide()
+	interactable_label_component.hide()
 	
 	#GameDialogueManager.action_enter_username.connect(on_enter_username)
 	
