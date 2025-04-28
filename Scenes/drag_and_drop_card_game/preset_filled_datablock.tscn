@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cr074s8vk64mm" path="res://Scenes/drag_and_drop_card_game/datablock_images/datablock.png" id="2_blob8"]
 
 [sub_resource type="GDScript" id="GDScript_j27ww"]
-script/source = "# preset_datablock.gd
+script/source = "# preset_filled_datablock.gd
 # Description: preset_datablocks are different from datablocks. 
 # They represent the partially filled out portion of the data table. 
 # Their position and values matter for data validation. This level 1 script 
